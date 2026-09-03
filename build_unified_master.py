@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+import re
+
+html_content = """<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -2210,3 +2212,13 @@
   </script>
 </body>
 </html>
+"""
+
+# Zero em-dash audit and replacement
+cleaned_html = html_content.replace('—', ' - ').replace('–', '-')
+
+output_path = r"C:\Users\Administrator\Desktop\ADU Alliance\adu-alliance-site\index.html"
+with open(output_path, "w", encoding="utf-8") as f:
+    f.write(cleaned_html)
+
+print(f"Successfully generated master index.html at {output_path} ({len(cleaned_html)} bytes)")
