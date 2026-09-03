@@ -101,7 +101,7 @@ html_content = """<!DOCTYPE html>
 
   <style>
     :root, [data-theme="light"] {
-      /* 2026 Architectural Daylight Mode */
+      /* 2026 Unified Architectural Daylight System */
       --bg-canvas: #FBFBF9;
       --bg-surface: #FFFFFF;
       --bg-surface-elevated: #FFFFFF;
@@ -122,7 +122,7 @@ html_content = """<!DOCTYPE html>
       --brand-primary: #0D1115;
       --brand-amber: #D97706;
       --brand-amber-light: #F59E0B;
-      --brand-amber-glow: rgba(217, 119, 6, 0.25);
+      --brand-amber-glow: rgba(217, 119, 6, 0.22);
       --brand-emerald: #1A382B;
       --brand-emerald-accent: #10B981;
       
@@ -133,8 +133,8 @@ html_content = """<!DOCTYPE html>
       
       --radius-sm: 8px;
       --radius-md: 14px;
-      --radius-lg: 22px;
-      --radius-xl: 32px;
+      --radius-lg: 20px;
+      --radius-xl: 30px;
       --radius-full: 9999px;
       
       --font-display: 'Outfit', sans-serif;
@@ -145,7 +145,7 @@ html_content = """<!DOCTYPE html>
     }
 
     [data-theme="dark"] {
-      /* 2026 Obsidian Slate Night Mode */
+      /* 2026 Unified Obsidian Slate Night System */
       --bg-canvas: #090C0F;
       --bg-surface: #10151C;
       --bg-surface-elevated: #161D26;
@@ -224,7 +224,7 @@ html_content = """<!DOCTYPE html>
       100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
 
-    /* Main Navigation */
+    /* Streamlined Single-Line Header */
     .site-header {
       position: sticky;
       top: 0;
@@ -241,18 +241,21 @@ html_content = """<!DOCTYPE html>
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 78px;
+      height: 72px;
+      gap: 20px;
+      white-space: nowrap;
     }
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
       color: var(--text-main);
+      flex-shrink: 0;
     }
     .brand-logo-mark {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       background: var(--brand-primary);
       color: #FFF;
       border-radius: var(--radius-sm);
@@ -261,40 +264,45 @@ html_content = """<!DOCTYPE html>
       justify-content: center;
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 20px;
+      font-size: 18px;
       letter-spacing: -0.5px;
       border: 1px solid var(--border-dark);
     }
     .brand-logo-text {
       display: flex;
-      flex-direction: column;
+      align-items: baseline;
+      gap: 6px;
     }
     .brand-logo-text .title {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 21px;
+      font-size: 19px;
       letter-spacing: -0.5px;
-      line-height: 1.1;
       color: var(--text-main);
     }
-    .brand-logo-text .subtitle {
-      font-size: 11px;
+    .brand-logo-text .badge-oc {
+      font-size: 10.5px;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
       color: var(--brand-amber);
-      font-weight: 700;
+      font-weight: 800;
+      background: var(--bg-surface-soft);
+      padding: 2px 7px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
     }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 24px;
       list-style: none;
+      margin: 0 auto;
     }
     .nav-links a {
       text-decoration: none;
       color: var(--text-muted);
       font-weight: 600;
-      font-size: 14.5px;
+      font-size: 14px;
       transition: color 0.2s ease;
     }
     .nav-links a:hover {
@@ -303,17 +311,36 @@ html_content = """<!DOCTYPE html>
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .theme-toggle-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-full);
+      background: var(--bg-surface-soft);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+    .theme-toggle-btn:hover {
+      background: var(--border-subtle);
+      transform: rotate(15deg);
     }
     .phone-badge {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       color: var(--text-main);
       text-decoration: none;
       font-weight: 700;
       font-family: var(--font-mono);
-      font-size: 14.5px;
+      font-size: 13.5px;
       padding: 8px 14px;
       border-radius: var(--radius-full);
       background: var(--bg-surface-soft);
@@ -323,35 +350,17 @@ html_content = """<!DOCTYPE html>
     .phone-badge:hover {
       background: var(--border-subtle);
     }
-    .theme-toggle-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-full);
-      background: var(--bg-surface-soft);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 18px;
-      transition: all 0.2s ease;
-    }
-    .theme-toggle-btn:hover {
-      background: var(--border-subtle);
-      transform: rotate(15deg);
-    }
     .btn-primary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 6px;
       background: var(--brand-amber);
       color: #FFF;
-      padding: 13px 26px;
+      padding: 10px 20px;
       border-radius: var(--radius-full);
       font-weight: 700;
-      font-size: 14.5px;
+      font-size: 13.5px;
       text-decoration: none;
       border: none;
       cursor: pointer;
@@ -364,11 +373,25 @@ html_content = """<!DOCTYPE html>
       box-shadow: 0 6px 20px var(--brand-amber-glow);
     }
 
+    /* Section Alternating Tokens */
+    .section-canvas {
+      background-color: var(--bg-canvas);
+    }
+    .section-surface-soft {
+      background-color: var(--bg-surface-soft);
+    }
+    .section-surface {
+      background-color: var(--bg-surface);
+    }
+    .section-dark {
+      background-color: var(--bg-dark);
+      color: #FFF;
+    }
+
     /* Hero Section */
     .hero-section {
       position: relative;
-      background: var(--bg-surface-soft);
-      padding: 72px 0 88px;
+      padding: 68px 0 84px;
       border-bottom: 1px solid var(--border-subtle);
       overflow: hidden;
     }
@@ -404,7 +427,7 @@ html_content = """<!DOCTYPE html>
     }
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(38px, 4.4vw, 58px);
+      font-size: clamp(38px, 4.4vw, 56px);
       font-weight: 800;
       line-height: 1.08;
       letter-spacing: -1.5px;
@@ -417,7 +440,7 @@ html_content = """<!DOCTYPE html>
       -webkit-text-fill-color: transparent;
     }
     .hero-lead {
-      font-size: 17.5px;
+      font-size: 17px;
       line-height: 1.6;
       color: var(--text-muted);
       margin-bottom: 32px;
@@ -449,7 +472,7 @@ html_content = """<!DOCTYPE html>
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 36px 32px;
+      padding: 34px 30px;
       box-shadow: var(--shadow-xl);
       position: relative;
     }
@@ -457,15 +480,15 @@ html_content = """<!DOCTYPE html>
       content: "";
       position: absolute;
       top: 0;
-      left: 32px;
-      right: 32px;
+      left: 30px;
+      right: 30px;
       height: 4px;
       background: linear-gradient(90deg, var(--brand-amber) 0%, var(--brand-amber-light) 100%);
       border-radius: 4px 4px 0 0;
     }
     .form-card-title {
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
       letter-spacing: -0.4px;
       color: var(--text-main);
@@ -474,29 +497,29 @@ html_content = """<!DOCTYPE html>
     .form-card-sub {
       font-size: 13.5px;
       color: var(--text-muted);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
     .lead-form-grid {
       display: grid;
-      gap: 16px;
+      gap: 15px;
     }
     .input-group label {
       display: block;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.6px;
       color: var(--text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .input-control {
       width: 100%;
-      height: 48px;
+      height: 46px;
       padding: 0 16px;
       border: 1px solid var(--border-medium);
       border-radius: var(--radius-sm);
       font-family: var(--font-body);
-      font-size: 15px;
+      font-size: 14.5px;
       color: var(--text-main);
       background: var(--bg-surface);
       transition: all 0.2s ease;
@@ -508,17 +531,17 @@ html_content = """<!DOCTYPE html>
     }
     .form-btn-submit {
       width: 100%;
-      height: 52px;
+      height: 50px;
       background: var(--brand-primary);
       color: #FFF;
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
       border-radius: var(--radius-sm);
       border: none;
       cursor: pointer;
       transition: all 0.2s ease;
-      margin-top: 6px;
+      margin-top: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -532,95 +555,92 @@ html_content = """<!DOCTYPE html>
       font-size: 11.5px;
       color: var(--text-light);
       text-align: center;
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     /* Trust Logo Bar */
     .trust-logo-section {
       background: var(--bg-surface);
-      padding: 36px 0;
+      padding: 32px 0;
       border-bottom: 1px solid var(--border-subtle);
     }
     .trust-logo-header {
       text-align: center;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: var(--text-light);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     .trust-logo-grid {
       display: flex;
       align-items: center;
       justify-content: space-around;
-      gap: 32px;
+      gap: 28px;
       flex-wrap: wrap;
     }
     .trust-logo-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-muted);
     }
 
     /* Section Utilities */
     .section-padding {
-      padding: 100px 0;
+      padding: 92px 0;
     }
     .section-head-center {
       text-align: center;
-      max-width: 780px;
-      margin: 0 auto 56px;
+      max-width: 760px;
+      margin: 0 auto 52px;
     }
     .eyebrow-tag {
       display: inline-block;
       font-family: var(--font-display);
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: var(--brand-amber);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .section-h2 {
       font-family: var(--font-display);
-      font-size: clamp(32px, 3.5vw, 44px);
+      font-size: clamp(30px, 3.3vw, 42px);
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: -1px;
       color: var(--text-main);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .section-desc {
-      font-size: 16.5px;
+      font-size: 16px;
       color: var(--text-muted);
       line-height: 1.6;
     }
 
-    /* 5 Models Tabbed Switcher (EVO ADU Style) */
-    .models-section {
-      background: var(--bg-canvas);
-    }
+    /* 5 Models Tabbed Switcher */
     .model-tabs-nav {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
       flex-wrap: wrap;
     }
     .model-tab-btn {
-      padding: 12px 24px;
+      padding: 11px 22px;
       border-radius: var(--radius-full);
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       color: var(--text-muted);
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 14.5px;
+      font-size: 14px;
       cursor: pointer;
       transition: all 0.2s ease;
     }
@@ -646,7 +666,7 @@ html_content = """<!DOCTYPE html>
     .model-display-media {
       position: relative;
       background: #000;
-      min-height: 480px;
+      min-height: 460px;
       overflow: hidden;
     }
     .model-display-media img {
@@ -656,7 +676,7 @@ html_content = """<!DOCTYPE html>
       transition: transform 0.5s ease;
     }
     .model-display-info {
-      padding: 48px 40px;
+      padding: 44px 36px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -667,25 +687,25 @@ html_content = """<!DOCTYPE html>
       border: 1px solid var(--border-subtle);
       padding: 4px 12px;
       border-radius: var(--radius-full);
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--brand-amber);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .model-info-head .model-name {
       font-family: var(--font-display);
-      font-size: 32px;
+      font-size: 30px;
       font-weight: 800;
       letter-spacing: -0.8px;
       color: var(--text-main);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .model-specs-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin: 24px 0;
-      padding: 20px 0;
+      margin: 20px 0;
+      padding: 18px 0;
       border-top: 1px solid var(--border-subtle);
       border-bottom: 1px solid var(--border-subtle);
     }
@@ -696,7 +716,7 @@ html_content = """<!DOCTYPE html>
       color: var(--text-main);
     }
     .model-spec-item .label {
-      font-size: 11.5px;
+      font-size: 11px;
       color: var(--text-muted);
       font-weight: 600;
       text-transform: uppercase;
@@ -705,54 +725,43 @@ html_content = """<!DOCTYPE html>
       background: var(--bg-surface-soft);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 20px;
-      margin-bottom: 24px;
+      padding: 18px;
+      margin-bottom: 22px;
     }
     .model-price-box .price-label {
-      font-size: 12px;
+      font-size: 11.5px;
       color: var(--text-muted);
       font-weight: 600;
     }
     .model-price-box .price-num {
       font-family: var(--font-mono);
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
       color: var(--brand-amber);
     }
 
     /* Interactive Cost & Property Value Estimator */
-    .calculator-section {
-      background: var(--bg-dark);
-      color: #FFF;
-      position: relative;
-    }
-    .calculator-section .section-h2 {
-      color: #FFF;
-    }
-    .calculator-section .section-desc {
-      color: #94A3B8;
-    }
     .calc-card-container {
       background: var(--bg-dark-surface);
       border: 1px solid var(--border-dark);
       border-radius: var(--radius-xl);
-      padding: 48px;
+      padding: 44px;
       box-shadow: var(--shadow-xl);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 44px;
     }
     .calc-inputs-col {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 28px;
     }
     .calc-slider-group label {
       display: flex;
       justify-content: space-between;
       font-weight: 700;
-      font-size: 14.5px;
-      margin-bottom: 12px;
+      font-size: 14px;
+      margin-bottom: 10px;
       color: #F8FAFC;
     }
     .calc-slider-group .slider-val {
@@ -771,8 +780,8 @@ html_content = """<!DOCTYPE html>
     }
     .calc-range-slider::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       background: var(--brand-amber-light);
       cursor: pointer;
@@ -782,37 +791,37 @@ html_content = """<!DOCTYPE html>
       background: var(--bg-dark-card);
       border: 1px solid var(--border-dark);
       border-radius: var(--radius-lg);
-      padding: 36px;
+      padding: 32px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
     .calc-metric-box {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
     .calc-metric-box:last-child {
       margin-bottom: 0;
     }
     .calc-metric-box .metric-lbl {
-      font-size: 12px;
+      font-size: 11.5px;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: #94A3B8;
       font-weight: 700;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .calc-metric-box .metric-val {
       font-family: var(--font-mono);
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 800;
       color: var(--brand-amber-light);
     }
     .calc-metric-box .metric-sub {
-      font-size: 12.5px;
+      font-size: 12px;
       color: #64748B;
     }
 
-    /* Living & Interiors Gallery (EVO ADU Style) */
+    /* Living & Interiors Gallery */
     .interiors-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -849,22 +858,22 @@ html_content = """<!DOCTYPE html>
       margin-bottom: 8px;
     }
     .interior-card-body p {
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--text-muted);
       line-height: 1.5;
     }
 
-    /* Four Ways to Step In (ADU Resource Center Style) */
+    /* Four Ways to Step In */
     .step-in-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
     .step-in-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 32px 24px;
+      padding: 30px 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -882,20 +891,20 @@ html_content = """<!DOCTYPE html>
       text-transform: uppercase;
       letter-spacing: 1px;
       color: var(--brand-amber);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .step-in-card h3 {
       font-family: var(--font-display);
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 800;
       color: var(--text-main);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .step-in-card p {
       font-size: 13.5px;
       color: var(--text-muted);
       line-height: 1.55;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
     .step-in-card .card-action-link {
       color: var(--brand-amber);
@@ -911,37 +920,35 @@ html_content = """<!DOCTYPE html>
     .process-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      position: relative;
+      gap: 22px;
     }
     .process-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 36px 28px;
-      position: relative;
+      padding: 32px 24px;
       box-shadow: var(--shadow-sm);
     }
     .process-card .phase-num {
       font-family: var(--font-mono);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
       color: var(--brand-amber);
       background: var(--bg-surface-soft);
       padding: 4px 10px;
       border-radius: var(--radius-full);
       display: inline-block;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .process-card h3 {
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 800;
       color: var(--text-main);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .process-card p {
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--text-muted);
       line-height: 1.6;
     }
@@ -950,7 +957,7 @@ html_content = """<!DOCTYPE html>
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      gap: 30px;
     }
     .project-card {
       background: var(--bg-surface);
@@ -962,7 +969,7 @@ html_content = """<!DOCTYPE html>
     .project-media-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      height: 280px;
+      height: 270px;
     }
     .project-media-split .img-box {
       position: relative;
@@ -975,20 +982,20 @@ html_content = """<!DOCTYPE html>
     }
     .project-media-split .img-box .badge {
       position: absolute;
-      top: 12px;
-      left: 12px;
+      top: 10px;
+      left: 10px;
       background: rgba(0,0,0,0.75);
       color: #FFF;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       padding: 3px 8px;
       border-radius: var(--radius-sm);
     }
     .project-card-body {
-      padding: 28px;
+      padding: 26px;
     }
     .project-card-body .city-tag {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.8px;
@@ -996,49 +1003,49 @@ html_content = """<!DOCTYPE html>
     }
     .project-card-body h3 {
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
       color: var(--text-main);
-      margin: 4px 0 12px;
+      margin: 4px 0 10px;
     }
     .project-stats-row {
       display: flex;
-      gap: 20px;
-      font-size: 13.5px;
+      gap: 18px;
+      font-size: 13px;
       color: var(--text-muted);
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     /* Why Us 6 Trust Pillars */
     .why-us-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 26px;
     }
     .why-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 36px 28px;
+      padding: 32px 26px;
       box-shadow: var(--shadow-sm);
     }
     .why-card .why-num {
       font-family: var(--font-mono);
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
       color: var(--brand-amber);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .why-card h3 {
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 800;
       color: var(--text-main);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .why-card p {
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--text-muted);
       line-height: 1.6;
     }
@@ -1052,7 +1059,7 @@ html_content = """<!DOCTYPE html>
     .city-chip {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      padding: 10px 14px;
+      padding: 10px 12px;
       border-radius: var(--radius-sm);
       font-size: 13px;
       font-weight: 600;
@@ -1069,20 +1076,20 @@ html_content = """<!DOCTYPE html>
 
     /* FAQ Section */
     .faq-container {
-      max-width: 880px;
+      max-width: 860px;
       margin: 0 auto;
     }
     .faq-item {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       overflow: hidden;
     }
     .faq-question {
-      padding: 22px 28px;
+      padding: 20px 26px;
       font-family: var(--font-display);
-      font-size: 17px;
+      font-size: 16.5px;
       font-weight: 700;
       color: var(--text-main);
       cursor: pointer;
@@ -1098,8 +1105,8 @@ html_content = """<!DOCTYPE html>
       transition: transform 0.2s ease;
     }
     .faq-answer {
-      padding: 0 28px 22px;
-      font-size: 14.5px;
+      padding: 0 26px 20px;
+      font-size: 14px;
       color: var(--text-muted);
       line-height: 1.65;
       display: none;
@@ -1115,21 +1122,21 @@ html_content = """<!DOCTYPE html>
     .site-footer {
       background: var(--bg-dark);
       color: #CBD5E1;
-      padding: 80px 0 40px;
+      padding: 72px 0 36px;
       border-top: 1px solid var(--border-dark);
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 64px;
+      gap: 44px;
+      margin-bottom: 56px;
     }
     .footer-col h4 {
       color: #FFF;
       font-family: var(--font-display);
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 800;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       letter-spacing: 0.5px;
     }
     .footer-col p {
@@ -1153,7 +1160,7 @@ html_content = """<!DOCTYPE html>
       color: #FFF;
     }
     .footer-bottom {
-      padding-top: 32px;
+      padding-top: 28px;
       border-top: 1px solid var(--border-dark);
       display: flex;
       justify-content: space-between;
@@ -1206,6 +1213,12 @@ html_content = """<!DOCTYPE html>
       text-decoration: none;
     }
 
+    @media (max-width: 1100px) {
+      .nav-links {
+        gap: 16px;
+      }
+    }
+
     @media (max-width: 1024px) {
       .hero-grid, .calc-card-container, .model-display-card, .portfolio-grid {
         grid-template-columns: 1fr;
@@ -1241,10 +1254,10 @@ html_content = """<!DOCTYPE html>
         grid-template-columns: 1fr;
       }
       .section-padding {
-        padding: 60px 0;
+        padding: 56px 0;
       }
       .hero-form-card {
-        padding: 24px 20px;
+        padding: 24px 18px;
       }
     }
   </style>
@@ -1257,7 +1270,7 @@ html_content = """<!DOCTYPE html>
     <strong>Orange County ADU Update (2026):</strong> California SB 9 and AB 1033 compliant. Fast 60-day city approvals active in all 34 OC cities. <span class="highlight">Call (657) 298-4061</span>
   </div>
 
-  <!-- Header Navigation -->
+  <!-- Streamlined Single-Line Header -->
   <header class="site-header" id="siteHeader">
     <div class="container">
       <div class="nav-inner">
@@ -1265,35 +1278,35 @@ html_content = """<!DOCTYPE html>
           <div class="brand-logo-mark">AA</div>
           <div class="brand-logo-text">
             <span class="title">ADU ALLIANCE</span>
-            <span class="subtitle">Orange County Design-Build</span>
+            <span class="badge-oc">OC</span>
           </div>
         </a>
 
+        <!-- 5 High-Signal One-Line Nav Links -->
         <ul class="nav-links">
-          <li><a href="#models">ADU Models</a></li>
-          <li><a href="#calculator">Cost & Value Estimator</a></li>
+          <li><a href="#models">Models</a></li>
+          <li><a href="#calculator">Estimator</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#step-in">4 Ways to Start</a></li>
           <li><a href="#portfolio">Projects</a></li>
-          <li><a href="#why-us">Why Us</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
 
+        <!-- Action Cluster: Theme Toggle + Phone + CTA -->
         <div class="nav-actions">
-          <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Light and Dark Mode" title="Toggle Theme">
+          <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Light and Dark Mode" title="Toggle Light/Dark Theme">
             <span class="theme-icon light-icon">☀️</span>
           </button>
           <a href="tel:+16572984061" class="phone-badge">
             <span>📞</span> (657) 298-4061
           </a>
-          <a href="#lead-form" class="btn-primary">Free Lot Feasibility</a>
+          <a href="#lead-form" class="btn-primary">Free Feasibility</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section" id="hero">
+  <!-- Hero Section (Canvas Tone) -->
+  <section class="hero-section section-canvas" id="hero">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
@@ -1326,7 +1339,7 @@ html_content = """<!DOCTYPE html>
           </div>
         </div>
 
-        <!-- Hero Form -->
+        <!-- Hero Form Card -->
         <div class="hero-form-card" id="lead-form">
           <h2 class="form-card-title">Check Your Property Feasibility</h2>
           <p class="form-card-sub">Get your custom Orange County ADU price & zoning read in 24 hours.</p>
@@ -1373,8 +1386,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Trust Logo Bar -->
-  <section class="trust-logo-section">
+  <!-- Trust Logo Bar (Surface Tone) -->
+  <section class="trust-logo-section section-surface">
     <div class="container">
       <div class="trust-logo-header">Trusted By Industry Leaders & California Housing Programs</div>
       <div class="trust-logo-grid">
@@ -1387,8 +1400,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- 5 Pre-Designed Models Section (EVO Style Interactive Tab Switcher) -->
-  <section class="section-padding models-section" id="models">
+  <!-- 5 Pre-Designed Models Section (Surface Soft Tone) -->
+  <section class="section-padding section-surface-soft" id="models">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Architectural Precision</span>
@@ -1443,13 +1456,13 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Interactive ADU Cost & Property Value Estimator -->
-  <section class="section-padding calculator-section" id="calculator">
+  <!-- Interactive ADU Cost & Property Value Estimator (Dark Tone Accent) -->
+  <section class="section-padding section-dark" id="calculator">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag" style="color:var(--brand-amber-light);">Real Value Analysis</span>
-        <h2 class="section-h2">Orange County ADU Cost & Property Value Estimator</h2>
-        <p class="section-desc">Adjust size and finish level to estimate total turnkey project investment, immediate property value increase, and estimated construction timeline in Orange County.</p>
+        <h2 class="section-h2" style="color:#FFF;">Orange County ADU Cost & Property Value Estimator</h2>
+        <p class="section-desc" style="color:#94A3B8;">Adjust size and finish level to estimate total turnkey project investment, immediate property value increase, and estimated construction timeline in Orange County.</p>
       </div>
 
       <div class="calc-card-container">
@@ -1470,7 +1483,7 @@ html_content = """<!DOCTYPE html>
             <input type="range" id="homeTierSlider" class="calc-range-slider" min="1" max="3" step="1" value="2">
           </div>
 
-          <div style="font-size:13px; color:#94A3B8; line-height:1.6; border-top:1px solid var(--border-dark); padding-top:20px;">
+          <div style="font-size:13px; color:#94A3B8; line-height:1.6; border-top:1px solid var(--border-dark); padding-top:18px;">
             💡 <strong>Note:</strong> Estimates reflect average Orange County municipal permitting, architectural drafting, structural engineering, and complete site construction.
           </div>
         </div>
@@ -1498,8 +1511,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Living & Interiors Gallery -->
-  <section class="section-padding" id="interiors">
+  <!-- Living & Interiors Gallery (Canvas Tone) -->
+  <section class="section-padding section-canvas" id="interiors">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Thoughtful Craftsmanship</span>
@@ -1541,8 +1554,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Four Ways to Step In (ADU Resource Center Pattern) -->
-  <section class="section-padding" id="step-in" style="background:var(--bg-surface-soft);">
+  <!-- Four Ways to Step In (Surface Soft Tone) -->
+  <section class="section-padding section-surface-soft" id="step-in">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">How To Get Started</span>
@@ -1590,8 +1603,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- 4-Stage Turnkey Process Timeline -->
-  <section class="section-padding" id="process">
+  <!-- 4-Stage Turnkey Process Timeline (Canvas Tone) -->
+  <section class="section-padding section-canvas" id="process">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Transparent Roadmap</span>
@@ -1627,8 +1640,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Portfolio Before / After Projects -->
-  <section class="section-padding" id="portfolio" style="background:var(--bg-canvas);">
+  <!-- Real Projects Portfolio with Before/After (Surface Soft Tone) -->
+  <section class="section-padding section-surface-soft" id="portfolio">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Proven Results</span>
@@ -1686,8 +1699,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Why Choose Us 6 Pillars -->
-  <section class="section-padding" id="why-us" style="background:var(--bg-surface-soft);">
+  <!-- Why Choose Us 6 Pillars (Canvas Tone) -->
+  <section class="section-padding section-canvas" id="why-us">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">The ADU Alliance Standard</span>
@@ -1735,8 +1748,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- 34 Orange County Municipalities Directory -->
-  <section class="section-padding" id="municipalities" style="background:var(--bg-canvas);">
+  <!-- 34 Orange County Municipalities Directory (Surface Soft Tone) -->
+  <section class="section-padding section-surface-soft" id="municipalities">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Local Authority</span>
@@ -1783,8 +1796,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section-padding" id="faq" style="background:var(--bg-surface-soft);">
+  <!-- FAQ Section (Canvas Tone) -->
+  <section class="section-padding section-canvas" id="faq">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Common Questions</span>
@@ -1846,16 +1859,16 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Final Call to Action -->
-  <section class="section-padding" style="background:var(--bg-dark); color:#FFF; text-align:center;">
+  <!-- Final Call to Action (Dark Tone Accent) -->
+  <section class="section-padding section-dark" style="text-align:center;">
     <div class="container">
       <div style="max-width:760px; margin:0 auto;">
         <span class="eyebrow-tag" style="color:var(--brand-amber-light);">Ready When You Are</span>
         <h2 class="section-h2" style="color:#FFF;">Start Your Orange County ADU Project Today</h2>
         <p class="section-desc" style="color:#94A3B8; margin-bottom:36px;">Schedule a free 30-minute on-premise property assessment with our licensed builders. Discover what is buildable on your lot with zero obligation.</p>
         <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-          <a href="#lead-form" class="btn-primary" style="padding:16px 36px; font-size:16px;">Schedule Free Property Assessment</a>
-          <a href="tel:+16572984061" class="phone-badge" style="background:#1E293B; color:#FFF; border-color:#334155; padding:16px 28px; font-size:16px;">
+          <a href="#lead-form" class="btn-primary" style="padding:14px 32px; font-size:15px;">Schedule Free Property Assessment</a>
+          <a href="tel:+16572984061" class="phone-badge" style="background:#1E293B; color:#FFF; border-color:#334155; padding:14px 26px; font-size:15px;">
             <span>📞</span> Call (657) 298-4061
           </a>
         </div>
@@ -1863,7 +1876,7 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (Dark Tone) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -1872,7 +1885,7 @@ html_content = """<!DOCTYPE html>
             <div class="brand-logo-mark" style="background:#FFF; color:#000;">AA</div>
             <div class="brand-logo-text">
               <span class="title" style="color:#FFF;">ADU ALLIANCE</span>
-              <span class="subtitle">Orange County Design-Build</span>
+              <span class="badge-oc" style="background:rgba(255,255,255,0.15); color:#FFF; border-color:rgba(255,255,255,0.2);">OC</span>
             </div>
           </div>
           <p>Orange County's dedicated design-build contractor specializing exclusively in turnkey accessory dwelling units, modern prefabs, and garage conversions.</p>
@@ -2142,4 +2155,4 @@ output_path = r"C:\Users\Administrator\Desktop\ADU Alliance\adu-alliance-site\in
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(cleaned_html)
 
-print("Updated index.html: Team section completely removed, Rent claims removed and refocused on Custom Construction & Property Value.")
+print("Generated clean 1-line header with unified color system across all sections.")
