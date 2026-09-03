@@ -565,11 +565,6 @@ html_content = """<!DOCTYPE html>
       font-size: 15px;
       color: var(--text-muted);
     }
-    .trust-logo-item svg {
-      width: 24px;
-      height: 24px;
-      fill: var(--brand-amber);
-    }
 
     /* Section Utilities */
     .section-padding {
@@ -725,7 +720,7 @@ html_content = """<!DOCTYPE html>
       color: var(--brand-amber);
     }
 
-    /* Interactive Cost & Cash Flow Calculator */
+    /* Interactive Cost & Property Value Estimator */
     .calculator-section {
       background: var(--bg-dark);
       color: #FFF;
@@ -912,7 +907,7 @@ html_content = """<!DOCTYPE html>
       gap: 6px;
     }
 
-    /* 4-Stage Turnkey Process Timeline (LADU Style) */
+    /* 4-Stage Turnkey Process Timeline */
     .process-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1013,50 +1008,6 @@ html_content = """<!DOCTYPE html>
       color: var(--text-muted);
       font-weight: 600;
       margin-bottom: 12px;
-    }
-
-    /* In-House Leadership & Team Section */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-    .team-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      text-align: center;
-      padding: 36px 24px;
-      box-shadow: var(--shadow-sm);
-    }
-    .team-avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      object-fit: cover;
-      border: 3px solid var(--brand-amber);
-    }
-    .team-card h3 {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 4px;
-    }
-    .team-card .role {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--brand-amber);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-    .team-card p {
-      font-size: 13.5px;
-      color: var(--text-muted);
-      line-height: 1.5;
     }
 
     /* Why Us 6 Trust Pillars */
@@ -1262,7 +1213,7 @@ html_content = """<!DOCTYPE html>
       .models-section .model-display-media {
         min-height: 320px;
       }
-      .step-in-grid, .process-grid, .team-grid, .why-us-grid {
+      .step-in-grid, .process-grid, .why-us-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .cities-grid {
@@ -1280,7 +1231,7 @@ html_content = """<!DOCTYPE html>
       .mobile-sticky-bar {
         display: block;
       }
-      .step-in-grid, .process-grid, .team-grid, .why-us-grid, .interiors-grid {
+      .step-in-grid, .process-grid, .why-us-grid, .interiors-grid {
         grid-template-columns: 1fr;
       }
       .cities-grid {
@@ -1320,11 +1271,11 @@ html_content = """<!DOCTYPE html>
 
         <ul class="nav-links">
           <li><a href="#models">ADU Models</a></li>
-          <li><a href="#calculator">Cost & ROI Calculator</a></li>
+          <li><a href="#calculator">Cost & Value Estimator</a></li>
           <li><a href="#process">Process</a></li>
           <li><a href="#step-in">4 Ways to Start</a></li>
           <li><a href="#portfolio">Projects</a></li>
-          <li><a href="#team">Team</a></li>
+          <li><a href="#why-us">Why Us</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
 
@@ -1352,7 +1303,7 @@ html_content = """<!DOCTYPE html>
           </div>
           
           <h1 class="hero-title">
-            Your Orange County Backyard, Built for <span class="accent-gradient">Living & Monthly Cash Flow.</span>
+            Your Orange County Backyard, Built for <span class="accent-gradient">Living, Family & Home Value.</span>
           </h1>
           
           <p class="hero-lead">
@@ -1492,13 +1443,13 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Interactive ADU Cost & Rental Cash Flow Calculator -->
+  <!-- Interactive ADU Cost & Property Value Estimator -->
   <section class="section-padding calculator-section" id="calculator">
     <div class="container">
       <div class="section-head-center">
-        <span class="eyebrow-tag" style="color:var(--brand-amber-light);">Real Financial Returns</span>
-        <h2 class="section-h2">Orange County ADU Cost & Rental Cash Flow Calculator</h2>
-        <p class="section-desc">Adjust size and finish level to estimate total turnkey project investment, projected monthly rental income, and annual cash flow in Orange County.</p>
+        <span class="eyebrow-tag" style="color:var(--brand-amber-light);">Real Value Analysis</span>
+        <h2 class="section-h2">Orange County ADU Cost & Property Value Estimator</h2>
+        <p class="section-desc">Adjust size and finish level to estimate total turnkey project investment, immediate property value increase, and estimated construction timeline in Orange County.</p>
       </div>
 
       <div class="calc-card-container">
@@ -1526,21 +1477,21 @@ html_content = """<!DOCTYPE html>
 
         <div class="calc-results-col">
           <div class="calc-metric-box">
-            <div class="metric-lbl">Estimated Turnkey Cost</div>
+            <div class="metric-lbl">Estimated Turnkey Build Cost</div>
             <div class="metric-val" id="calcCostVal">$184,800</div>
             <div class="metric-sub">Includes permits, design, foundation & construction</div>
           </div>
 
           <div class="calc-metric-box">
-            <div class="metric-lbl">Projected OC Monthly Rent</div>
-            <div class="metric-val" id="calcRentVal">$2,850/mo</div>
-            <div class="metric-sub">Based on current Orange County average comps</div>
+            <div class="metric-lbl">Estimated Property Value Added</div>
+            <div class="metric-val" id="calcEquityVal">$285,000+</div>
+            <div class="metric-sub">Immediate home equity addition to your property</div>
           </div>
 
           <div class="calc-metric-box">
-            <div class="metric-lbl">Projected Annual Cash Flow</div>
-            <div class="metric-val" id="calcAnnualVal">$34,200/yr</div>
-            <div class="metric-sub">Passive income added to your property</div>
+            <div class="metric-lbl">Turnkey Timeline to Completion</div>
+            <div class="metric-val" id="calcTimelineVal">6 to 8 Months</div>
+            <div class="metric-sub">From initial site review to final move-in keys</div>
           </div>
         </div>
       </div>
@@ -1613,7 +1564,7 @@ html_content = """<!DOCTYPE html>
           <div>
             <div class="tag">Skip The Drive</div>
             <h3>Video Consultation</h3>
-            <p>Zoom with our architectural planning team. Share your lot aerials, explore floor plans, and review cost breakdowns live.</p>
+            <p>Zoom with our architectural planning specialists. Share your lot aerials, explore floor plans, and review cost breakdowns live.</p>
           </div>
           <a href="#lead-form" class="card-action-link">Book 20-Min Video Call →</a>
         </div>
@@ -1631,7 +1582,7 @@ html_content = """<!DOCTYPE html>
           <div>
             <div class="tag">Free Download</div>
             <h3>2026 OC ADU Guide</h3>
-            <p>Download our comprehensive 28-page Orange County handbook covering city permit timelines, rental rates, and floor plans.</p>
+            <p>Download our comprehensive 28-page Orange County handbook covering city permit timelines, cost guides, and floor plans.</p>
           </div>
           <a href="#lead-form" class="card-action-link">Download Free PDF →</a>
         </div>
@@ -1658,7 +1609,7 @@ html_content = """<!DOCTYPE html>
         <div class="process-card">
           <div class="phase-num">Stage 02 · Wk 3-6</div>
           <h3>Architectural Design</h3>
-          <p>Our in-house design team produces complete architectural blueprints, structural engineering, Title 24 energy calculations, and 3D renderings.</p>
+          <p>We produce complete architectural blueprints, structural engineering, Title 24 energy calculations, and 3D renderings for your review.</p>
         </div>
 
         <div class="process-card">
@@ -1682,7 +1633,7 @@ html_content = """<!DOCTYPE html>
       <div class="section-head-center">
         <span class="eyebrow-tag">Proven Results</span>
         <h2 class="section-h2">Real ADU Projects Completed in Orange County</h2>
-        <p class="section-desc">See how real Orange County homeowners transformed underutilized backyards into beautiful, income-producing guest homes.</p>
+        <p class="section-desc">See how real Orange County homeowners transformed underutilized backyards into beautiful, independent guest homes and family suites.</p>
       </div>
 
       <div class="portfolio-grid">
@@ -1705,7 +1656,7 @@ html_content = """<!DOCTYPE html>
               <span>💰 $154,000 Budget</span>
               <span>⏱️ 5 Months Build</span>
             </div>
-            <p class="section-desc" style="font-size:14px;">Detached 2-car garage converted into a luxury rental producing $2,600/month in passive rental cash flow.</p>
+            <p class="section-desc" style="font-size:14px;">Detached 2-car garage converted into a luxury guest suite and private home office with vaulted ceilings.</p>
           </div>
         </div>
 
@@ -1735,42 +1686,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- In-House Leadership & Design-Build Team -->
-  <section class="section-padding" id="team" style="background:var(--bg-surface-soft);">
-    <div class="container">
-      <div class="section-head-center">
-        <span class="eyebrow-tag">Dedicated Craftsmen</span>
-        <h2 class="section-h2">The Specialists Behind 200+ California ADUs</h2>
-        <p class="section-desc">You work directly with licensed architects, permit expeditors, and master general contractors. No outsourced runarounds.</p>
-      </div>
-
-      <div class="team-grid">
-        <div class="team-card">
-          <img src="https://aduresourcecenter.com/images/team/Harvi.webp" alt="Marcus Vance - Lead Architect" class="team-avatar">
-          <h3>Marcus Vance, AIA</h3>
-          <div class="role">Lead Architectural Designer</div>
-          <p>14 years of California residential design expertise specializing in light-filled, permit-optimized ADU floor plans.</p>
-        </div>
-
-        <div class="team-card">
-          <img src="https://aduresourcecenter.com/images/team/Anahita-K.webp" alt="Elena Rostova - Permitting Director" class="team-avatar">
-          <h3>Elena Rostova</h3>
-          <div class="role">Director of Municipal Permitting</div>
-          <p>Specialized plan-check expeditor with direct daily relationships across all 34 Orange County city planning departments.</p>
-        </div>
-
-        <div class="team-card">
-          <img src="https://aduresourcecenter.com/images/team/Emin.webp" alt="Carlos Mendez - Master Builder" class="team-avatar">
-          <h3>Carlos Mendez</h3>
-          <div class="role">General Contractor (Class B #1094821)</div>
-          <p>20+ years building high-end custom homes and ADUs in Southern California with a spotless safety and quality record.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Why Choose Us 6 Pillars -->
-  <section class="section-padding" id="why-us">
+  <section class="section-padding" id="why-us" style="background:var(--bg-surface-soft);">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">The ADU Alliance Standard</span>
@@ -1811,8 +1728,8 @@ html_content = """<!DOCTYPE html>
 
         <div class="why-card">
           <div class="why-num">06</div>
-          <h3>Dedicated Project Manager</h3>
-          <p>You receive weekly photo updates, milestone tracking, and a direct line to your project superintendent from start to move-in.</p>
+          <h3>Dedicated Project Superintendent</h3>
+          <p>You receive weekly photo updates, milestone tracking, and a direct line to your dedicated site superintendent from start to move-in.</p>
         </div>
       </div>
     </div>
@@ -1912,13 +1829,13 @@ html_content = """<!DOCTYPE html>
             <span class="toggle-icon">+</span>
           </div>
           <div class="faq-answer">
-            In California, building an ADU only triggers a partial reassessment based on the new construction value (typically adding $900-$1,600/year to your property tax bill). Your primary residence retains its original Prop 13 tax basis. This is heavily outweighed by rental income ($2,400-$3,800/mo).
+            In California, building an ADU only triggers a partial reassessment based on the new construction value (typically adding $900-$1,600/year to your property tax bill). Your primary residence retains its original Prop 13 tax basis, while adding substantial equity value to your parcel.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <span>Can I convert my existing garage into a rentable ADU?</span>
+            <span>Can I convert my existing garage into an ADU?</span>
             <span class="toggle-icon">+</span>
           </div>
           <div class="faq-answer">
@@ -1979,7 +1896,7 @@ html_content = """<!DOCTYPE html>
             <li><a href="#process">Turnkey ADU Construction</a></li>
             <li><a href="#portfolio">Garage Conversions</a></li>
             <li><a href="#process">City Permitting & Approvals</a></li>
-            <li><a href="#calculator">Cost & Cash Flow Calculator</a></li>
+            <li><a href="#calculator">Cost & Value Estimator</a></li>
             <li><a href="#step-in">Free Site Feasibility Walk</a></li>
           </ul>
         </div>
@@ -2090,7 +2007,7 @@ html_content = """<!DOCTYPE html>
         beds: "2 Bed",
         baths: "1.0",
         price: "$208,000",
-        overview: "Dual private bedrooms with shared central open-concept living, perfect for rental income or family living.",
+        overview: "Dual private bedrooms with shared central open-concept living, perfect for extended family living or guest suites.",
         img: "https://www.evoadu.com/assets/images/Home_Pic_5_Two_Home.jpg"
       },
       twoplus: {
@@ -2124,14 +2041,14 @@ html_content = """<!DOCTYPE html>
       });
     });
 
-    // Interactive Cost & Rental Cash Flow Calculator
+    // Interactive Cost & Property Value Estimator
     const sqftSlider = document.getElementById('homeSqftSlider');
     const tierSlider = document.getElementById('homeTierSlider');
     const sqftText = document.getElementById('calcSqftText');
     const tierText = document.getElementById('calcTierText');
     const costVal = document.getElementById('calcCostVal');
-    const rentVal = document.getElementById('calcRentVal');
-    const annualVal = document.getElementById('calcAnnualVal');
+    const equityVal = document.getElementById('calcEquityVal');
+    const timelineVal = document.getElementById('calcTimelineVal');
 
     const tierLabels = {
       "1": "Standard Build (Clean & Efficient)",
@@ -2140,7 +2057,7 @@ html_content = """<!DOCTYPE html>
     };
 
     const costPerSqft = { "1": 290, "2": 330, "3": 385 };
-    const rentBase = { "1": 3.8, "2": 4.5, "3": 5.2 };
+    const equityPerSqft = { "1": 460, "2": 520, "3": 600 };
 
     function updateCalculator() {
       const sqft = parseInt(sqftSlider.value);
@@ -2153,13 +2070,18 @@ html_content = """<!DOCTYPE html>
       const totalCost = Math.round((sqft * costPerSqft[tier]) / 1000) * 1000;
       costVal.innerText = `$${totalCost.toLocaleString()}`;
 
-      // Monthly Rent calculation
-      const monthlyRent = Math.round((sqft * rentBase[tier]) / 50) * 50;
-      rentVal.innerText = `$${monthlyRent.toLocaleString()}/mo`;
+      // Property Value / Equity calculation
+      const totalEquity = Math.round((sqft * equityPerSqft[tier]) / 1000) * 1000;
+      equityVal.innerText = `$${totalEquity.toLocaleString()}+`;
 
-      // Annual Cash Flow
-      const annualFlow = monthlyRent * 12;
-      annualVal.innerText = `$${annualFlow.toLocaleString()}/yr`;
+      // Timeline estimation
+      if (sqft <= 450) {
+        timelineVal.innerText = "5 to 6 Months";
+      } else if (sqft <= 750) {
+        timelineVal.innerText = "6 to 8 Months";
+      } else {
+        timelineVal.innerText = "7 to 9 Months";
+      }
     }
 
     sqftSlider.addEventListener('input', updateCalculator);
@@ -2214,11 +2136,10 @@ html_content = """<!DOCTYPE html>
 </html>
 """
 
-# Zero em-dash audit and replacement
 cleaned_html = html_content.replace('—', ' - ').replace('–', '-')
 
 output_path = r"C:\Users\Administrator\Desktop\ADU Alliance\adu-alliance-site\index.html"
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(cleaned_html)
 
-print(f"Successfully generated master index.html at {output_path} ({len(cleaned_html)} bytes)")
+print("Updated index.html: Team section completely removed, Rent claims removed and refocused on Custom Construction & Property Value.")
