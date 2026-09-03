@@ -101,30 +101,27 @@ html_content = """<!DOCTYPE html>
 
   <style>
     :root, [data-theme="light"] {
-      /* 2026 Unified Architectural Daylight System */
+      /* 2026 100% Harmonious Architectural Light Theme */
       --bg-canvas: #FBFBF9;
       --bg-surface: #FFFFFF;
       --bg-surface-elevated: #FFFFFF;
       --bg-surface-soft: #F4F1EA;
-      --bg-dark: #0D1115;
-      --bg-dark-surface: #141B22;
-      --bg-dark-card: #1D2630;
       
       --text-main: #11171E;
       --text-muted: #526071;
       --text-light: #8E9EAF;
-      --text-on-dark: #F8FAFC;
       
       --border-subtle: #E8E4DA;
       --border-medium: #D2CDC0;
-      --border-dark: #242F3D;
       
-      --brand-primary: #0D1115;
+      --brand-primary: #11171E;
       --brand-amber: #D97706;
       --brand-amber-light: #F59E0B;
       --brand-amber-glow: rgba(217, 119, 6, 0.22);
-      --brand-emerald: #1A382B;
-      --brand-emerald-accent: #10B981;
+      
+      --calc-card-bg: #FFFFFF;
+      --calc-results-bg: #F4F1EA;
+      --calc-slider-track: #E2DDD3;
       
       --shadow-sm: 0 1px 3px rgba(13, 17, 21, 0.04);
       --shadow-md: 0 8px 24px -4px rgba(13, 17, 21, 0.08);
@@ -145,23 +142,27 @@ html_content = """<!DOCTYPE html>
     }
 
     [data-theme="dark"] {
-      /* 2026 Unified Obsidian Slate Night System */
+      /* 2026 100% Harmonious Obsidian Slate Dark Theme */
       --bg-canvas: #090C0F;
       --bg-surface: #10151C;
       --bg-surface-elevated: #161D26;
-      --bg-surface-soft: #121820;
-      --bg-dark: #07090C;
-      --bg-dark-surface: #0E1217;
-      --bg-dark-card: #151C24;
+      --bg-surface-soft: #131922;
       
       --text-main: #F3F4F6;
       --text-muted: #9CA3AF;
       --text-light: #6B7280;
-      --text-on-dark: #FFFFFF;
       
       --border-subtle: #202A37;
       --border-medium: #2C3A4D;
-      --border-dark: #37475E;
+      
+      --brand-primary: #FFFFFF;
+      --brand-amber: #F59E0B;
+      --brand-amber-light: #FBBF24;
+      --brand-amber-glow: rgba(245, 158, 11, 0.25);
+      
+      --calc-card-bg: #10151C;
+      --calc-results-bg: #161D26;
+      --calc-slider-track: #1E293B;
       
       --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
       --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.5);
@@ -194,17 +195,17 @@ html_content = """<!DOCTYPE html>
 
     /* Top Live Announcement Bar */
     .top-announcement {
-      background: #090C0E;
-      color: #CBD5E1;
+      background: var(--bg-surface-soft);
+      color: var(--text-main);
       font-size: 12.5px;
       padding: 9px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid var(--border-subtle);
       text-align: center;
       font-family: var(--font-display);
       font-weight: 500;
     }
     .top-announcement .highlight {
-      color: var(--brand-amber-light);
+      color: var(--brand-amber);
       font-weight: 700;
     }
     .top-announcement .pulse-dot {
@@ -257,7 +258,7 @@ html_content = """<!DOCTYPE html>
       width: 38px;
       height: 38px;
       background: var(--brand-primary);
-      color: #FFF;
+      color: var(--bg-surface);
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
@@ -266,7 +267,10 @@ html_content = """<!DOCTYPE html>
       font-weight: 800;
       font-size: 18px;
       letter-spacing: -0.5px;
-      border: 1px solid var(--border-dark);
+      border: 1px solid var(--border-subtle);
+    }
+    [data-theme="dark"] .brand-logo-mark {
+      color: #090C0F;
     }
     .brand-logo-text {
       display: flex;
@@ -329,7 +333,7 @@ html_content = """<!DOCTYPE html>
       transition: all 0.2s ease;
     }
     .theme-toggle-btn:hover {
-      background: var(--border-subtle);
+      background: var(--border-medium);
       transform: rotate(15deg);
     }
     .phone-badge {
@@ -382,10 +386,6 @@ html_content = """<!DOCTYPE html>
     }
     .section-surface {
       background-color: var(--bg-surface);
-    }
-    .section-dark {
-      background-color: var(--bg-dark);
-      color: #FFF;
     }
 
     /* Hero Section */
@@ -533,7 +533,7 @@ html_content = """<!DOCTYPE html>
       width: 100%;
       height: 50px;
       background: var(--brand-primary);
-      color: #FFF;
+      color: var(--bg-surface);
       font-family: var(--font-display);
       font-weight: 700;
       font-size: 15px;
@@ -547,8 +547,11 @@ html_content = """<!DOCTYPE html>
       justify-content: center;
       gap: 8px;
     }
+    [data-theme="dark"] .form-btn-submit {
+      color: #090C0F;
+    }
     .form-btn-submit:hover {
-      background: #1E293B;
+      opacity: 0.9;
       transform: translateY(-1px);
     }
     .form-guarantee-note {
@@ -560,7 +563,6 @@ html_content = """<!DOCTYPE html>
 
     /* Trust Logo Bar */
     .trust-logo-section {
-      background: var(--bg-surface);
       padding: 32px 0;
       border-bottom: 1px solid var(--border-subtle);
     }
@@ -650,9 +652,12 @@ html_content = """<!DOCTYPE html>
     }
     .model-tab-btn.active {
       background: var(--brand-primary);
-      color: #FFF;
+      color: var(--bg-surface);
       border-color: var(--brand-primary);
       box-shadow: var(--shadow-sm);
+    }
+    [data-theme="dark"] .model-tab-btn.active {
+      color: #090C0F;
     }
     .model-display-card {
       background: var(--bg-surface);
@@ -740,10 +745,10 @@ html_content = """<!DOCTYPE html>
       color: var(--brand-amber);
     }
 
-    /* Interactive Cost & Property Value Estimator */
+    /* Harmonious Cost & Property Value Estimator (100% Theme Synchronized) */
     .calc-card-container {
-      background: var(--bg-dark-surface);
-      border: 1px solid var(--border-dark);
+      background: var(--calc-card-bg);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-xl);
       padding: 44px;
       box-shadow: var(--shadow-xl);
@@ -762,17 +767,17 @@ html_content = """<!DOCTYPE html>
       font-weight: 700;
       font-size: 14px;
       margin-bottom: 10px;
-      color: #F8FAFC;
+      color: var(--text-main);
     }
     .calc-slider-group .slider-val {
       font-family: var(--font-mono);
-      color: var(--brand-amber-light);
+      color: var(--brand-amber);
       font-weight: 800;
     }
     .calc-range-slider {
       width: 100%;
       height: 8px;
-      background: #1E293B;
+      background: var(--calc-slider-track);
       border-radius: 4px;
       outline: none;
       -webkit-appearance: none;
@@ -783,13 +788,13 @@ html_content = """<!DOCTYPE html>
       width: 22px;
       height: 22px;
       border-radius: 50%;
-      background: var(--brand-amber-light);
+      background: var(--brand-amber);
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+      box-shadow: 0 0 10px var(--brand-amber-glow);
     }
     .calc-results-col {
-      background: var(--bg-dark-card);
-      border: 1px solid var(--border-dark);
+      background: var(--calc-results-bg);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
       padding: 32px;
       display: flex;
@@ -806,7 +811,7 @@ html_content = """<!DOCTYPE html>
       font-size: 11.5px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: #94A3B8;
+      color: var(--text-muted);
       font-weight: 700;
       margin-bottom: 3px;
     }
@@ -814,11 +819,11 @@ html_content = """<!DOCTYPE html>
       font-family: var(--font-mono);
       font-size: 32px;
       font-weight: 800;
-      color: var(--brand-amber-light);
+      color: var(--brand-amber);
     }
     .calc-metric-box .metric-sub {
       font-size: 12px;
-      color: #64748B;
+      color: var(--text-muted);
     }
 
     /* Living & Interiors Gallery */
@@ -1118,12 +1123,20 @@ html_content = """<!DOCTYPE html>
       transform: rotate(45deg);
     }
 
+    /* Final CTA Section (Harmonious Theme Adapted) */
+    .cta-section {
+      background-color: var(--bg-surface-soft);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
     /* Footer */
     .site-footer {
-      background: var(--bg-dark);
-      color: #CBD5E1;
+      background-color: var(--bg-surface);
+      color: var(--text-muted);
       padding: 72px 0 36px;
-      border-top: 1px solid var(--border-dark);
+      border-top: 1px solid var(--border-subtle);
     }
     .footer-grid {
       display: grid;
@@ -1132,7 +1145,7 @@ html_content = """<!DOCTYPE html>
       margin-bottom: 56px;
     }
     .footer-col h4 {
-      color: #FFF;
+      color: var(--text-main);
       font-family: var(--font-display);
       font-size: 15.5px;
       font-weight: 800;
@@ -1141,7 +1154,7 @@ html_content = """<!DOCTYPE html>
     }
     .footer-col p {
       font-size: 13.5px;
-      color: #94A3B8;
+      color: var(--text-muted);
       line-height: 1.65;
     }
     .footer-links {
@@ -1151,22 +1164,22 @@ html_content = """<!DOCTYPE html>
       margin-bottom: 10px;
     }
     .footer-links a {
-      color: #94A3B8;
+      color: var(--text-muted);
       text-decoration: none;
       font-size: 13.5px;
       transition: color 0.2s ease;
     }
     .footer-links a:hover {
-      color: #FFF;
+      color: var(--brand-amber);
     }
     .footer-bottom {
       padding-top: 28px;
-      border-top: 1px solid var(--border-dark);
+      border-top: 1px solid var(--border-subtle);
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 12.5px;
-      color: #64748B;
+      color: var(--text-light);
     }
 
     /* Sticky Mobile Action Bar */
@@ -1456,13 +1469,13 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Interactive ADU Cost & Property Value Estimator (Dark Tone Accent) -->
-  <section class="section-padding section-dark" id="calculator">
+  <!-- Interactive ADU Cost & Property Value Estimator (Canvas Tone with Unified Light/Dark Card) -->
+  <section class="section-padding section-canvas" id="calculator">
     <div class="container">
       <div class="section-head-center">
-        <span class="eyebrow-tag" style="color:var(--brand-amber-light);">Real Value Analysis</span>
-        <h2 class="section-h2" style="color:#FFF;">Orange County ADU Cost & Property Value Estimator</h2>
-        <p class="section-desc" style="color:#94A3B8;">Adjust size and finish level to estimate total turnkey project investment, immediate property value increase, and estimated construction timeline in Orange County.</p>
+        <span class="eyebrow-tag">Real Value Analysis</span>
+        <h2 class="section-h2">Orange County ADU Cost & Property Value Estimator</h2>
+        <p class="section-desc">Adjust size and finish level to estimate total turnkey project investment, immediate property value increase, and estimated construction timeline in Orange County.</p>
       </div>
 
       <div class="calc-card-container">
@@ -1483,7 +1496,7 @@ html_content = """<!DOCTYPE html>
             <input type="range" id="homeTierSlider" class="calc-range-slider" min="1" max="3" step="1" value="2">
           </div>
 
-          <div style="font-size:13px; color:#94A3B8; line-height:1.6; border-top:1px solid var(--border-dark); padding-top:18px;">
+          <div style="font-size:13px; color:var(--text-muted); line-height:1.6; border-top:1px solid var(--border-subtle); padding-top:18px;">
             💡 <strong>Note:</strong> Estimates reflect average Orange County municipal permitting, architectural drafting, structural engineering, and complete site construction.
           </div>
         </div>
@@ -1511,8 +1524,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Living & Interiors Gallery (Canvas Tone) -->
-  <section class="section-padding section-canvas" id="interiors">
+  <!-- Living & Interiors Gallery (Surface Soft Tone) -->
+  <section class="section-padding section-surface-soft" id="interiors">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Thoughtful Craftsmanship</span>
@@ -1554,8 +1567,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Four Ways to Step In (Surface Soft Tone) -->
-  <section class="section-padding section-surface-soft" id="step-in">
+  <!-- Four Ways to Step In (Canvas Tone) -->
+  <section class="section-padding section-canvas" id="step-in">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">How To Get Started</span>
@@ -1603,8 +1616,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- 4-Stage Turnkey Process Timeline (Canvas Tone) -->
-  <section class="section-padding section-canvas" id="process">
+  <!-- 4-Stage Turnkey Process Timeline (Surface Soft Tone) -->
+  <section class="section-padding section-surface-soft" id="process">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Transparent Roadmap</span>
@@ -1640,8 +1653,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Real Projects Portfolio with Before/After (Surface Soft Tone) -->
-  <section class="section-padding section-surface-soft" id="portfolio">
+  <!-- Real Projects Portfolio with Before/After (Canvas Tone) -->
+  <section class="section-padding section-canvas" id="portfolio">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Proven Results</span>
@@ -1658,7 +1671,7 @@ html_content = """<!DOCTYPE html>
             </div>
             <div class="img-box">
               <img src="https://www.adubuildlosangeles.com/images/before_and_after/collection-1/after.jpg" alt="After Finished ADU">
-              <span class="badge" style="background:var(--brand-amber);">AFTER</span>
+              <span class="badge" style="background:var(--brand-amber); color:#FFF;">AFTER</span>
             </div>
           </div>
           <div class="project-card-body">
@@ -1681,7 +1694,7 @@ html_content = """<!DOCTYPE html>
             </div>
             <div class="img-box">
               <img src="https://www.adubuildlosangeles.com/images/before_and_after/collection-2/after.jpg" alt="After Modern Detached ADU">
-              <span class="badge" style="background:var(--brand-amber);">AFTER</span>
+              <span class="badge" style="background:var(--brand-amber); color:#FFF;">AFTER</span>
             </div>
           </div>
           <div class="project-card-body">
@@ -1699,8 +1712,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Why Choose Us 6 Pillars (Canvas Tone) -->
-  <section class="section-padding section-canvas" id="why-us">
+  <!-- Why Choose Us 6 Pillars (Surface Soft Tone) -->
+  <section class="section-padding section-surface-soft" id="why-us">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">The ADU Alliance Standard</span>
@@ -1748,8 +1761,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- 34 Orange County Municipalities Directory (Surface Soft Tone) -->
-  <section class="section-padding section-surface-soft" id="municipalities">
+  <!-- 34 Orange County Municipalities Directory (Canvas Tone) -->
+  <section class="section-padding section-canvas" id="municipalities">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Local Authority</span>
@@ -1796,8 +1809,8 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- FAQ Section (Canvas Tone) -->
-  <section class="section-padding section-canvas" id="faq">
+  <!-- FAQ Section (Surface Soft Tone) -->
+  <section class="section-padding section-surface-soft" id="faq">
     <div class="container">
       <div class="section-head-center">
         <span class="eyebrow-tag">Common Questions</span>
@@ -1859,16 +1872,16 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Final Call to Action (Dark Tone Accent) -->
-  <section class="section-padding section-dark" style="text-align:center;">
+  <!-- Final Call to Action (Harmonious Tone) -->
+  <section class="section-padding cta-section">
     <div class="container">
       <div style="max-width:760px; margin:0 auto;">
-        <span class="eyebrow-tag" style="color:var(--brand-amber-light);">Ready When You Are</span>
-        <h2 class="section-h2" style="color:#FFF;">Start Your Orange County ADU Project Today</h2>
-        <p class="section-desc" style="color:#94A3B8; margin-bottom:36px;">Schedule a free 30-minute on-premise property assessment with our licensed builders. Discover what is buildable on your lot with zero obligation.</p>
+        <span class="eyebrow-tag">Ready When You Are</span>
+        <h2 class="section-h2">Start Your Orange County ADU Project Today</h2>
+        <p class="section-desc" style="margin-bottom:36px;">Schedule a free 30-minute on-premise property assessment with our licensed builders. Discover what is buildable on your lot with zero obligation.</p>
         <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
           <a href="#lead-form" class="btn-primary" style="padding:14px 32px; font-size:15px;">Schedule Free Property Assessment</a>
-          <a href="tel:+16572984061" class="phone-badge" style="background:#1E293B; color:#FFF; border-color:#334155; padding:14px 26px; font-size:15px;">
+          <a href="tel:+16572984061" class="phone-badge" style="padding:14px 26px; font-size:15px;">
             <span>📞</span> Call (657) 298-4061
           </a>
         </div>
@@ -1876,20 +1889,20 @@ html_content = """<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Footer (Dark Tone) -->
+  <!-- Footer (Surface Tone) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
           <div class="brand-logo" style="margin-bottom:16px;">
-            <div class="brand-logo-mark" style="background:#FFF; color:#000;">AA</div>
+            <div class="brand-logo-mark">AA</div>
             <div class="brand-logo-text">
-              <span class="title" style="color:#FFF;">ADU ALLIANCE</span>
-              <span class="badge-oc" style="background:rgba(255,255,255,0.15); color:#FFF; border-color:rgba(255,255,255,0.2);">OC</span>
+              <span class="title">ADU ALLIANCE</span>
+              <span class="badge-oc">OC</span>
             </div>
           </div>
           <p>Orange County's dedicated design-build contractor specializing exclusively in turnkey accessory dwelling units, modern prefabs, and garage conversions.</p>
-          <p style="margin-top:12px; color:#64748B;">CA State License Board Class B #1094821 · Licensed, Bonded & Insured</p>
+          <p style="margin-top:12px; color:var(--text-light); font-size:12.5px;">CA State License Board Class B #1094821 · Licensed, Bonded & Insured</p>
         </div>
 
         <div class="footer-col">
@@ -2155,4 +2168,4 @@ output_path = r"C:\Users\Administrator\Desktop\ADU Alliance\adu-alliance-site\in
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(cleaned_html)
 
-print("Generated clean 1-line header with unified color system across all sections.")
+print("Fixed: 100% harmonious theme locking. No dark sandwiching in light mode!")
