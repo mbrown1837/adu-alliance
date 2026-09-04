@@ -4,6 +4,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy | ADU Alliance',
   description: 'ADU Alliance privacy policy and data protection practices for Orange County homeowners.',
+  alternates: {
+    canonical: 'https://adualliance.com/privacy',
+  },
 };
 
 export default function PrivacyPage() {

@@ -4,6 +4,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Service | ADU Alliance',
   description: 'ADU Alliance terms of service and California contractor matching network disclosures.',
+  alternates: {
+    canonical: 'https://adualliance.com/terms',
+  },
 };
 
 export default function TermsPage() {
