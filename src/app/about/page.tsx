@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "About ADU Alliance | Orange County's Premier ADU Builders",
-  description: "Learn about ADU Alliance, Orange County's dedicated accessory dwelling unit design-build general contractor (CSLB Class B #1094821). Over 200+ completed projects, single-contract accountability, and 100% city permit guarantee.",
+  description: "Learn about ADU Alliance, Orange County's dedicated accessory dwelling unit design-build general contractor (CSLB Licensed Builder Network). Over 200+ completed projects, single-contract accountability, and 100% city permit guarantee.",
   alternates: {
     canonical: 'https://adualliance.com/about',
   },
@@ -32,7 +32,7 @@ export default function AboutPage() {
       latitude: 33.6846,
       longitude: -117.8265,
     },
-    description: "Orange County's dedicated ADU design-build contractor specializing in turnkey accessory dwelling units and garage conversions under CSLB License #1094821.",
+    description: "Orange County's dedicated ADU design-build contractor specializing in turnkey accessory dwelling units and garage conversions under CSLB License Verified CSLB Alliance.",
   };
 
   return (
@@ -72,7 +72,7 @@ export default function AboutPage() {
           </div>
           <div className="p-4 bg-brand-dark rounded-2xl border border-brand-borderDark">
             <div className="text-xs text-slate-400">License</div>
-            <div className="text-2xl font-black text-white">Class B #1094821</div>
+            <div className="text-2xl font-black text-white">Licensed Builder Network</div>
           </div>
         </div>
       </div>
@@ -131,16 +131,16 @@ export default function AboutPage() {
             <ShieldCheck className="w-5 h-5 text-brand-emerald" /> State Verified Licensing
           </div>
           <h2 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight">
-            California State License Board (CSLB) Class B #1094821
+            Pre-Vetted CSLB Licensed Builder Alliance
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-            ADU Alliance operates with full legal authorization from the California State License Board. We carry $2,000,000 in general commercial liability coverage and comprehensive workers compensation insurance on every project site.
+            Every accessory dwelling unit designed and built through ADU Alliance is contracted directly with pre-vetted California General Contractors (Class B) licensed in good standing by the California State License Board (CSLB). All builder partners maintain active commercial liability insurance and comprehensive workers compensation coverage.
           </p>
           <div className="flex flex-wrap gap-4 text-xs font-mono text-slate-300 pt-2">
-            <span>✓ Active Class B License #1094821</span>
-            <span>✓ Fully Bonded & Insured</span>
-            <span>✓ Worker's Comp Active</span>
-            <span>✓ 100% Code Compliant</span>
+            <span>✓ Pre-Vetted CSLB Builders (Class B)</span>
+            <span>✓ Fully Bonded & Insured Partners</span>
+            <span>✓ Active Workers Comp</span>
+            <span>✓ 100% California Code Compliant</span>
           </div>
         </div>
 

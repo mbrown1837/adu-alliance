@@ -78,7 +78,7 @@ export default function Hero() {
               <ShieldCheck className="w-8 h-8 text-brand-emerald" /> Class B
             </div>
             <div className="text-xs font-bold uppercase tracking-wider text-slate-200 mt-1">Licensed & Insured</div>
-            <div className="text-[11px] text-slate-400 font-mono mt-0.5">CA Contractor License #1094821</div>
+            <div className="text-[11px] text-slate-400 font-mono mt-0.5">Verified CSLB Licensed Network</div>
           </div>
         </div>
 

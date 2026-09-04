@@ -93,7 +93,7 @@ export default function CityLocationPage({ params }: LocationPageProps) {
           </div>
           <div className="p-4 bg-brand-dark rounded-2xl border border-brand-borderDark col-span-2 sm:col-span-1">
             <div className="text-xs text-slate-400">Contractor License</div>
-            <div className="text-xl font-black text-brand-emerald">Class B #1094821</div>
+            <div className="text-xl font-black text-brand-emerald">Licensed Builder Network</div>
           </div>
         </div>
       </div>

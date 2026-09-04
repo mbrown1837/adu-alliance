@@ -1325,7 +1325,7 @@ html_content = """<!DOCTYPE html>
         <div class="hero-content">
           <div class="hero-badge-row">
             <div class="trust-pill"><span class="stars">★★★★★</span> 4.9/5 Rating (94+ Reviews)</div>
-            <div class="trust-pill">🏛️ CA Class B Licensed #1094821</div>
+            <div class="trust-pill">🏛️ CA Class B Licensed Verified CSLB Alliance</div>
           </div>
           
           <h1 class="hero-title">
@@ -1407,7 +1407,7 @@ html_content = """<!DOCTYPE html>
         <div class="trust-logo-item">🏛️ Casita Coalition</div>
         <div class="trust-logo-item">💼 CalHFA Approved ($40k Grants)</div>
         <div class="trust-logo-item">🏡 California HCD Compliant</div>
-        <div class="trust-logo-item">🛡️ CSLB Licensed #1094821</div>
+        <div class="trust-logo-item">🛡️ CSLB Licensed Verified CSLB Alliance</div>
         <div class="trust-logo-item">🤝 HPP Cares Housing Partner</div>
       </div>
     </div>
@@ -1725,7 +1725,7 @@ html_content = """<!DOCTYPE html>
         <div class="why-card">
           <div class="why-num">01</div>
           <h3>Licensed & Fully Insured</h3>
-          <p>We hold an active California General Contractor (B) license (#1094821) with comprehensive liability and workers compensation coverage.</p>
+          <p>We hold an active California General Contractor (B) license (Verified CSLB Alliance) with comprehensive liability and workers compensation coverage.</p>
         </div>
 
         <div class="why-card">
@@ -1902,7 +1902,7 @@ html_content = """<!DOCTYPE html>
             </div>
           </div>
           <p>Orange County's dedicated design-build contractor specializing exclusively in turnkey accessory dwelling units, modern prefabs, and garage conversions.</p>
-          <p style="margin-top:12px; color:var(--text-light); font-size:12.5px;">CA State License Board Class B #1094821 · Licensed, Bonded & Insured</p>
+          <p style="margin-top:12px; color:var(--text-light); font-size:12.5px;">Pre-Vetted CSLB Licensed Builders · Fully Bonded & Insured</p>
         </div>
 
         <div class="footer-col">

@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
             <span className="text-brand-emerald flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5" /> CA General Contractor (B) #1094821
+              <ShieldCheck className="w-3.5 h-3.5" /> Licensed CA Builder Network (Class B)
             </span>
             <span className="text-slate-600">&bull;</span>
             <span>Orange County ADU Specialists</span>

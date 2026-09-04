@@ -22,7 +22,7 @@ export default function Footer() {
               Orange County&apos;s premier single-contract ADU design-build general contractor. We manage 3D architectural plans, city plan check permits, and ground-up turnkey construction across all 34 OC municipalities.
             </p>
             <div className="space-y-1 text-xs font-mono text-slate-300">
-              <div>CA General Contractor (B) License #1094821</div>
+              <div>Verified CSLB Licensed Builder Network</div>
               <div>Direct Planning Desk: <a href="tel:6572984061" className="text-white hover:text-brand-amber font-bold">(657) 298-4061</a></div>
               <div>2372 Morse Ave, Irvine, CA 92614 &bull; Orange County Headquarters</div>
             </div>
@@ -87,7 +87,7 @@ export default function Footer() {
         {/* Legal Disclaimer */}
         <div className="pt-6 border-t border-brand-borderDark/40 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-500 font-mono">
           <div>
-            &copy; {new Date().getFullYear()} ADU Alliance. All Rights Reserved. California General Contractor License (Class B) #1094821.
+            &copy; {new Date().getFullYear()} ADU Alliance. All Rights Reserved. Verified CSLB Licensed Builder Alliance.
           </div>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-slate-400">Privacy Policy</Link>

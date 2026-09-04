@@ -115,7 +115,7 @@ export default function ProjectsPage() {
           </div>
           <div className="p-4 bg-brand-dark rounded-2xl border border-brand-borderDark">
             <div className="text-xs text-slate-400">Contractor License</div>
-            <div className="text-2xl font-black text-white">Class B #1094821</div>
+            <div className="text-2xl font-black text-white">Licensed Builder Network</div>
           </div>
         </div>
       </div>

@@ -320,7 +320,7 @@ export const TRUST_PILLARS = [
   {
     number: '01',
     title: 'Licensed General Contractor (B)',
-    description: 'ADU Alliance holds an active California General Contractor (B) license #1094821 with comprehensive general liability and workers compensation coverage.',
+    description: 'ADU Alliance holds an active California General Contractor (B) license Verified CSLB Alliance with comprehensive general liability and workers compensation coverage.',
   },
   {
     number: '02',
