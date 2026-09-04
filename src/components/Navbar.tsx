@@ -8,7 +8,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-nav-dark border-b border-brand-borderDark transition-all">
+    <header className="sticky top-0 z-50 glass-nav-dark border-b border-brand-borderDark transition-all">
       {/* Micro Trust Bar */}
       <div className="bg-black/60 text-slate-400 px-6 py-1 text-[11px] font-mono border-b border-brand-borderDark/60 hidden sm:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -45,12 +45,12 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-slate-300">
-          <a href="#services" className="hover:text-white transition-colors">Services</a>
-          <a href="#models" className="hover:text-white transition-colors">Models</a>
-          <a href="#process" className="hover:text-white transition-colors">Process & Track</a>
-          <a href="#projects" className="hover:text-white transition-colors">Before & After</a>
-          <a href="#entry-ways" className="hover:text-white transition-colors">Get Started</a>
-          <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
+          <Link href="/models" className="hover:text-white transition-colors">Models</Link>
+          <Link href="/services/garage-conversion" className="hover:text-white transition-colors">Services</Link>
+          <Link href="/process" className="hover:text-white transition-colors">Process</Link>
+          <Link href="/calculator" className="hover:text-white transition-colors">Estimator</Link>
+          <Link href="/projects" className="hover:text-white transition-colors">Projects</Link>
+          <Link href="/about" className="hover:text-white transition-colors">About</Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
@@ -60,12 +60,12 @@ export default function Navbar() {
           >
             <Phone className="w-3.5 h-3.5 text-brand-amber" /> (657) 298-4061
           </a>
-          <a
-            href="#assessment"
+          <Link
+            href="/free-feasibility"
             className="px-5 py-2.5 bg-brand-amber hover:bg-brand-amberDark text-black font-black text-xs uppercase tracking-wider rounded-full shadow-md transition-all flex items-center gap-1"
           >
-            Free Assessment <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+            Free Feasibility <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
 
         <button
@@ -79,14 +79,14 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {menuOpen && (
-        <div className="md:hidden bg-brand-dark border-b border-brand-borderDark px-6 py-6 space-y-4 animate-in slide-in-from-top-4">
+        <div className="md:hidden bg-brand-dark border-b border-brand-borderDark px-6 py-6 space-y-4">
           <nav className="flex flex-col gap-4 text-base font-semibold text-slate-300">
-            <a href="#services" onClick={() => setMenuOpen(false)} className="hover:text-white">Services</a>
-            <a href="#models" onClick={() => setMenuOpen(false)} className="hover:text-white">Models</a>
-            <a href="#process" onClick={() => setMenuOpen(false)} className="hover:text-white">Process & Track</a>
-            <a href="#projects" onClick={() => setMenuOpen(false)} className="hover:text-white">Before & After</a>
-            <a href="#entry-ways" onClick={() => setMenuOpen(false)} className="hover:text-white">Get Started</a>
-            <a href="#faq" onClick={() => setMenuOpen(false)} className="hover:text-white">FAQ</a>
+            <Link href="/models" onClick={() => setMenuOpen(false)} className="hover:text-white">Models</Link>
+            <Link href="/services/garage-conversion" onClick={() => setMenuOpen(false)} className="hover:text-white">Services</Link>
+            <Link href="/process" onClick={() => setMenuOpen(false)} className="hover:text-white">Process</Link>
+            <Link href="/calculator" onClick={() => setMenuOpen(false)} className="hover:text-white">Estimator</Link>
+            <Link href="/projects" onClick={() => setMenuOpen(false)} className="hover:text-white">Projects</Link>
+            <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-white">About</Link>
           </nav>
           <div className="pt-2 flex flex-col gap-3">
             <a
@@ -95,13 +95,13 @@ export default function Navbar() {
             >
               <Phone className="w-4 h-4 text-brand-amber" /> Call (657) 298-4061
             </a>
-            <a
-              href="#assessment"
+            <Link
+              href="/free-feasibility"
               onClick={() => setMenuOpen(false)}
-              className="py-3 bg-brand-amber text-black text-center font-black text-xs uppercase tracking-wider rounded-xl shadow"
+              className="py-3 bg-brand-amber text-black text-center font-black text-xs uppercase tracking-wider rounded-xl shadow block"
             >
-              Get Free Property Assessment
-            </a>
+              Get Free Property Feasibility
+            </Link>
           </div>
         </div>
       )}
