@@ -50,7 +50,7 @@ export default function LaduProcessTimeline() {
                 </div>
 
                 <h3 className="text-xl font-bold uppercase text-white tracking-tight">
-                  {item.title}
+                  {item.name}
                 </h3>
 
                 <p className="text-xs text-slate-400 leading-relaxed">

@@ -1962,25 +1962,43 @@
     const themeToggleBtn = document.getElementById('themeToggleBtn');
     const rootHtml = document.documentElement;
 
-    // Load saved theme or system preference
-    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    setTheme(savedTheme);
+    // System Theme Preference + LocalStorage Sync
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const rootHtml = document.documentElement;
 
-    themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = rootHtml.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      setTheme(newTheme);
-    });
+    function getPreferredTheme() {
+      const stored = localStorage.getItem('theme');
+      if (stored === 'dark' || stored === 'light') {
+        return stored;
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
 
-    function setTheme(theme) {
+    function applyTheme(theme) {
       rootHtml.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
       if (theme === 'dark') {
         themeToggleBtn.innerHTML = '<span class="theme-icon dark-icon">🌙</span>';
       } else {
         themeToggleBtn.innerHTML = '<span class="theme-icon light-icon">☀️</span>';
       }
     }
+
+    // Initialize with system preference by default
+    applyTheme(getPreferredTheme());
+
+    // Listen to live OS system theme toggle (daylight/night automatic switch)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+
+    themeToggleBtn.addEventListener('click', () => {
+      const current = rootHtml.getAttribute('data-theme') || 'light';
+      const next = current === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', next);
+      applyTheme(next);
+    });
 
     // Header scroll shadow
     const siteHeader = document.getElementById('siteHeader');

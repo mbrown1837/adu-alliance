@@ -1,7 +1,7 @@
-import { ADUService, ADUModel, CaseStudy, CityInfo, TeamMember, FaqItem, BlogPost } from './types';
+import { ADUService, ADUModel, CaseStudy, CityInfo, FaqItem, BlogPost } from './types';
 
 // ==========================================
-// 1. BASE STRUCTURE: ADU BUILD LA 5 SERVICES
+// 1. BASE STRUCTURE: 5 CORE DESIGN-BUILD SERVICES
 // ==========================================
 export const ADU_SERVICES: ADUService[] = [
   {
@@ -11,13 +11,13 @@ export const ADU_SERVICES: ADUService[] = [
     slug: 'adu-design',
     category: 'Architecture & Engineering',
     tagline: 'Custom 3D Drawings Engineered for Faster City Approvals',
-    description: 'Work directly with dedicated ADU architects who understand Orange County municipal zoning. We craft site-specific 3D floor plans, structural engineering calculations, and Title 24 energy compliance sets that maximize your usable yard space and rental ROI.',
+    description: 'Work directly with dedicated ADU architects who understand Orange County municipal zoning. We craft site-specific 3D floor plans, structural engineering calculations, and Title 24 energy compliance sets that maximize your usable yard space and property value.',
     imageUrl: 'https://www.adubuildlosangeles.com/_next/image?url=%2Fimages%2Fnew-images%2FADU%2FModern_ADU_in_suburban_backyard_202607271417.jpeg&w=3840&q=75',
     features: [
       'Custom 3D exterior & interior rendering walkthroughs',
       'Structural engineering calculations (Title 24 compliant)',
       'Site plan mapping for setbacks, easements & utilities',
-      'Optimized for natural light, privacy & rental value',
+      'Optimized for natural light, privacy & property value',
     ],
     turnaroundTime: '2 to 4 Weeks',
   },
@@ -45,13 +45,13 @@ export const ADU_SERVICES: ADUService[] = [
     slug: 'detached-adu',
     category: 'Ground-Up Construction',
     tagline: 'Custom Standalone Backyard Homes & Guest Cottages',
-    description: 'Build a private, standalone dwelling in your backyard. From compact 380 sq ft studios to spacious 1,200 sq ft 2-bedroom luxury residences, our licensed craftsmen handle excavation, foundation, framing, plumbing, electrical, and turnkey luxury finishes.',
+    description: 'Build a private, standalone dwelling in your backyard. From compact 350 sq ft studios to spacious 1,200 sq ft 2-bedroom luxury residences, our licensed craftsmen handle excavation, foundation, framing, plumbing, electrical, and turnkey luxury finishes.',
     imageUrl: 'https://www.adubuildlosangeles.com/_next/image?url=%2Fimages%2Fnew-images%2FADU%2FModern_ADU_in_backyard_202607271417.jpeg&w=3840&q=75',
     features: [
       'Engineered slab or raised foundation & structural framing',
       'Independent utility connections & separate subpanel',
       'Designer kitchens, quartz countertops & walk-in showers',
-      'Dedicated project manager on-site through final inspection',
+      'Dedicated superintendent on-site through final inspection',
     ],
     turnaroundTime: '3 to 5 Months Build Time',
   },
@@ -61,14 +61,14 @@ export const ADU_SERVICES: ADUService[] = [
     title: 'Garage to ADU Conversion',
     slug: 'garage-conversion',
     category: 'Conversion Specialist',
-    tagline: 'Transform Existing Footprint for Maximum Cash Flow',
-    description: 'Convert your underutilized 2-car garage into a legal, permitted 1-bedroom or studio rental unit. Because the existing foundation and framing are utilized, garage conversions offer the fastest timeline and highest cash-on-cash rental return in Orange County.',
+    tagline: 'Transform Existing Footprint for Maximum Space Efficiency',
+    description: 'Convert your underutilized 2-car garage into a legal, permitted 1-bedroom or studio living space. Because the existing foundation and framing are utilized, garage conversions offer the fastest timeline and highest cost efficiency in Orange County.',
     imageUrl: 'https://www.adubuildlosangeles.com/_next/image?url=%2Fimages%2Fnew-images%2FADU%2FModern_ADU_in_backyard_202607271417_2.jpeg&w=3840&q=75',
     features: [
       'Zero yard space sacrificed & existing envelope repurposed',
       'No replacement parking required under California state law',
       'Plumbing trenching, soundproof insulation & drywalled interior',
-      'Typical rental returns of $2,200 to $2,800/month in OC',
+      'Fastest municipal permitting and construction timeline',
     ],
     turnaroundTime: '10 to 14 Weeks Build Time',
   },
@@ -79,7 +79,7 @@ export const ADU_SERVICES: ADUService[] = [
     slug: 'junior-adu',
     category: 'Interior & Attached',
     tagline: 'Create Living Space Within or Attached to Primary Home',
-    description: 'Create a compliant Junior ADU (up to 500 sq ft) within your existing home footprint or build an attached suite extension. Ideal for aging parents, college students, or private rental income with lower upfront construction investment.',
+    description: 'Create a compliant Junior ADU (up to 500 sq ft) within your existing home footprint or build an attached suite extension. Ideal for aging parents, college students, or private guest quarters with lower upfront construction investment.',
     imageUrl: 'https://www.adubuildlosangeles.com/_next/image?url=%2Fimages%2Fnew-images%2FADU%2FModern_ADU_in_backyard_202607271417_3.jpeg&w=3840&q=75',
     features: [
       'Up to 500 sq ft space with private exterior entrance',
@@ -92,19 +92,19 @@ export const ADU_SERVICES: ADUService[] = [
 ];
 
 // ==========================================
-// 2. VISUAL POLISH & MODEL EXPERIENCE: EVO
+// 2. 5 PRE-DESIGNED SIGNATURE MODELS
 // ==========================================
 export const EVO_MODELS: ADUModel[] = [
   {
     id: 'compact',
-    name: 'Compact',
+    name: 'EVO Compact',
     slug: 'compact',
     sqft: 350,
-    startingPrice: 145800,
-    priceFormatted: '$145,800',
+    startingPrice: 149000,
+    priceFormatted: '$149,000',
     dimensions: 'Studio · 1 Bath · 350 sq ft',
     bedrooms: 'Studio',
-    bathrooms: '1 Bath',
+    bathrooms: '1.0 Bath',
     imageUrl: 'https://www.evoadu.com/assets/images/Home_Pic_2_Compact_Home.jpg',
     tagline: 'Smart, efficient living space',
     description: 'A compact studio layout that maximizes every square inch. Full kitchen, private bathroom, and ample built-in storage.',
@@ -112,14 +112,14 @@ export const EVO_MODELS: ADUModel[] = [
   },
   {
     id: 'studio',
-    name: 'Studio',
+    name: 'EVO Studio',
     slug: 'studio',
     sqft: 430,
-    startingPrice: 157920,
-    priceFormatted: '$157,920',
+    startingPrice: 159500,
+    priceFormatted: '$159,500',
     dimensions: 'Studio + Office · 1 Bath · 430 sq ft',
     bedrooms: 'Studio + Nook',
-    bathrooms: '1 Bath',
+    bathrooms: '1.0 Bath',
     imageUrl: 'https://www.evoadu.com/assets/images/Home_Pic_3_Studio_Home.jpg',
     tagline: 'Studio living with dedicated office niche',
     description: 'Generous open floor plan featuring a dedicated work-from-home office nook, full designer bath, and floor-to-ceiling windows.',
@@ -127,14 +127,14 @@ export const EVO_MODELS: ADUModel[] = [
   },
   {
     id: 'one',
-    name: 'One',
+    name: 'EVO One',
     slug: 'one',
     sqft: 560,
-    startingPrice: 179680,
-    priceFormatted: '$179,680',
+    startingPrice: 182000,
+    priceFormatted: '$182,000',
     dimensions: '1 Bed · 1 Bath · 560 sq ft',
     bedrooms: '1 Bedroom',
-    bathrooms: '1 Bath',
+    bathrooms: '1.0 Bath',
     imageUrl: 'https://www.evoadu.com/assets/images/Home_Pic_4_One_Home.jpg',
     tagline: 'Our signature one-bedroom retreat',
     description: 'Private master bedroom sanctuary with walk-in closet, expansive open-plan living and dining, and luxury oak cabinetry throughout.',
@@ -142,119 +142,95 @@ export const EVO_MODELS: ADUModel[] = [
   },
   {
     id: 'two',
-    name: 'Two',
+    name: 'EVO Two',
     slug: 'two',
     sqft: 715,
-    startingPrice: 203050,
-    priceFormatted: '$203,050',
+    startingPrice: 208000,
+    priceFormatted: '$208,000',
     dimensions: '2 Bed · 1 Bath · 715 sq ft',
     bedrooms: '2 Bedrooms',
-    bathrooms: '1 Bath',
+    bathrooms: '1.0 Bath',
     imageUrl: 'https://www.evoadu.com/assets/images/Home_Pic_5_Two_Home.jpg',
-    tagline: 'Spacious two-bedroom living',
-    description: 'Two separate bedrooms on opposite sides for complete sound privacy. Ideal for rental income or multi-generational families.',
-    features: ['Two full independent bedrooms', 'Generous living room with glass sliders', 'Steel-framed structural core', 'All-electric heating & cooling'],
+    tagline: 'Spacious two-bedroom layout',
+    description: 'Dual private bedrooms with shared central open-concept living, perfect for extended family living or guest suites.',
+    features: ['Two private bedrooms with built-in closets', 'Large open living & dining area', 'Full chef kitchen with appliances', 'Separate electrical subpanel'],
   },
   {
-    id: 'two-plus',
-    name: 'Two+',
-    slug: 'two-plus',
+    id: 'twoplus',
+    name: 'EVO Two+',
+    slug: 'twoplus',
     sqft: 800,
-    startingPrice: 238000,
-    priceFormatted: '$238,000',
+    startingPrice: 242000,
+    priceFormatted: '$242,000',
     dimensions: '2 Bed · 2 Bath · 800 sq ft',
     bedrooms: '2 Bedrooms',
-    bathrooms: '2 Baths',
+    bathrooms: '2.0 Baths',
     imageUrl: 'https://www.evoadu.com/assets/images/Home_Pic_6_TwoPlus_Home.jpg',
-    tagline: 'Dual master suites with luxury finishes',
-    description: 'Two complete master suites, each with private en-suite bathroom. The ultimate high-yield investment or luxury guest house.',
-    features: ['Dual private master suites with en-suite baths', 'Chef kitchen with custom oak cabinetry', 'Smart home energy monitoring', 'Solar-ready prewired infrastructure'],
+    tagline: 'Flagship luxury secondary residence',
+    description: 'Our flagship luxury 2-bedroom, 2-bathroom floor plan with primary suite, laundry closet, and expansive sliders.',
+    features: ['Dual ensuite bathrooms', 'Expansive 9ft vaulted ceilings', '12ft sliding glass wall system', 'High-end designer plumbing fixtures'],
   },
 ];
 
+// ==========================================
+// 2B. INTERIORS GALLERY
+// ==========================================
 export const INTERIORS_GALLERY = [
   {
     title: 'Open living, seamlessly connected',
-    description: 'Living room, kitchen, and dining flow together in one bright, airy space. Custom oak cabinetry and built-in storage keep everything organized.',
+    description: 'Living room, kitchen, and dining flow together in one bright, airy space with custom cabinetry.',
     imageUrl: 'https://www.evoadu.com/assets/images/Home_Pic_12_Living_Home.jpg',
   },
   {
     title: 'Bedrooms that feel like a retreat',
-    description: 'Vaulted wood ceilings, warm natural light, and a full walk-in closet. A private sanctuary designed for rest and comfort.',
+    description: 'Vaulted wood ceilings, warm natural light, and integrated storage designed for calm rest.',
     imageUrl: 'https://www.evoadu.com/assets/images/Interior_1.jpg',
   },
   {
-    title: 'Cozy evenings, elevated spaces',
-    description: 'Vaulted ceilings with recessed lighting create a warm, inviting atmosphere. Generous proportions make every moment feel relaxed.',
-    imageUrl: 'https://www.evoadu.com/assets/images/Living_2.jpg',
-  },
-  {
-    title: 'A workspace that works for you',
-    description: 'Thoughtfully proportioned spaces with built-in shelving and abundant natural light. Perfect for a home office or quiet reading corner.',
+    title: 'Chef kitchens & quartz countertops',
+    description: 'Full-size stainless appliances, soft-close custom cabinetry, and durable solid surface counters.',
     imageUrl: 'https://www.evoadu.com/assets/images/Interior_3.jpg',
-  },
-  {
-    title: 'Modern living, thoughtfully designed',
-    description: 'Clean lines, integrated appliances, and sun-drenched interiors. A space that feels open, bright, and ready to live in.',
-    imageUrl: 'https://www.evoadu.com/assets/images/Living_3.jpg',
-  },
-  {
-    title: 'Rest, reimagined',
-    description: 'Soaring vaulted ceilings, warm wood tones, and generous built-in wardrobe storage. A bedroom designed to feel spacious, calm, and yours.',
-    imageUrl: 'https://www.evoadu.com/assets/images/Home_Pic_13_Bedroom_Home.jpg',
   },
 ];
 
 // ==========================================
-// 3. PROCESS TRANSPARENCY: LADU GANTT & PHASES
+// 3. 4-STAGE TURNKEY ROADMAP
 // ==========================================
 export const LADU_PROJECT_PLAN = [
   {
-    phase: '01',
-    title: 'Free Site Visit & Feasibility',
-    timeline: 'Week 0',
-    duration: '30-Minute Lot Walk',
-    desc: 'An in-house engineer walks your property, measures exact setbacks, locates sewer lines, and confirms municipal zoning parameters.',
-  },
-  {
-    phase: '02',
-    title: 'Design & 3D Drafting',
-    timeline: 'Weeks 1–4',
-    duration: '4 Weeks',
-    desc: 'Custom architectural plan drafting, structural calculations, and Title 24 energy compliance tailored to your household goals.',
-  },
-  {
-    phase: '03',
-    title: 'City Permits & Approvals',
-    timeline: 'Weeks 5–14',
-    duration: '6 to 10 Weeks',
-    desc: 'We handle 100% of planning submissions and correction responses with your local OC city department until approved.',
-  },
-  {
-    phase: '04',
-    title: 'Financing Lock',
-    timeline: 'Weeks 14–16',
+    phase: 'Phase 01',
+    name: 'Property Feasibility',
+    timeline: 'Wk 1-2',
     duration: '2 Weeks',
-    desc: 'We assist with construction loans, HELOCs, HEA, or CalHFA $40,000 grant distributions.',
+    desc: 'Lot setback analysis, sewer/water/electrical mapping, HOA rule review, and fixed scope proposal.',
   },
   {
-    phase: '05',
-    title: 'Turnkey Construction',
-    timeline: 'Weeks 16–32',
-    duration: '4 to 5 Months',
-    desc: 'Foundation, framing, MEP rough-in, luxury interior finishes, and weekly photo/video progress reports.',
+    phase: 'Phase 02',
+    name: 'Architectural Design',
+    timeline: 'Wk 3-6',
+    duration: '3 - 4 Weeks',
+    desc: '3D modeling, floor plans, structural engineering calculations, and Title 24 energy compliance sets.',
   },
   {
-    phase: '06',
-    title: 'Final Inspection & Keys',
-    timeline: 'Week 32+',
-    duration: 'Move-In Ready',
-    desc: 'Final municipal inspector sign-off, certificate of occupancy, and walkthrough key handover.',
+    phase: 'Phase 03',
+    name: 'City Permitting',
+    timeline: 'Wk 6-16',
+    duration: '6 - 10 Weeks',
+    desc: 'Plan check submission, city comment resolution, and guaranteed permit issuance across Orange County.',
+  },
+  {
+    phase: 'Phase 04',
+    name: 'Turnkey Construction',
+    timeline: 'Wk 17-36',
+    duration: '4 - 6 Months',
+    desc: 'Licensed Class B ground-up construction, weekly photo updates, final inspection, and keys handover.',
   },
 ];
 
+export const LADU_PROCESS_PHASES = LADU_PROJECT_PLAN;
+
 // ==========================================
-// 4. LEAD MAGNETS & MULTIPLE ENTRY POINTS: ARC
+// 4. FOUR WAYS TO STEP IN
 // ==========================================
 export const ENTRY_PATHWAYS = [
   {
@@ -263,7 +239,7 @@ export const ENTRY_PATHWAYS = [
     subtitle: 'Free 30-Minute Property Feasibility',
     description: 'An ADU specialist walks your Orange County property, checks setbacks, sewer depth, and maps out your options on the spot.',
     cta: 'Schedule On-Site Walk',
-    href: '/estimate?type=site-walk',
+    href: '/free-feasibility?type=site-walk',
     popular: true,
   },
   {
@@ -272,50 +248,26 @@ export const ENTRY_PATHWAYS = [
     subtitle: 'Zoom with a Senior Planner',
     description: 'Share your property screen on Zoom. Get instant setback readouts, 3D model recommendations, and budget ranges.',
     cta: 'Book Video Call',
-    href: '/estimate?type=video-call',
+    href: '/free-feasibility?type=video-call',
     popular: false,
   },
   {
     badge: 'QUICK & EASY',
     title: 'Phone Consultation',
     subtitle: '15-Minute Expert Q&A',
-    description: 'Prefer to talk? Call our Irvine planning desk directly for immediate answers on costs, city permits, and ROI.',
+    description: 'Prefer to talk? Call our Irvine planning desk directly for immediate answers on costs, city permits, and timelines.',
     cta: 'Call (657) 298-4061',
-    href: 'tel:6572984061',
+    href: 'tel:+16572984061',
     popular: false,
   },
   {
     badge: 'INSTANT DOWNLOAD',
     title: '2026 OC ADU Guide',
     subtitle: '28-Page Comprehensive PDF',
-    description: 'Line-item cost tables, city permit timelines, floor plans, and rental comps across all 34 Orange County cities.',
+    description: 'Line-item cost tables, city permit timelines, floor plans, and zoning rules across all 34 Orange County cities.',
     cta: 'Download Free PDF',
-    href: '/estimate?type=guide-download',
+    href: '/free-feasibility?type=guide-download',
     popular: false,
-  },
-];
-
-export const TEAM_MEMBERS: TeamMember[] = [
-  {
-    name: 'Marcus Vance',
-    role: 'Principal Architectural Designer',
-    experience: '16+ Years in California Residential Architecture',
-    imageUrl: 'https://aduresourcecenter.com/images/team/dani.webp',
-    credentials: 'AIA Associate · LEED AP · 300+ California Permits Approved',
-  },
-  {
-    name: 'Elena Rostova',
-    role: 'Director of Permitting & City Plan Check',
-    experience: '12+ Years with Southern California Building Departments',
-    imageUrl: 'https://aduresourcecenter.com/images/team/Anahita-K.webp',
-    credentials: 'Ex-Municipal Plan Checker · Orange County Permitting Specialist',
-  },
-  {
-    name: 'Carlos Mendez',
-    role: 'Senior Project Captain & General Contractor',
-    experience: '18+ Years Turnkey Construction Management',
-    imageUrl: 'https://aduresourcecenter.com/images/team/Emin.webp',
-    credentials: 'CA General Contractor Class B #1094821 · OSHA 30 Certified',
   },
 ];
 
@@ -324,35 +276,35 @@ export const TEAM_MEMBERS: TeamMember[] = [
 // ==========================================
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    id: 'echo-park-garage',
-    title: 'The Newport Beach Garage Transformation',
+    id: 'newport-coastal-studio',
+    title: 'The Newport Coastal Studio Transformation',
     location: 'Newport Beach, CA',
     type: 'Garage Conversion ADU',
     sqft: 420,
-    cost: '$125K All-In Scope',
+    cost: '$154K All-In Scope',
     permitWeeks: '9 Weeks Permit',
-    rentalIncome: '$2,600 / month',
+    rentalIncome: '$150,000+ Added Equity',
     beforeImage: 'https://www.adubuildlosangeles.com/images/before_and_after/collection-1/before.jpg',
     afterImage: 'https://www.adubuildlosangeles.com/images/before_and_after/collection-1/after.jpg',
-    description: 'A cluttered detached 2-car garage converted into a bright, contemporary 1-bedroom ADU with vaulted ceilings, custom oak cabinetry, and full in-unit laundry.',
+    description: 'A cluttered detached 2-car garage converted into a bright, contemporary guest suite with vaulted ceilings, custom oak cabinetry, and full in-unit laundry.',
     highlights: [
       'Approved through city plan check in 9 weeks',
-      'Currently producing $2,600/month in passive rental income',
+      'Built as private guest retreat and home office',
       'Estimated $150,000+ added property equity',
     ],
   },
   {
-    id: 'silver-lake-studio',
-    title: 'The Irvine Modern Detached Studio',
+    id: 'irvine-modern-detached',
+    title: 'The Irvine Modern Detached Two-Bedroom',
     location: 'Irvine, CA (Woodbridge)',
     type: 'Detached Backyard ADU',
-    sqft: 560,
-    cost: '$185K All-In Scope',
+    sqft: 715,
+    cost: '$218K All-In Scope',
     permitWeeks: '11 Weeks Permit',
-    rentalIncome: '$2,850 / month',
+    rentalIncome: '$285,000+ Added Equity',
     beforeImage: 'https://www.adubuildlosangeles.com/images/before_and_after/collection-2/before.jpg',
     afterImage: 'https://www.adubuildlosangeles.com/images/before_and_after/collection-2/after.jpg',
-    description: 'Ground-up custom detached 1-bedroom ADU featuring floor-to-ceiling sliding glass doors, mini-split climate control, and a private landscaped patio.',
+    description: 'Ground-up custom detached 2-bedroom ADU featuring floor-to-ceiling sliding glass doors, mini-split climate control, and a private landscaped patio.',
     highlights: [
       '100% City of Irvine permit approval with zero revisions',
       'Turnkey single contract: design, foundation to final keys',
@@ -361,6 +313,9 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 ];
 
+// ==========================================
+// 6. TRUST PILLARS
+// ==========================================
 export const TRUST_PILLARS = [
   {
     number: '01',
@@ -394,6 +349,9 @@ export const TRUST_PILLARS = [
   },
 ];
 
+// ==========================================
+// 7. ALL 34 ORANGE COUNTY MUNICIPALITIES DATA
+// ==========================================
 export const ORANGE_COUNTY_CITIES: CityInfo[] = [
   {
     name: 'Irvine',
@@ -401,8 +359,8 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     county: 'Orange County',
     population: '310,000',
     avgRent: '$2,800 - $3,600/mo',
-    permitTurnaroundWeeks: '8 - 14 wks',
-    keyZoningNotes: 'Allows up to 1,200 sq ft detached ADU + 500 sq ft JADU. 4ft rear/side setbacks strictly enforced. HOA aesthetic rules must comply with AB 1033.',
+    permitTurnaroundWeeks: '8 - 12 wks',
+    keyZoningNotes: 'Allows up to 1,200 sq ft detached ADU + 500 sq ft JADU. 4ft rear/side setbacks strictly enforced. Master-planned HOA aesthetic guidelines fully handled.',
     isPriority: true,
   },
   {
@@ -411,18 +369,8 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     county: 'Orange County',
     population: '85,000',
     avgRent: '$3,200 - $4,500/mo',
-    permitTurnaroundWeeks: '10 - 16 wks',
-    keyZoningNotes: 'Coastal zone properties require Coastal Commission exemption review. High rental demand. Pre-engineered plans expedite city plan check.',
-    isPriority: true,
-  },
-  {
-    name: 'Costa Mesa',
-    slug: 'costa-mesa',
-    county: 'Orange County',
-    population: '111,000',
-    avgRent: '$2,500 - $3,400/mo',
-    permitTurnaroundWeeks: '6 - 12 wks',
-    keyZoningNotes: 'Very ADU-friendly municipal process. Fast turnaround on garage conversions and junior ADUs (JADUs).',
+    permitTurnaroundWeeks: '10 - 14 wks',
+    keyZoningNotes: 'Coastal zone properties require Coastal Commission exemption review. High luxury home values ($2M+). Architectural plan sets expedite city plan check.',
     isPriority: true,
   },
   {
@@ -431,8 +379,18 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     county: 'Orange County',
     population: '198,000',
     avgRent: '$2,600 - $3,500/mo',
-    permitTurnaroundWeeks: '8 - 14 wks',
-    keyZoningNotes: 'Allows up to 16-18ft height limits for detached single-story. Excellent rental yields near beach corridors.',
+    permitTurnaroundWeeks: '8 - 12 wks',
+    keyZoningNotes: 'Allows up to 16-18ft height limits for detached single-story. Strong demand for detached garage conversions and coastal guest suites.',
+    isPriority: true,
+  },
+  {
+    name: 'Costa Mesa',
+    slug: 'costa-mesa',
+    county: 'Orange County',
+    population: '111,000',
+    avgRent: '$2,500 - $3,400/mo',
+    permitTurnaroundWeeks: '6 - 10 wks',
+    keyZoningNotes: 'High ADU construction density. Fast municipal turnaround on garage conversions, junior ADUs (JADUs), and detached backyard cottages.',
     isPriority: true,
   },
   {
@@ -441,8 +399,8 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     county: 'Orange County',
     population: '346,000',
     avgRent: '$2,300 - $3,100/mo',
-    permitTurnaroundWeeks: '7 - 12 wks',
-    keyZoningNotes: 'City of Anaheim Planning Dept offers expedited review for standard pre-engineered floor plans.',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'City of Anaheim Planning Dept offers expedited review for standard pre-checked floor plans. Large lot footprints accommodate up to 1,200 sq ft.',
     isPriority: true,
   },
   {
@@ -451,12 +409,295 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     county: 'Orange County',
     population: '310,000',
     avgRent: '$2,200 - $2,900/mo',
-    permitTurnaroundWeeks: '8 - 13 wks',
-    keyZoningNotes: 'High demand for multi-generational housing and rental units. Large lots accommodate maximum 1,200 sq ft builds.',
+    permitTurnaroundWeeks: '8 - 12 wks',
+    keyZoningNotes: 'High demand for multi-generational family living suites. Deep lots accommodate maximum 1,200 sq ft detached homes and 2-car garage conversions.',
     isPriority: true,
+  },
+  {
+    name: 'Orange',
+    slug: 'orange',
+    county: 'Orange County',
+    population: '139,000',
+    avgRent: '$2,400 - $3,200/mo',
+    permitTurnaroundWeeks: '7 - 12 wks',
+    keyZoningNotes: 'Old Towne Orange historic district requires specific exterior architectural styling. Standard residential zones approve fast 60-day permits.',
+    isPriority: true,
+  },
+  {
+    name: 'Fullerton',
+    slug: 'fullerton',
+    county: 'Orange County',
+    population: '143,000',
+    avgRent: '$2,300 - $3,100/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'Great lot depths in established neighborhoods. Excellent permit turnaround for detached secondary suites and detached garage conversions.',
+    isPriority: true,
+  },
+  {
+    name: 'Laguna Beach',
+    slug: 'laguna-beach',
+    county: 'Orange County',
+    population: '23,000',
+    avgRent: '$3,500 - $5,000/mo',
+    permitTurnaroundWeeks: '12 - 16 wks',
+    keyZoningNotes: 'Hillside terrain and coastal development regulations apply. Custom structural engineering and grading analysis included in our turnkey scope.',
+    isPriority: true,
+  },
+  {
+    name: 'Mission Viejo',
+    slug: 'mission-viejo',
+    county: 'Orange County',
+    population: '93,000',
+    avgRent: '$2,600 - $3,400/mo',
+    permitTurnaroundWeeks: '8 - 12 wks',
+    keyZoningNotes: 'South Orange County master planned lots. Standard 4ft rear and side setbacks. HOA architectural guidelines coordinated directly by our team.',
+    isPriority: true,
+  },
+  {
+    name: 'Lake Forest',
+    slug: 'lake-forest',
+    county: 'Orange County',
+    population: '88,000',
+    avgRent: '$2,500 - $3,300/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'Rapidly expanding residential ADU activity. City planning streamlines detached 1-2 bedroom backyard builds under state mandate.',
+    isPriority: true,
+  },
+  {
+    name: 'Aliso Viejo',
+    slug: 'aliso-viejo',
+    county: 'Orange County',
+    population: '52,000',
+    avgRent: '$2,600 - $3,400/mo',
+    permitTurnaroundWeeks: '8 - 12 wks',
+    keyZoningNotes: 'Established residential subdivisions. High demand for modern attached suites and garage conversions for aging family members.',
+    isPriority: true,
+  },
+  {
+    name: 'San Clemente',
+    slug: 'san-clemente',
+    county: 'Orange County',
+    population: '64,000',
+    avgRent: '$2,800 - $3,800/mo',
+    permitTurnaroundWeeks: '9 - 14 wks',
+    keyZoningNotes: 'Spanish Colonial Revival styling considerations in specific zones. Coastal proximity and high demand for turnkey backyard guest cottages.',
+    isPriority: true,
+  },
+  {
+    name: 'Dana Point',
+    slug: 'dana-point',
+    county: 'Orange County',
+    population: '33,000',
+    avgRent: '$2,900 - $4,000/mo',
+    permitTurnaroundWeeks: '9 - 14 wks',
+    keyZoningNotes: 'Scenic coastal community with strong property values. State ADU laws allow detached standalone construction with 4ft setbacks.',
+    isPriority: true,
+  },
+  {
+    name: 'Brea',
+    slug: 'brea',
+    county: 'Orange County',
+    population: '47,000',
+    avgRent: '$2,400 - $3,200/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'North OC community with spacious lots. Fast municipal review process for detached modular and stick-built ADU designs.',
+    isPriority: false,
+  },
+  {
+    name: 'Yorba Linda',
+    slug: 'yorba-linda',
+    county: 'Orange County',
+    population: '68,000',
+    avgRent: '$2,700 - $3,600/mo',
+    permitTurnaroundWeeks: '8 - 12 wks',
+    keyZoningNotes: 'Large equestrian and residential parcels allowing maximum 1,200 sq ft detached residences and attached luxury additions.',
+    isPriority: false,
+  },
+  {
+    name: 'Tustin',
+    slug: 'tustin',
+    county: 'Orange County',
+    population: '80,000',
+    avgRent: '$2,500 - $3,300/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'Central Orange County location with straightforward municipal guidelines for detached and garage conversion ADUs.',
+    isPriority: false,
+  },
+  {
+    name: 'San Juan Capistrano',
+    slug: 'san-juan-capistrano',
+    county: 'Orange County',
+    population: '35,000',
+    avgRent: '$2,700 - $3,600/mo',
+    permitTurnaroundWeeks: '8 - 13 wks',
+    keyZoningNotes: 'Historic and equestrian character. Turnkey custom designs engineered to complement traditional California architecture.',
+    isPriority: false,
+  },
+  {
+    name: 'Fountain Valley',
+    slug: 'fountain-valley',
+    county: 'Orange County',
+    population: '55,000',
+    avgRent: '$2,500 - $3,300/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'Flat residential lots with excellent utility access. High volume of garage conversions and detached studio builds.',
+    isPriority: false,
+  },
+  {
+    name: 'Garden Grove',
+    slug: 'garden-grove',
+    county: 'Orange County',
+    population: '172,000',
+    avgRent: '$2,300 - $3,000/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'Substantial lot depths allowing dual-unit configurations (detached ADU + Junior ADU) on qualified single-family lots.',
+    isPriority: false,
+  },
+  {
+    name: 'Placentia',
+    slug: 'placentia',
+    county: 'Orange County',
+    population: '51,000',
+    avgRent: '$2,400 - $3,100/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'Standard municipal permitting under California state framework. Fast plan checks for 1-bedroom and studio backyard homes.',
+    isPriority: false,
+  },
+  {
+    name: 'Buena Park',
+    slug: 'buena-park',
+    county: 'Orange County',
+    population: '83,000',
+    avgRent: '$2,300 - $3,000/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'Established residential tracts with high suitability for garage conversions and cost-effective turnkey construction.',
+    isPriority: false,
+  },
+  {
+    name: 'Cypress',
+    slug: 'cypress',
+    county: 'Orange County',
+    population: '50,000',
+    avgRent: '$2,400 - $3,200/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'Quiet residential neighborhoods. Fast city building approvals for pre-engineered detached ADUs with 4ft setbacks.',
+    isPriority: false,
+  },
+  {
+    name: 'Seal Beach',
+    slug: 'seal-beach',
+    county: 'Orange County',
+    population: '25,000',
+    avgRent: '$2,700 - $3,700/mo',
+    permitTurnaroundWeeks: '9 - 14 wks',
+    keyZoningNotes: 'Coastal enclave with tight lot lines. High-precision architectural drafting ensures 100% compliance with coastal zoning.',
+    isPriority: false,
+  },
+  {
+    name: 'Rancho Santa Margarita',
+    slug: 'rancho-santa-margarita',
+    county: 'Orange County',
+    population: '47,000',
+    avgRent: '$2,600 - $3,400/mo',
+    permitTurnaroundWeeks: '8 - 12 wks',
+    keyZoningNotes: 'Master planned HOA communities. California AB 1033 compliant architectural designs streamline HOA and city approval.',
+    isPriority: false,
+  },
+  {
+    name: 'Laguna Niguel',
+    slug: 'laguna-niguel',
+    county: 'Orange County',
+    population: '64,000',
+    avgRent: '$2,700 - $3,700/mo',
+    permitTurnaroundWeeks: '8 - 12 wks',
+    keyZoningNotes: 'Rolling topography with hillside views. Structural engineering packages optimized for slope and soil conditions.',
+    isPriority: false,
+  },
+  {
+    name: 'Laguna Hills',
+    slug: 'laguna-hills',
+    county: 'Orange County',
+    population: '31,000',
+    avgRent: '$2,600 - $3,500/mo',
+    permitTurnaroundWeeks: '8 - 12 wks',
+    keyZoningNotes: 'Generous single-family parcels with strong demand for multi-generational guest suites and detached modern cottages.',
+    isPriority: false,
+  },
+  {
+    name: 'Laguna Woods',
+    slug: 'laguna-woods',
+    county: 'Orange County',
+    population: '16,000',
+    avgRent: '$2,300 - $3,000/mo',
+    permitTurnaroundWeeks: '8 - 12 wks',
+    keyZoningNotes: 'Specialized 55+ residential community regulations. Single-story accessible ADU designs with zero-threshold entries.',
+    isPriority: false,
+  },
+  {
+    name: 'Los Alamitos',
+    slug: 'los-alamitos',
+    county: 'Orange County',
+    population: '12,000',
+    avgRent: '$2,500 - $3,300/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'Established residential streets with straightforward municipal plan check guidelines and fast 60-day permit cycles.',
+    isPriority: false,
+  },
+  {
+    name: 'La Habra',
+    slug: 'la-habra',
+    county: 'Orange County',
+    population: '63,000',
+    avgRent: '$2,300 - $3,000/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'North OC border community with deep lots and high demand for cost-effective detached units and garage transformations.',
+    isPriority: false,
+  },
+  {
+    name: 'Stanton',
+    slug: 'stanton',
+    county: 'Orange County',
+    population: '38,000',
+    avgRent: '$2,200 - $2,900/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'High-density residential areas benefiting from state ADU parking exemption and streamlined building inspections.',
+    isPriority: false,
+  },
+  {
+    name: 'Villa Park',
+    slug: 'villa-park',
+    county: 'Orange County',
+    population: '6,000',
+    avgRent: '$3,200 - $4,600/mo',
+    permitTurnaroundWeeks: '8 - 13 wks',
+    keyZoningNotes: 'Large half-acre and full-acre lots. Accommodates expansive 1,200 sq ft custom guest estates with luxury architectural finishes.',
+    isPriority: false,
+  },
+  {
+    name: 'Westminster',
+    slug: 'westminster',
+    county: 'Orange County',
+    population: '90,000',
+    avgRent: '$2,300 - $3,100/mo',
+    permitTurnaroundWeeks: '7 - 11 wks',
+    keyZoningNotes: 'Wide lots with excellent rear yard access for cranes and materials. High demand for 2-bedroom detached family homes.',
+    isPriority: false,
+  },
+  {
+    name: 'Coto de Caza',
+    slug: 'coto-de-caza',
+    county: 'Orange County',
+    population: '15,000',
+    avgRent: '$3,400 - $5,000/mo',
+    permitTurnaroundWeeks: '9 - 14 wks',
+    keyZoningNotes: 'Gated luxury community with strict architectural guidelines. Turnkey design-build coordination with local gate and architectural review committees.',
+    isPriority: false,
   },
 ];
 
+// ==========================================
+// 8. FAQ DATA
+// ==========================================
 export const FAQS: FaqItem[] = [
   {
     category: 'General ADU',
@@ -471,12 +712,12 @@ export const FAQS: FaqItem[] = [
   {
     category: 'Costs & Taxes',
     question: 'Will building an ADU trigger a full reassessment of my primary home’s property taxes?',
-    answer: 'No. Under California Prop 13, adding an ADU triggers only a "partial blended reassessment" on the newly constructed square footage itself. Your primary home retains its existing protected tax valuation. Typically, an ADU adds $900 to $1,800/year in property taxes, which is vastly offset by $2,200 to $3,800+/month in rental income.',
+    answer: 'No. Under California Prop 13, adding an ADU triggers only a "partial blended reassessment" on the newly constructed square footage itself. Your primary home retains its existing protected tax valuation. Typically, an ADU adds $900 to $1,800/year in property taxes, which is vastly offset by substantial equity and property appreciation.',
   },
   {
     category: 'Process',
     question: 'Does ADU Alliance handle everything, or will I need to hire separate architects and subcontractors?',
-    answer: 'We handle the entire project under one single contract. Our in-house team oversees feasibility, 3D architectural drawings, structural engineering, city plan check permits, and turnkey ground-up construction. You have one dedicated project manager and one accountable point of contact from kickoff to keys.',
+    answer: 'We handle the entire project under one single contract. Our in-house team oversees feasibility, 3D architectural drawings, structural engineering, city plan check permits, and turnkey ground-up construction. You have one dedicated project superintendent and one accountable point of contact from kickoff to keys.',
   },
   {
     category: 'Timelines',
@@ -485,6 +726,9 @@ export const FAQS: FaqItem[] = [
   },
 ];
 
+// ==========================================
+// 9. BLOG ARTICLES
+// ==========================================
 export const MOCK_BLOG_POSTS: BlogPost[] = [
   {
     id: 1,
@@ -493,25 +737,25 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     excerpt: 'Everything Orange County homeowners need to know about updated 2026 ADU regulations, detached height allowances, HOA rules, and expedited municipal plan check.',
     content: `
       <h2>The 2026 California & Orange County ADU Landscape</h2>
-      <p>Building an Accessory Dwelling Unit (ADU) in Orange County has never been more financially lucrative or legally streamlined. Thanks to recent legislative updates including AB 1033, California homeowners have unprecedented rights to construct secondary residences for passive rental income, multi-generational family living, or high-value equity gains.</p>
+      <p>Building an Accessory Dwelling Unit (ADU) in Orange County has never been more financially rewarding or legally streamlined. Thanks to recent legislative updates including AB 1033, California homeowners have unprecedented rights to construct secondary residences for multi-generational family living or high-value equity gains.</p>
     `,
     date: 'February 2026',
-    author: 'Elena Rostova (Permit Director)',
+    author: 'ADU Alliance Technical Team',
     featuredImage: 'https://www.evoadu.com/assets/images/Home_Pic_4_One_Home.jpg',
     category: 'Regulations & Permits',
     readTime: '6 min read',
   },
   {
     id: 2,
-    title: 'Garage Conversion in Orange County: Complete 2026 Cost & ROI Breakdown',
+    title: 'Garage Conversion in Orange County: Complete 2026 Cost & Value Breakdown',
     slug: 'garage-conversion-cost-orange-county-2026',
     excerpt: 'Real project scope, line-item budgets, city permit fees, and timeline expectations for converting a 2-car garage in Irvine, Newport Beach, and Anaheim.',
     content: `
       <h2>Why Garage Conversions Are the #1 ROI Home Improvement in Southern California</h2>
-      <p>Converting a standard 2-car garage into a legal, permitted 1-bedroom rental unit represents the highest cash-on-cash return in residential real estate.</p>
+      <p>Converting a standard 2-car garage into a legal, permitted 1-bedroom living unit represents the most cost-effective space addition in residential real estate.</p>
     `,
     date: 'January 2026',
-    author: 'Carlos Mendez (General Contractor)',
+    author: 'ADU Alliance Technical Team',
     featuredImage: 'https://www.adubuildlosangeles.com/images/before_and_after/collection-1/after.jpg',
     category: 'Costs & Pricing',
     readTime: '5 min read',

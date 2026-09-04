@@ -5,14 +5,13 @@ import EvoModelShowcase from '@/components/EvoModelShowcase';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import LaduProcessTimeline from '@/components/LaduProcessTimeline';
 import FourWaysStepIn from '@/components/FourWaysStepIn';
-import TeamSection from '@/components/TeamSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import FaqSection from '@/components/FaqSection';
 import PropertyAssessmentTool from '@/components/PropertyAssessmentTool';
 
 export default function HomePage() {
   return (
-    <div className="bg-brand-black text-white">
+    <div className="bg-brand-canvas text-brand-main min-h-screen">
       {/* 1. Authority Hero (ADU Build LA + EVO) */}
       <Hero />
 
@@ -31,16 +30,13 @@ export default function HomePage() {
       {/* 6. Lead Magnets & Entry Pathways (ADU Resource Center) */}
       <FourWaysStepIn />
 
-      {/* 7. In-House Specialists & Accountability (ADU Resource Center) */}
-      <TeamSection />
-
-      {/* 8. 6 Trust Pillars (ADU Build LA) */}
+      {/* 7. 6 Trust Pillars (ADU Build LA) */}
       <WhyChooseUs />
 
-      {/* 9. Common Questions (Search-Optimized FAQ) */}
+      {/* 8. Common Questions (Search-Optimized FAQ) */}
       <FaqSection />
 
-      {/* 10. Instant Property Assessment Wizard */}
+      {/* 9. Instant Property Assessment Wizard */}
       <PropertyAssessmentTool />
     </div>
   );
