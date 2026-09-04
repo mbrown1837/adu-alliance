@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { ORANGE_COUNTY_CITIES, ADU_SERVICES } from '@/lib/data';
+import { ORANGE_COUNTY_CITIES, ADU_SERVICES, MOCK_BLOG_POSTS } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://adualliance.com';
@@ -79,5 +79,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: city.isPriority ? 0.85 : 0.75,
   }));
 
-  return [...coreRoutes, ...serviceRoutes, ...locationRoutes];
+  // Blog Routes
+  const blogRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    ...MOCK_BLOG_POSTS.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
+  ];
+
+  return [...coreRoutes, ...serviceRoutes, ...locationRoutes, ...blogRoutes];
 }
