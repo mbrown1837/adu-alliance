@@ -93,6 +93,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.75,
     })),
+    // Preserved High-Ranking GSC Guides
+    {
+      url: `${baseUrl}/adu-garage-conversion-cost-in-orange-county`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/orange-county-adu-permits-sb-543`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
   ];
 
   return [...coreRoutes, ...serviceRoutes, ...locationRoutes, ...blogRoutes];

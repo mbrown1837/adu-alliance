@@ -1,0 +1,71 @@
+# ADU Alliance — Comprehensive Knowledge Graph & System Context (`llms-full.txt`)
+
+> Comprehensive, machine-readable reference documenting ADU Alliance, Orange County accessory dwelling unit regulations, floor plans, pricing structures, municipal permitting processes, and California housing legislation (2026 Edition).
+
+---
+
+## 1. Organization Overview
+- **Name**: ADU Alliance
+- **Entity Type**: General Contractor Design-Build Alliance & Homeowner Feasibility Network
+- **Geographic Focus**: Orange County, California (Exclusive)
+- **Direct Telephone**: (657) 298-4061
+- **Headquarters**: 2372 Morse Ave, Irvine, CA 92614
+- **Online Hub**: https://adualliance.com
+- **Contractor Licensing**: Contracted directly through verified, pre-vetted California General Contractors (Class B) licensed by the California State License Board (CSLB), fully bonded and insured with comprehensive liability and workers compensation coverage.
+
+---
+
+## 2. Core Service Scopes & Turnkey Deliverables
+
+### A. Garage to ADU Conversion (`/services/garage-conversion`)
+- **Description**: Repurposing an existing attached or detached 2-car garage into a legal, permitted 1-bedroom or studio secondary residence.
+- **Typical Cost**: $95,000 to $149,000 all-in turnkey.
+- **Typical Timeline**: 8 to 12 weeks for municipal plan checks; 10 to 14 weeks for physical construction.
+- **Key Advantage**: 40% to 50% lower cost than ground-up construction because foundation, framing envelope, and roof trusses are already present. No replacement off-street parking is required under California state law.
+
+### B. Custom Detached Backyard ADU (`/services/detached-adu`)
+- **Description**: Standalone, ground-up secondary residence built in the rear yard of a single-family home.
+- **Square Footage Range**: 350 sq ft to 1,200 sq ft.
+- **Typical Cost**: $149,000 to $245,000+ depending on size and finish level.
+- **Typical Timeline**: 6 to 9 months total (3-4 weeks architectural design, 8-12 weeks city plan check, 4-6 months construction).
+
+### C. Junior ADU (JADU) & Attached Additions (`/services/junior-adu`)
+- **Description**: Independent living unit up to 500 sq ft built entirely within an existing home footprint (such as an attached garage, master suite, or basement) or as an attached home extension.
+- **Requirements**: Dedicated exterior entrance, efficiency food preparation area, and optional interior shared connection.
+
+### D. 3D Architectural Plans & Structural Engineering (`/services/adu-design`)
+- **Scope**: Site plan showing 4-foot setbacks and utility runs, floor plans, exterior elevations, foundation details, framing layout, Title 24 energy calculations, and structural calculations stamped by licensed California engineers.
+
+### E. City Permitting & Municipal Expediting (`/services/adu-permits`)
+- **Scope**: Direct submission and active coordination with all 34 Orange County municipal planning and building departments. 100% permit approval guarantee.
+
+---
+
+## 3. Pre-Designed Model Specifications
+
+| Model Name | Square Footage | Layout | Base Turnkey Price | Key Features |
+|---|---|---|---|---|
+| **EVO Compact** | 350 sq ft | Studio · 1 Bath | $149,000 | Ultra-efficient layout, full galley kitchen, walk-in shower, built-in oak storage. |
+| **EVO Studio** | 430 sq ft | Studio + Nook · 1 Bath | $159,500 | Dedicated work-from-home office nook, vaulted ceilings, Low-E slider. |
+| **EVO One** | 560 sq ft | 1 Bed · 1 Bath | $182,000 | Private master bedroom retreat, walk-in closet, kitchen island with seating. |
+| **EVO Two** | 715 sq ft | 2 Bed · 1 Bath | $208,000 | Dual private bedrooms, open central living/dining, ideal for family living. |
+| **EVO Two+** | 800 sq ft | 2 Bed · 2 Bath | $242,000 | Dual ensuite bathrooms, 9ft vaulted ceilings, 12ft sliding glass wall system. |
+
+---
+
+## 4. California State ADU Legal Framework (2026 Mandates)
+1. **Senate Bill 9 (SB 9) & Assembly Bill 68 (AB 68)**: Establishes ministerial approval without discretionary hearings for ADUs and JADUs on single-family lots.
+2. **4-Foot Setback Mandate**: California law strictly prohibits local cities from requiring more than 4-foot rear or side setbacks for detached single-story ADUs.
+3. **HOA Enforceability (AB 670)**: Homeowners Associations cannot prohibit or unreasonably restrict ADU construction on single-family parcels.
+4. **Condominium Conveyance (AB 1033)**: Local cities can elect to allow ADUs to be sold separately from the primary home as condominiums, creating unprecedented equity potential.
+5. **Property Tax Protection (Prop 13)**: Constructing an ADU triggers only a partial blended reassessment of the new construction value; the existing primary house retains its original protected tax base.
+
+---
+
+## 5. Contact & Action Endpoints
+- **Direct Phone Consultation**: (657) 298-4061
+- **Free Online Property Feasibility Assessment**: https://adualliance.com/free-feasibility
+- **Interactive Cost & Value Calculator**: https://adualliance.com/calculator
+- **Floor Plans & Models**: https://adualliance.com/models
+- **Completed Orange County Case Studies**: https://adualliance.com/projects
+- **About the Alliance**: https://adualliance.com/about

@@ -37,7 +37,7 @@ export default function CityLocationPage({ params }: LocationPageProps) {
     notFound();
   }
 
-  // City-specific LocalBusiness JSON-LD schema
+  // City-specific LocalBusiness & Breadcrumbs JSON-LD schema
   const localSchema = {
     '@context': 'https://schema.org',
     '@type': 'GeneralContractor',
@@ -52,7 +52,32 @@ export default function CityLocationPage({ params }: LocationPageProps) {
       addressCountry: 'US',
     },
     areaServed: [city.name, 'Orange County'],
-    description: `Premier design-build ADU general contractor serving homeowners in ${city.name}, California.`,
+    description: `Premier design-build ADU general contractor network serving homeowners in ${city.name}, California.`,
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://adualliance.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Locations',
+        item: 'https://adualliance.com/#locations',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: `${city.name} ADU Builders`,
+        item: `https://adualliance.com/locations/${city.slug}`,
+      },
+    ],
   };
 
   return (
@@ -61,6 +86,10 @@ export default function CityLocationPage({ params }: LocationPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

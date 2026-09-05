@@ -15,26 +15,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-            "source": "/adu-garage-conversion-cost-in-orange-county/",
-            "destination": "/services/garage-conversion",
-            "permanent": true
-      },
-      {
-            "source": "/adu-garage-conversion-cost-in-orange-county",
-            "destination": "/services/garage-conversion",
-            "permanent": true
-      },
-      {
-            "source": "/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too/",
-            "destination": "/process",
-            "permanent": true
-      },
-      {
-            "source": "/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too",
-            "destination": "/process",
-            "permanent": true
-      },
-      {
             "source": "/garage-conversion-adu-in-huntington-beach/",
             "destination": "/locations/huntington-beach",
             "permanent": true
@@ -52,16 +32,6 @@ const nextConfig = {
       {
             "source": "/granny-apartments-in-huntington-beach",
             "destination": "/locations/huntington-beach",
-            "permanent": true
-      },
-      {
-            "source": "/orange-county-adu-permits-sb-543/",
-            "destination": "/process",
-            "permanent": true
-      },
-      {
-            "source": "/orange-county-adu-permits-sb-543",
-            "destination": "/process",
             "permanent": true
       },
       {
@@ -397,16 +367,6 @@ const nextConfig = {
       {
             "source": "/adu-builders-near-me-in-aliso-viejo",
             "destination": "/locations/aliso-viejo",
-            "permanent": true
-      },
-      {
-            "source": "/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide/",
-            "destination": "/calculator",
-            "permanent": true
-      },
-      {
-            "source": "/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide",
-            "destination": "/calculator",
             "permanent": true
       },
       {
