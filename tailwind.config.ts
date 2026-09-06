@@ -29,7 +29,6 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-outfit)', 'Outfit', '-apple-system', 'sans-serif'],
         display: ['var(--font-outfit)', 'Outfit', 'sans-serif'],
-        editorial: ['var(--font-instrument)', 'Instrument Serif', 'Georgia', 'serif'],
         mono: ['var(--font-mono)', 'monospace'],
       },
       letterSpacing: {

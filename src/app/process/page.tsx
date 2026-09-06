@@ -22,7 +22,7 @@ export default function ProcessPage() {
         </span>
         <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-white">
           From Site Visit to Keys. <br />
-          <span className="font-editorial italic font-normal text-slate-300 lowercase">
+          <span className="font-normal italic text-brand-amber">
             One team, one single contract.
           </span>
         </h1>

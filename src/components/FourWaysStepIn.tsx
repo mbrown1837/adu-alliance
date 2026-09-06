@@ -15,10 +15,10 @@ export default function FourWaysStepIn() {
             CHOOSE YOUR ENTRY PATHWAY
           </span>
           <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-white">
-            Four Ways to <span className="font-editorial italic font-normal text-slate-300 lowercase">Step In</span>
+            Four Ways to <span className="font-normal italic text-brand-amber">Step In</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
-            Pick the exact path that fits where you are today — whether exploring initial zoning, ready to walk your lot, or requesting an architectural quote.
+            Pick the exact path that fits where you are today  -  whether exploring initial zoning, ready to walk your lot, or requesting an architectural quote.
           </p>
         </div>
 

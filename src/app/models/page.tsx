@@ -22,7 +22,7 @@ export default function ModelsPage() {
         </span>
         <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-white">
           Engineered for Living. <br />
-          <span className="font-editorial italic font-normal text-slate-300 lowercase">
+          <span className="font-normal italic text-brand-amber">
             Permit-ready by design.
           </span>
         </h1>

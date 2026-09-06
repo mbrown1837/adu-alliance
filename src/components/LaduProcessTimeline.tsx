@@ -15,7 +15,7 @@ export default function LaduProcessTimeline() {
             </span>
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-white">
               From Site Visit to Keys in <br />
-              <span className="font-editorial italic font-normal text-slate-300 lowercase">
+              <span className="font-normal italic text-brand-amber">
                 6 to 9 months.
               </span>
             </h2>

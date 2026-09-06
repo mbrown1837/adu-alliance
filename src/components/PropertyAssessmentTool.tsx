@@ -34,7 +34,7 @@ export default function PropertyAssessmentTool() {
           </div>
           <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-white">
             Want to know what you can build on <br />
-            <span className="font-editorial italic font-normal text-slate-300 lowercase">your lot?</span>
+            <span className="font-normal italic text-brand-amber">your lot?</span>
           </h2>
           <p className="text-sm text-slate-400">
             Tell us about your property. We confirm your ADU options, setback allowances, and share realistic budget ranges within 1 business day.

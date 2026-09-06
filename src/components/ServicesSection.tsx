@@ -15,7 +15,7 @@ export default function ServicesSection() {
             </span>
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-white">
               ADU Services from an <br />
-              <span className="font-editorial italic font-normal text-slate-300 lowercase">
+              <span className="font-normal italic text-brand-amber">
                 Orange County Design-Build Team
               </span>
             </h2>

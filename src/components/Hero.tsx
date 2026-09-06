@@ -25,7 +25,7 @@ export default function Hero() {
 
           <h1 className="font-black uppercase tracking-tighter text-white leading-[0.95] text-5xl sm:text-7xl lg:text-8xl">
             ADU Builders <br />
-            <span className="text-slate-300 font-editorial italic font-normal lowercase tracking-normal">
+            <span className="text-slate-300 font-normal italic text-brand-amber tracking-normal">
               Orange County
             </span>
           </h1>

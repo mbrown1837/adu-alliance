@@ -49,7 +49,7 @@ export default function AboutPage() {
         </span>
         <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-white">
           We Only Build ADUs. <br />
-          <span className="font-editorial italic font-normal text-slate-300 lowercase">
+          <span className="font-normal italic text-brand-amber">
             One team, one fixed price, one point of accountability.
           </span>
         </h1>

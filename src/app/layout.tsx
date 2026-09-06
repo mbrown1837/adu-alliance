@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Outfit, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
+import { Outfit, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,14 +9,6 @@ const outfit = Outfit({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800', '900'],
   variable: '--font-outfit',
-  display: 'swap',
-});
-
-const instrument = Instrument_Serif({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal', 'italic'],
-  variable: '--font-instrument',
   display: 'swap',
 });
 
@@ -99,7 +91,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${outfit.variable} ${instrument.variable} ${jetbrains.variable} scroll-smooth bg-brand-black text-white`}>
+    <html lang="en" className={`${outfit.variable} ${jetbrains.variable} scroll-smooth bg-brand-black text-white`}>
       <head>
         <script
           type="application/ld+json"
