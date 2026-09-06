@@ -738,8 +738,12 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
     content: `
       <h2>The 2026 California & Orange County ADU Landscape</h2>
       <p>Building an Accessory Dwelling Unit (ADU) in Orange County has never been more financially rewarding or legally streamlined. Thanks to recent legislative updates including AB 1033, California homeowners have unprecedented rights to construct secondary residences for multi-generational family living or high-value equity gains.</p>
+      <h3>1. 4-Foot Setback Mandate Across All OC Cities</h3>
+      <p>Under California Government Code, local jurisdictions cannot mandate more than 4-foot rear and side setbacks for detached single-story ADUs up to 16-18 feet in height.</p>
+      <h3>2. Complete HOA Preemption Under AB 670</h3>
+      <p>Homeowners Associations throughout Orange County cannot prohibit or unreasonably restrict ADU construction on single-family lots.</p>
     `,
-    date: 'February 2026',
+    date: 'March 2026',
     author: 'ADU Alliance Technical Team',
     featuredImage: 'https://www.evoadu.com/assets/images/Home_Pic_4_One_Home.jpg',
     category: 'Regulations & Permits',
@@ -747,17 +751,73 @@ export const MOCK_BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 2,
-    title: 'Garage Conversion in Orange County: Complete 2026 Cost & Value Breakdown',
-    slug: 'garage-conversion-cost-orange-county-2026',
-    excerpt: 'Real project scope, line-item budgets, city permit fees, and timeline expectations for converting a 2-car garage in Irvine, Newport Beach, and Anaheim.',
+    title: 'ADU Garage Conversion Cost in Orange County: The Real Numbers for Homeowners',
+    slug: 'adu-garage-conversion-cost-in-orange-county',
+    excerpt: 'Complete 2026 line-item cost breakdown for converting a 2-car garage into a legal ADU in Orange County, CA. Real budgets, permit fees, plumbing, and timeline facts.',
     content: `
-      <h2>Why Garage Conversions Are the #1 ROI Home Improvement in Southern California</h2>
-      <p>Converting a standard 2-car garage into a legal, permitted 1-bedroom living unit represents the most cost-effective space addition in residential real estate.</p>
+      <h2>Why Garage Conversions Are the #1 ROI Space Addition in Orange County</h2>
+      <p>In 2026, converting a standard 2-car garage (380 to 450 sq ft) into a permitted living unit in Orange County typically costs between $95,000 and $149,000 all-in. Because the existing concrete slab, walls, and roof structure are utilized, garage conversions cost 40% to 50% less than ground-up detached construction.</p>
+      <h3>Key Cost Breakdown</h3>
+      <ul>
+        <li><strong>Architectural Plans & Engineering:</strong> $6,000 - $9,500</li>
+        <li><strong>City Permit & Plan Check Fees:</strong> $2,500 - $5,000</li>
+        <li><strong>Plumbing Trenching & Sewer Connection:</strong> $12,000 - $20,000</li>
+        <li><strong>Electrical Subpanel (100A) & Wiring:</strong> $9,000 - $15,000</li>
+        <li><strong>HVAC Ductless Mini-Split:</strong> $4,500 - $7,500</li>
+        <li><strong>Kitchen, Bath & Turnkey Finishes:</strong> $28,000 - $45,000</li>
+      </ul>
     `,
-    date: 'January 2026',
+    date: 'March 2026',
     author: 'ADU Alliance Technical Team',
     featuredImage: 'https://www.adubuildlosangeles.com/images/before_and_after/collection-1/after.jpg',
     category: 'Costs & Pricing',
+    readTime: '7 min read',
+  },
+  {
+    id: 3,
+    title: 'ADU Orange County: Why Everyone Is Talking About New Laws (And You Should Too)',
+    slug: 'adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too',
+    excerpt: 'Complete analysis of updated California ADU legislation, municipal zoning setbacks, and HOA rights for Orange County homeowners.',
+    content: `
+      <h2>The Wave of Legislative Reform Across California</h2>
+      <p>Recent California state legislation (including Assembly Bill 1033, Senate Bill 9, and AB 68) has transformed accessory dwelling units in Orange County into an expedited property right. Homeowners can now construct detached ADUs up to 1,200 sq ft, convert garages without replacing parking, build despite HOA restrictions, and explore separate condominium conveyance under AB 1033.</p>
+      <h3>AB 1033: Selling an ADU as a Condominium</h3>
+      <p>Assembly Bill 1033 empowers local municipalities to allow property owners to deed-restrict and sell an ADU separately from the main home as a condominium unit, opening unprecedented homeownership and equity creation options across Orange County.</p>
+    `,
+    date: 'March 2026',
+    author: 'ADU Alliance Technical Team',
+    featuredImage: 'https://www.evoadu.com/assets/images/Home_Pic_5_Two_Home.jpg',
+    category: 'Regulations & Permits',
+    readTime: '6 min read',
+  },
+  {
+    id: 4,
+    title: 'Orange County ADU Permits in 15 Days? What SB 543 Means for Your Project',
+    slug: 'orange-county-adu-permits-sb-543',
+    excerpt: 'What California Senate Bill 543 means for Orange County ADU permits. 15-day initial review period, pre-approved plan check sets, and city approval timelines.',
+    content: `
+      <h2>Understanding SB 543 and Municipal Review Timelines</h2>
+      <p>Senate Bill 543 establishes a 15-day initial review period for local building departments to review pre-approved or standard plan sets; it does not guarantee final permit issuance in 15 days. While this significantly speeds up initial comments, comprehensive city plan check, utility verification, and engineering sign-off typically require 60 to 90 days across most Orange County municipalities.</p>
+    `,
+    date: 'March 2026',
+    author: 'ADU Alliance Technical Team',
+    featuredImage: 'https://www.adubuildlosangeles.com/images/new-images/ADU/Modern_ADU_in_suburban_backyard_202607271417_2.jpeg',
+    category: 'Permitting',
     readTime: '5 min read',
+  },
+  {
+    id: 5,
+    title: 'The Real Truth About ADU Construction Cost Per Square Foot in 2026',
+    slug: 'adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide',
+    excerpt: 'The real truth about ADU construction cost per square foot in Orange County for 2026. Why lowball $150/sq ft quotes fail and realistic line-item budgets.',
+    content: `
+      <h2>Realistic Cost Per Square Foot in Orange County</h2>
+      <p>In 2026, realistic turnkey ADU construction in Orange County ranges from $280 to $385 per square foot for ground-up detached builds, and $210 to $270 per square foot for garage conversions. Online advertisements claiming "$150/sq ft" almost universally exclude mandatory costs like concrete foundation pours, architectural engineering, city permit fees, trenching, and utility connections.</p>
+    `,
+    date: 'March 2026',
+    author: 'ADU Alliance Technical Team',
+    featuredImage: 'https://www.evoadu.com/assets/images/Home_Pic_6_TwoPlus_Home.jpg',
+    category: 'Costs & Pricing',
+    readTime: '7 min read',
   },
 ];

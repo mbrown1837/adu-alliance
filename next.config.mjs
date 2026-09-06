@@ -1378,6 +1378,46 @@ const nextConfig = {
             "source": "/zero-hassle-adu-permit-california-2026-guide",
             "destination": "/process",
             "permanent": true
+      },
+      {
+            "source": "/adu-garage-conversion-cost-in-orange-county",
+            "destination": "/blog/adu-garage-conversion-cost-in-orange-county",
+            "permanent": true
+      },
+      {
+            "source": "/adu-garage-conversion-cost-in-orange-county/",
+            "destination": "/blog/adu-garage-conversion-cost-in-orange-county",
+            "permanent": true
+      },
+      {
+            "source": "/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too",
+            "destination": "/blog/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too",
+            "permanent": true
+      },
+      {
+            "source": "/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too/",
+            "destination": "/blog/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too",
+            "permanent": true
+      },
+      {
+            "source": "/orange-county-adu-permits-sb-543",
+            "destination": "/blog/orange-county-adu-permits-sb-543",
+            "permanent": true
+      },
+      {
+            "source": "/orange-county-adu-permits-sb-543/",
+            "destination": "/blog/orange-county-adu-permits-sb-543",
+            "permanent": true
+      },
+      {
+            "source": "/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide",
+            "destination": "/blog/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide",
+            "permanent": true
+      },
+      {
+            "source": "/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide/",
+            "destination": "/blog/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide",
+            "permanent": true
       }
 ];
   },

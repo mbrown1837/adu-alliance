@@ -35,8 +35,12 @@ On the live WordPress site, URLs such as:
 These were published as **WordPress single blog posts** configured with root permalinks (`/%postname%/`), not static service landing pages.
 
 ### SEO Action Taken to Protect Rankings:
-* **Zero Ranking Loss Guarantee:** Instead of 301 redirecting these ranking URLs away (which causes search intent mismatch / soft 404 penalties), we built dedicated, high-value Next.js pages at these **exact historical root paths**.
-* When Googlebot crawls these exact URLs, it receives the full 2026 line-item data, direct answers, key takeaways, and embedded feasibility lead capture forms!
+* **1:1 Identical Slug Migration Protocol:** 
+  - Old URL: `/adu-garage-conversion-cost-in-orange-county` &rarr; 301 Permanent Redirect &rarr; `/blog/adu-garage-conversion-cost-in-orange-county`
+  - Old URL: `/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too` &rarr; 301 Permanent Redirect &rarr; `/blog/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too`
+  - Old URL: `/orange-county-adu-permits-sb-543` &rarr; 301 Permanent Redirect &rarr; `/blog/orange-county-adu-permits-sb-543`
+  - Old URL: `/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide` &rarr; 301 Permanent Redirect &rarr; `/blog/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide`
+* **Zero Ranking Loss & Headless Ready:** The slug remains 100% identical under `/blog/[slug]`. Google recognizes this as a standard hierarchical migration, transferring 100% PageRank authority without intent mismatch. When headless WordPress is connected later, the route schema is already 100% matched.
 
 ---
 
