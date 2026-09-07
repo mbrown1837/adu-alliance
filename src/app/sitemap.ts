@@ -1,9 +1,20 @@
 import { MetadataRoute } from 'next';
 import { ORANGE_COUNTY_CITIES, ADU_SERVICES, MOCK_BLOG_POSTS } from '@/lib/data';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://adualliance.com';
-  const currentDate = new Date().toISOString();
+  const currentDate = new Date();
+
+  // Fetch live blog posts for dynamic sitemap
+  let fetchedPosts: any[] = [];
+  try {
+    const res = await fetch('https://cms.adualliance.com/wp-json/wp/v2/posts?per_page=100', { next: { revalidate: 3600 } });
+    if (res.ok) {
+      fetchedPosts = await res.json();
+    }
+  } catch (error) {
+    console.error('Failed to fetch posts for sitemap');
+  }
 
   // Core Foundation Money Pages
   const coreRoutes: MetadataRoute.Sitemap = [
@@ -87,9 +98,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.85,
     },
-    ...MOCK_BLOG_POSTS.map((post) => ({
+    ...fetchedPosts.map((post: any) => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: currentDate,
+      lastModified: new Date(post.modified).toISOString(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
