@@ -6,9 +6,9 @@ import { ShieldCheck, MapPin, Clock, CheckCircle2, Phone, Home, Building2 } from
 import Link from 'next/link';
 
 interface LocationPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -18,7 +18,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: LocationPageProps): Promise<Metadata> {
-  const city = ORANGE_COUNTY_CITIES.find((c) => c.slug === params.slug);
+  const { slug } = await params;
+  const city = ORANGE_COUNTY_CITIES.find((c) => c.slug === slug);
   if (!city) return {};
 
   return {
@@ -30,8 +31,9 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
   };
 }
 
-export default function CityLocationPage({ params }: LocationPageProps) {
-  const city = ORANGE_COUNTY_CITIES.find((c) => c.slug === params.slug);
+export default async function CityLocationPage({ params }: LocationPageProps) {
+  const { slug } = await params;
+  const city = ORANGE_COUNTY_CITIES.find((c) => c.slug === slug);
 
   if (!city) {
     notFound();

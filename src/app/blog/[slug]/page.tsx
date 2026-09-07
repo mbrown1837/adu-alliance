@@ -7,23 +7,48 @@ import Footer from '@/components/Footer';
 import FeasibilityForm from '@/components/FeasibilityForm';
 
 async function getPost(slug: string) {
-  const res = await fetch(`https://cms.adualliance.com/wp-json/wp/v2/posts?slug=${slug}&_embed`, {
-    next: { revalidate: 3600 },
-  });
-  const posts = await res.json();
-  return posts[0] || null;
+  try {
+    const res = await fetch(`https://cms.adualliance.com/wp-json/wp/v2/posts?slug=${slug}&_embed`, {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return null;
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) return null;
+    const posts = await res.json();
+    return posts[0] || null;
+  } catch {
+    return null;
+  }
 }
 
 export async function generateStaticParams() {
-  const res = await fetch('https://cms.adualliance.com/wp-json/wp/v2/posts?per_page=100');
-  const posts = await res.json();
-  return posts.map((post: any) => ({
-    slug: post.slug,
-  }));
+  const allSlugs: { slug: string }[] = [];
+  let page = 1;
+  let hasMore = true;
+  
+  while (hasMore) {
+    try {
+      const res = await fetch(`https://cms.adualliance.com/wp-json/wp/v2/posts?per_page=50&page=${page}&_fields=slug`, {
+        next: { revalidate: 3600 },
+      });
+      if (!res.ok) break;
+      const posts = await res.json();
+      if (posts.length === 0) break;
+      allSlugs.push(...posts.map((p: any) => ({ slug: p.slug })));
+      const totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1');
+      hasMore = page < totalPages;
+      page++;
+    } catch {
+      break;
+    }
+  }
+  
+  return allSlugs;
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getPost(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPost(slug);
   if (!post) {
     return { title: 'Not Found' };
   }
@@ -37,8 +62,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const post = await getPost(params.slug);
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   if (!post) {
     notFound();

@@ -4,11 +4,27 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 async function getPosts() {
-  const res = await fetch('https://cms.adualliance.com/wp-json/wp/v2/posts?_embed&per_page=50', {
-    next: { revalidate: 3600 },
-  });
-  if (!res.ok) return [];
-  return res.json();
+  const allPosts: any[] = [];
+  let page = 1;
+  let hasMore = true;
+  
+  while (hasMore) {
+    try {
+      const res = await fetch(`https://cms.adualliance.com/wp-json/wp/v2/posts?_embed&per_page=50&page=${page}`, {
+        next: { revalidate: 3600 },
+      });
+      if (!res.ok) break;
+      const posts = await res.json();
+      if (posts.length === 0) break;
+      allPosts.push(...posts);
+      const totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1');
+      hasMore = page < totalPages;
+      page++;
+    } catch {
+      break;
+    }
+  }
+  return allPosts;
 }
 
 export default async function BlogIndex() {

@@ -1,20 +1,36 @@
 import { MetadataRoute } from 'next';
-import { ORANGE_COUNTY_CITIES, ADU_SERVICES, MOCK_BLOG_POSTS } from '@/lib/data';
+import { ORANGE_COUNTY_CITIES, ADU_SERVICES } from '@/lib/data';
+
+async function fetchAllPostSlugs() {
+  const allPosts: any[] = [];
+  let page = 1;
+  let hasMore = true;
+  
+  while (hasMore) {
+    try {
+      const res = await fetch(`https://cms.adualliance.com/wp-json/wp/v2/posts?per_page=50&page=${page}&_fields=slug,modified`, {
+        next: { revalidate: 3600 },
+      });
+      if (!res.ok) break;
+      const posts = await res.json();
+      if (posts.length === 0) break;
+      allPosts.push(...posts);
+      const totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1');
+      hasMore = page < totalPages;
+      page++;
+    } catch {
+      break;
+    }
+  }
+  return allPosts;
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://adualliance.com';
   const currentDate = new Date();
 
   // Fetch live blog posts for dynamic sitemap
-  let fetchedPosts: any[] = [];
-  try {
-    const res = await fetch('https://cms.adualliance.com/wp-json/wp/v2/posts?per_page=100', { next: { revalidate: 3600 } });
-    if (res.ok) {
-      fetchedPosts = await res.json();
-    }
-  } catch (error) {
-    console.error('Failed to fetch posts for sitemap');
-  }
+  const fetchedPosts = await fetchAllPostSlugs();
 
   // Core Foundation Money Pages
   const coreRoutes: MetadataRoute.Sitemap = [

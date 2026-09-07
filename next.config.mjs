@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  staticPageGenerationTimeout: 300,
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'www.evoadu.com' },
@@ -10,6 +11,8 @@ const nextConfig = {
       { protocol: 'https', hostname: 'www.ladu.co' },
       { protocol: 'https', hostname: 'ladu.co' },
       { protocol: 'https', hostname: 'adualliance.com' },
+      { protocol: 'https', hostname: 'cms.adualliance.com' },
+      { protocol: 'https', hostname: 'cdn.marblism.com' },
     ],
   },
   async redirects() {
