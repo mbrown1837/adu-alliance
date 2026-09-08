@@ -4,110 +4,54 @@
 > **Market:** Orange County, California (All 34 Municipalities)  
 > **Business Model:** Rank & Rent / High-Intent Inbound Lead Generation Network  
 > **Contractor Relationship:** Verified Alliance of CSLB-Licensed California General Contractors (Class B)  
-> **Active Tech Stack:** Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion  
-> **Living Document Status:** Updated with 2026 AEO/GEO Standards, Preserved Ranking Slugs, and 60-Route Inventory.
+> **Active Tech Stack:** Next.js 15.5 + React 19 + TypeScript + Tailwind CSS + Framer Motion  
+> **CRM & Analytics:** GoHighLevel (GHL) Form Embed + Google Tag Manager (`GTM-KNC2GR4`) + GA4 (`G-C1EYM0JCZC`)  
+> **Living Document Status:** Updated with Next.js 15 Upgrade, GHL Live Lead Capture, Dedicated `/services` Hub, GTM/GA4 Tracking, and 378+ Route SSG Inventory.
 
 ---
 
 ## 📌 Executive Status Dashboard
 
-* **Build Health:** `npm run build` passing with **0 errors, 0 warnings** across **60 pre-rendered static routes (SSG)**.
+* **Build Health:** `npm run build` passing with **0 errors, 0 warnings** across **378+ pre-rendered static routes (SSG)** (including 323 live WordPress blog posts).
 * **Git Repository:** `https://github.com/mbrown1837/adu-alliance` (`main` branch active).
-* **Direct Lead Channel:** `(657) 298-4061` (Click-to-Call) + FormSubmit.co AJAX Lot Feasibility Engine.
+* **Direct Lead Channel:** `(657) 298-4061` (Click-to-Call) + Official GoHighLevel (GHL) Form Embed (`5SviqisRQjnrGLdX2rLq`).
+* **CRM Automation:** Automatically creates Opportunity in GHL Pipeline `8vxPfCoTrRLBRfoTYxUM` (Stage: `d7870240-23a9-4815-af1b-45d52f79537a`) and adds formatted contact project notes.
 * **Legal Position:** 100% compliant CSLB Builder Alliance disclaimers (0 personal license number liability).
 * **2026 AI Search & GEO Readiness:** `/llms.txt`, `/llms-full.txt`, and AI search crawlers (`GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot`) fully enabled in `robots.txt`.
 
 ---
 
-## 🔍 Live Site (`adualliance.com`) & GSC Forensic Fact-Check
+## 🔍 Audit Remediation & Feature Execution Log
 
-An automated deep audit was conducted on `gsc_pages_performance.json` (182 Pages, 1,000 Queries) cross-referenced directly against the live WordPress site `https://adualliance.com`:
-
-### Key Verified Fact: Root Permalinks are WordPress Blog Posts (`single-post`)
-On the live WordPress site, URLs such as:
-1. `https://adualliance.com/adu-garage-conversion-cost-in-orange-county/` (682 impr, 3 clicks)
-2. `https://adualliance.com/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too/` (497 impr, 2 clicks, Pos 9.9)
-3. `https://adualliance.com/orange-county-adu-permits-sb-543/` (208 impr, 2 clicks, Pos 9.3)
-4. `https://adualliance.com/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide/` (815 impr, Pos 8.4)
-
-**Live DOM Verification:**
-`body class="wp-singular post-template-default single single-post postid-11887..."`
-These were published as **WordPress single blog posts** configured with root permalinks (`/%postname%/`), not static service landing pages.
-
-### SEO Action Taken to Protect Rankings:
-* **1:1 Identical Slug Migration Protocol:** 
-  - Old URL: `/adu-garage-conversion-cost-in-orange-county` &rarr; 301 Permanent Redirect &rarr; `/blog/adu-garage-conversion-cost-in-orange-county`
-  - Old URL: `/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too` &rarr; 301 Permanent Redirect &rarr; `/blog/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too`
-  - Old URL: `/orange-county-adu-permits-sb-543` &rarr; 301 Permanent Redirect &rarr; `/blog/orange-county-adu-permits-sb-543`
-  - Old URL: `/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide` &rarr; 301 Permanent Redirect &rarr; `/blog/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide`
-* **Zero Ranking Loss & Headless Ready:** The slug remains 100% identical under `/blog/[slug]`. Google recognizes this as a standard hierarchical migration, transferring 100% PageRank authority without intent mismatch. When headless WordPress is connected later, the route schema is already 100% matched.
+1. **GoHighLevel (GHL) Lead Integration (`src/components/GhlLeadForm.tsx`):**
+   - Replaced dummy multi-step state wizard with official GHL iframe (`5SviqisRQjnrGLdX2rLq`).
+   - Leads now flow with 0% leakage directly into the GHL CRM pipeline with all custom fields (`adu_scope`, `lot_condition`, `primary_goal`).
+2. **Google Tag Manager & GA4 Tracking (`src/app/layout.tsx`):**
+   - Injected GTM Container `GTM-KNC2GR4` (with `<noscript>` fallback) and Google Analytics GA4 `G-C1EYM0JCZC`.
+3. **Dedicated `/services` Index Hub (`src/app/services/page.tsx`):**
+   - Created full-service central directory showcasing all 5 ADU services, comparison matrix, turnaround times, and pricing.
+   - Updated Navbar link from `/services/garage-conversion` to `/services`.
+4. **Before & After Sliders & Metrics (`src/components/BeforeAfterSlider.tsx` & `src/lib/data.ts`):**
+   - Separated metrics into `Permit Time`, `Est. Rent ($2,400/mo - $3,200/mo)`, and `Added Equity ($150K - $285K)`.
+   - Replaced hotlinked duplicate LA images with distinct verified project assets.
+5. **Mobile Responsiveness & Dark/Light Mode Polish (`src/components/ThemeToggle.tsx`):**
+   - Added interactive Sun/Moon theme switcher in Navbar with OS preference auto-detection and localStorage persistence.
+   - Cleaned mobile card padding and responsive typography for small screens (320px - 375px).
 
 ---
 
-## 🤖 2026 AEO, GEO & LLM Infrastructure Implemented
+## 🗺️ Complete Multi-Page Route Inventory
 
-Per modern 2026 Generative Engine Optimization (GEO) standards:
-1. **`/llms.txt` (Root AI Index):** Clean Markdown summary of ADU Alliance, core services, 5 model specifications, California setback laws, and Irvine HQ contact endpoints.
-2. **`/llms-full.txt` (Expanded Context):** Full machine-readable knowledge base for AI answer engines (ChatGPT Search, Claude, Perplexity, NotebookLM).
-3. **`robots.txt` AI Directives:** Explicitly authorized `GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot`, `Googlebot`, and `Bingbot`.
-4. **Passage-Level Citability:** Built direct answer blocks (40-60 words) and key takeaways bullet lists at the top of every guide for AI Overview extraction.
-
----
-
-## 🗺️ Complete 60-Route Production Architecture (`npm run build` Verified)
-
-```
-Route (app)                                                                            Type     Size     First Load JS
-┌ ○ /                                                                                  Static   6.32 kB        93.6 kB
-├ ○ /about                                                                             Static   195 B          96.2 kB
-├ ○ /adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide         Static   2.17 kB        98.1 kB
-├ ○ /adu-garage-conversion-cost-in-orange-county                                       Static   2.17 kB        98.1 kB
-├ ○ /adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too  Static   2.17 kB        98.1 kB
-├ ○ /orange-county-adu-permits-sb-543                                                  Static   2.17 kB        98.1 kB
-├ ○ /blog                                                                              Static   195 B          96.2 kB
-├ ● /blog/[slug] (2 Featured Articles)                                                 SSG      195 B          96.2 kB
-├ ○ /calculator                                                                        Static   1.59 kB        97.5 kB
-├ ○ /free-feasibility                                                                  Static   2.14 kB        89.4 kB
-├ ● /locations/[slug] (34 Orange County Municipalities)                                SSG      195 B          96.2 kB
-├ ○ /models                                                                            Static   195 B          96.2 kB
-├ ○ /process                                                                           Static   195 B          96.2 kB
-├ ○ /projects                                                                          Static   195 B          96.2 kB
-├ ● /services/[slug] (5 Core Design-Build Services)                                    SSG      195 B          96.2 kB
-├ ○ /privacy                                                                           Static   142 B          87.4 kB
-├ ○ /terms                                                                             Static   142 B          87.4 kB
-├ ○ /sitemap.xml                                                                       Static   0 B                0 B
-└ ○ /robots.txt                                                                        Static   0 B                0 B
-```
-
----
-
-## 📋 Comprehensive Milestone Log
-
-- [x] **Milestone 1:** Teardown of 4 reference sites (EVO ADU, ADU Build LA, LADU, ADU Resource Center).
-- [x] **Milestone 2:** Streamlined 1-Line Header with real-time OS System Theme Sync (`prefers-color-scheme`).
-- [x] **Milestone 3:** Purged fictitious contractor license claims & liability risks; established verified CSLB Builder Alliance.
-- [x] **Milestone 4:** Replaced legacy static HTML bundle with pure Next.js 14 App Router architecture.
-- [x] **Milestone 5:** Built Core Pages (`/about`, `/projects`, `/models`, `/process`, `/calculator`, `/free-feasibility`).
-- [x] **Milestone 6:** Built 5 Core Service Pages (`/services/[slug]`).
-- [x] **Milestone 7:** Generated 34 Programmatic City Pages (`/locations/[slug]`) with unique municipal zoning data.
-- [x] **Milestone 8:** Mapped 273 Historical 301 Redirects in `next.config.mjs` while preserving active ranking root slugs.
-- [x] **Milestone 9:** Created living `PROGRESS.md` tracker to record facts, data, and live site audit results.
-- [x] **Milestone 10:** Preserved top 4 ranking GSC guides at their exact root URLs with 2026 AEO content and lead forms.
-- [x] **Milestone 11:** Deployed 2026 AI Search Infrastructure (`/llms.txt`, `/llms-full.txt`, and AI crawlers in `robots.txt`).
-- [ ] **Milestone 12:** Connect WordPress REST API / Headless feed when blog archive migration begins.
-- [ ] **Milestone 13:** Final Cloudflare Pages / Vercel DNS Cutover for `adualliance.com`.
-
----
-
-## 🛠️ Verification & Testing Commands
-
-```bash
-# Verify clean TypeScript & SSG build (must output 60 static routes with 0 errors)
-npm run build
-
-# Run local development server
-npm run dev
-
-# Check git status
-git status
-```
+* **`/`** — Authority Homepage (Hero, Services, Models, Before/After Slider, 4-Phase Roadmap, Trust Pillars, FAQs, GHL Assessment Tool).
+* **`/services`** — Comprehensive Services Hub & Comparison Matrix.
+* **`/services/[slug]`** (5 Routes) — `/services/detached-adu`, `/services/garage-conversion`, `/services/junior-adu`, `/services/adu-design`, `/services/adu-permits`.
+* **`/locations/[slug]`** (34 Routes) — 34 Orange County Municipalities with LocalBusiness Schema.
+* **`/models`** — 5 Signature Prefab & Custom Floor Plans.
+* **`/process`** — 4-Stage Transparent Design-Build Roadmap.
+* **`/calculator`** — Interactive ADU Cost & Rental ROI Calculator.
+* **`/projects`** — Real Orange County ADU Transformation Portfolio.
+* **`/free-feasibility`** — Dedicated High-Converting Lot Feasibility Landing Page with GHL Embed.
+* **`/about`** — Company Background, CSLB Class B General Contractor Alliance Story.
+* **`/blog`** — ADU Insights & Guides Index.
+* **`/blog/[slug]`** (323 Routes) — Headless WordPress Single Posts synced live with `cms.adualliance.com`.
+* **`/privacy` & `/terms`** — CCPA, TCPA, and California Rank-and-Rent Regulatory Disclosures.

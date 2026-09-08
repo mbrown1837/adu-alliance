@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, ArrowRight, ShieldCheck, Phone } from 'lucide-react';
+import ThemeToggle from '@/components/ThemeToggle';
+import { trackPhoneCallClick } from '@/lib/gtm';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +23,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-3">
             <span>Direct Planning Desk:</span>
-            <a href="tel:6572984061" className="text-white hover:text-brand-amber font-bold">
+            <a href="tel:6572984061" onClick={() => trackPhoneCallClick('6572984061', 'MicroTrustBar')} className="text-white hover:text-brand-amber font-bold">
               (657) 298-4061
             </a>
           </div>
@@ -44,18 +46,21 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-slate-300">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-7 text-xs font-bold uppercase tracking-wider text-slate-300">
           <Link href="/models" className="hover:text-white transition-colors">Models</Link>
-          <Link href="/services/garage-conversion" className="hover:text-white transition-colors">Services</Link>
+          <Link href="/services" className="hover:text-white transition-colors">Services</Link>
           <Link href="/process" className="hover:text-white transition-colors">Process</Link>
           <Link href="/calculator" className="hover:text-white transition-colors">Estimator</Link>
           <Link href="/projects" className="hover:text-white transition-colors">Projects</Link>
+          <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
           <Link href="/about" className="hover:text-white transition-colors">About</Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
+          <ThemeToggle />
           <a
             href="tel:6572984061"
+            onClick={() => trackPhoneCallClick('6572984061', 'DesktopHeaderNav')}
             className="text-xs font-mono font-bold text-slate-300 hover:text-white flex items-center gap-1.5"
           >
             <Phone className="w-3.5 h-3.5 text-brand-amber" /> (657) 298-4061
@@ -68,13 +73,16 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 text-white"
-          aria-label="Toggle Navigation"
-        >
-          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="p-2 text-white"
+            aria-label="Toggle Navigation"
+          >
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -82,15 +90,17 @@ export default function Navbar() {
         <div className="md:hidden bg-brand-dark border-b border-brand-borderDark px-6 py-6 space-y-4">
           <nav className="flex flex-col gap-4 text-base font-semibold text-slate-300">
             <Link href="/models" onClick={() => setMenuOpen(false)} className="hover:text-white">Models</Link>
-            <Link href="/services/garage-conversion" onClick={() => setMenuOpen(false)} className="hover:text-white">Services</Link>
+            <Link href="/services" onClick={() => setMenuOpen(false)} className="hover:text-white">Services</Link>
             <Link href="/process" onClick={() => setMenuOpen(false)} className="hover:text-white">Process</Link>
             <Link href="/calculator" onClick={() => setMenuOpen(false)} className="hover:text-white">Estimator</Link>
             <Link href="/projects" onClick={() => setMenuOpen(false)} className="hover:text-white">Projects</Link>
+            <Link href="/blog" onClick={() => setMenuOpen(false)} className="hover:text-white">Blog</Link>
             <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-white">About</Link>
           </nav>
           <div className="pt-2 flex flex-col gap-3">
             <a
               href="tel:6572984061"
+              onClick={() => trackPhoneCallClick('6572984061', 'MobileNavDrawer')}
               className="py-3 bg-brand-black border border-brand-borderDark text-white text-center font-bold text-xs rounded-xl flex items-center justify-center gap-2"
             >
               <Phone className="w-4 h-4 text-brand-amber" /> Call (657) 298-4061

@@ -117,14 +117,18 @@ export default function BeforeAfterSlider() {
                   </div>
 
                   {/* Highlights */}
-                  <div className="grid grid-cols-2 gap-3 text-xs font-mono py-2 bg-brand-black rounded-xl border border-brand-borderDark px-4">
+                  <div className="grid grid-cols-3 gap-2 text-xs font-mono py-2.5 bg-brand-black rounded-xl border border-brand-borderDark px-3">
                     <div>
-                      <span className="text-slate-500 block text-[10px]">Permit Duration</span>
-                      <strong className="text-white">{cs.permitWeeks}</strong>
+                      <span className="text-slate-500 block text-[9px] uppercase">Permit Time</span>
+                      <strong className="text-white text-xs">{cs.permitWeeks}</strong>
                     </div>
                     <div>
-                      <span className="text-slate-500 block text-[10px]">Monthly Cash Flow</span>
-                      <strong className="text-brand-emerald">{cs.rentalIncome}</strong>
+                      <span className="text-slate-500 block text-[9px] uppercase">Est. Rent</span>
+                      <strong className="text-brand-emerald text-xs">{cs.rentalIncome}</strong>
+                    </div>
+                    <div>
+                      <span className="text-slate-500 block text-[9px] uppercase">Added Equity</span>
+                      <strong className="text-brand-amber text-xs">{cs.equityAdded || '$150K+ Equity'}</strong>
                     </div>
                   </div>
 

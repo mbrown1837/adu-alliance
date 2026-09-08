@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Outfit, JetBrains_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -93,12 +94,52 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${jetbrains.variable} scroll-smooth bg-brand-black text-white`}>
       <head>
+        {/* Google Tag Manager Container */}
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KNC2GR4');`,
+          }}
+        />
+
+        {/* Google tag (gtag.js) GA4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-C1EYM0JCZC"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="ga4-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-C1EYM0JCZC');
+            `,
+          }}
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
       </head>
       <body className="bg-brand-black text-white font-sans antialiased selection:bg-brand-amber selection:text-black flex flex-col min-h-screen">
+        {/* Google Tag Manager (noscript fallback) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KNC2GR4"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

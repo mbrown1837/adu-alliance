@@ -11,21 +11,21 @@ export default function EvoModelShowcase() {
   ];
 
   return (
-    <section id="models" className="py-24 px-6 bg-brand-black space-y-24">
-      <div className="max-w-7xl mx-auto space-y-24">
+    <section id="models" className="py-16 sm:py-24 px-4 sm:px-6 bg-brand-black space-y-16 sm:space-y-24">
+      <div className="max-w-7xl mx-auto space-y-16 sm:space-y-24">
         
         {/* Part 1: Model Grid */}
-        <div className="space-y-16">
+        <div className="space-y-10 sm:space-y-16">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-brand-borderDark pb-6">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold">
                 FIVE SIGNATURE MODELS &bull; STUDIOS TO TWO-BEDROOM HOMES
               </span>
-              <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-white mt-1">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-white mt-1">
                 Find your ADU
               </h2>
             </div>
-            <a href="#assessment" className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-white">
+            <a href="#assessment" className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-white shrink-0">
               Compare all models &rarr;
             </a>
           </div>
@@ -34,8 +34,8 @@ export default function EvoModelShowcase() {
             {EVO_MODELS.map((model, idx) => (
               <div
                 key={model.id}
-                className={`relative rounded-3xl overflow-hidden bg-brand-dark border border-brand-borderDark group flex flex-col justify-end aspect-[4/3] ${
-                  idx === 0 ? 'lg:col-span-2 aspect-[16/9]' : ''
+                className={`relative rounded-2xl sm:rounded-3xl overflow-hidden bg-brand-dark border border-brand-borderDark group flex flex-col justify-end min-h-[300px] sm:min-h-[360px] ${
+                  idx === 0 ? 'lg:col-span-2 min-h-[320px] sm:min-h-[420px]' : ''
                 }`}
               >
                 <img
@@ -43,23 +43,20 @@ export default function EvoModelShowcase() {
                   alt={`${model.name} ADU`}
                   className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
 
-                <div className="relative z-10 p-6 sm:p-8 space-y-3">
-                  <h3
-                    className="font-black uppercase text-white leading-none tracking-tighter"
-                    style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
-                  >
+                <div className="relative z-10 p-5 sm:p-8 space-y-3">
+                  <h3 className="font-black uppercase text-white leading-tight tracking-tighter text-3xl sm:text-4xl lg:text-6xl">
                     {model.name}
                   </h3>
 
                   <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-white/20">
-                    <p className="text-sm sm:text-base font-semibold text-white/90">
+                    <p className="text-xs sm:text-base font-semibold text-white/90">
                       From <span className="font-mono text-brand-amber font-bold">{model.priceFormatted}</span> &bull; {model.sqft} sq ft
                     </p>
                     <a
                       href="#assessment"
-                      className="px-4 py-2 bg-white/20 hover:bg-white text-white hover:text-black font-bold text-xs uppercase rounded-full backdrop-blur-md transition-all"
+                      className="px-4 py-2 bg-white/20 hover:bg-white text-white hover:text-black font-bold text-xs uppercase rounded-full backdrop-blur-md transition-all shrink-0"
                     >
                       Configure &rarr;
                     </a>
@@ -71,23 +68,23 @@ export default function EvoModelShowcase() {
         </div>
 
         {/* Part 2: Living & Interiors Editorial Gallery */}
-        <div id="interiors" className="space-y-16 pt-12 border-t border-brand-borderDark">
+        <div id="interiors" className="space-y-12 sm:space-y-16 pt-8 sm:pt-12 border-t border-brand-borderDark">
           <div className="max-w-3xl space-y-3">
             <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold">
               ARCHITECTURAL FINISHES
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-white">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-white">
               Living & Interiors
             </h2>
-            <p className="text-sm sm:text-base text-slate-300">
+            <p className="text-xs sm:text-base text-slate-300">
               Every unit is designed to feel like home from day one. Warm finishes, smart layouts, and natural light throughout.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {INTERIORS_GALLERY.map((item, idx) => (
-              <div key={idx} className="space-y-4 group">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-brand-dark border border-brand-borderDark">
+              <div key={idx} className="space-y-3 group">
+                <div className="relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden bg-brand-dark border border-brand-borderDark">
                   <img
                     src={item.imageUrl}
                     alt={item.title}
@@ -95,7 +92,7 @@ export default function EvoModelShowcase() {
                   />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="text-lg font-bold text-white tracking-tight">{item.title}</h4>
+                  <h4 className="text-base sm:text-lg font-bold text-white tracking-tight">{item.title}</h4>
                   <p className="text-xs text-slate-400 leading-relaxed">{item.description}</p>
                 </div>
               </div>
@@ -104,20 +101,20 @@ export default function EvoModelShowcase() {
         </div>
 
         {/* Part 3: Built for California Specs */}
-        <div className="p-8 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark space-y-10">
-          <div className="max-w-2xl space-y-3">
+        <div className="p-6 sm:p-12 bg-brand-dark rounded-2xl sm:rounded-3xl border border-brand-borderDark space-y-8 sm:space-y-10">
+          <div className="max-w-2xl space-y-2 sm:space-y-3">
             <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold">
               PRECISION PERFORMANCE
             </span>
             <h3 className="text-2xl sm:text-4xl font-black uppercase tracking-tighter text-white">
               Built for California
             </h3>
-            <p className="text-sm text-slate-300">
+            <p className="text-xs sm:text-sm text-slate-300">
               Fire-resistant, climate-ready, and solar-compatible infrastructure engineered for Orange County climate and code.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {specs.map((s, i) => {
               const Icon = s.icon;
               return (

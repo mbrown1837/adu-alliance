@@ -36,6 +36,7 @@ export interface CaseStudy {
   cost: string;
   permitWeeks: string;
   rentalIncome: string;
+  equityAdded?: string;
   beforeImage: string;
   afterImage: string;
   description: string;

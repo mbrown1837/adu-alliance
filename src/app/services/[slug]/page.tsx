@@ -2,8 +2,9 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ADU_SERVICES, EVO_MODELS } from '@/lib/data';
-import { ShieldCheck, CheckCircle2, Clock, Phone, ArrowRight, DollarSign, FileCheck, Layers } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Clock, Phone, ArrowRight, DollarSign, FileCheck, Layers, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
+import GhlLeadForm from '@/components/GhlLeadForm';
 
 interface ServicePageProps {
   params: Promise<{
@@ -24,9 +25,15 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   return {
     title: `${service.title} in Orange County, CA | ADU Alliance`,
-    description: `${service.description.slice(0, 160)} Call (657) 298-4061 for a free property feasibility assessment.`,
+    description: `${service.description.slice(0, 150)} Guaranteed municipal permits across 34 OC cities. Call (657) 298-4061 for lot assessment.`,
     alternates: {
       canonical: `https://adualliance.com/services/${service.slug}`,
+    },
+    openGraph: {
+      title: `${service.title} | Orange County ADU Alliance`,
+      description: service.description,
+      url: `https://adualliance.com/services/${service.slug}`,
+      images: [{ url: service.imageUrl, alt: service.title }],
     },
   };
 }
@@ -46,7 +53,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     provider: {
       '@type': 'GeneralContractor',
       name: 'ADU Alliance',
-      telephone: '+16572984061',
+      telephone: '+1-657-298-4061',
       url: 'https://adualliance.com',
       priceRange: '$149,000 - $350,000',
       address: {
@@ -76,7 +83,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         '@type': 'ListItem',
         position: 2,
         name: 'Services',
-        item: 'https://adualliance.com/#services',
+        item: 'https://adualliance.com/services',
       },
       {
         '@type': 'ListItem',
@@ -87,8 +94,16 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     ],
   };
 
+  const serviceCostBreakdown = [
+    { item: 'Architectural Plans & Structural Engineering', range: '$6,000 - $9,500', note: 'Includes Title 24 energy calculations & 3D renderings' },
+    { item: 'Municipal Plan Check & City Permit Fees', range: '$2,500 - $5,000', note: 'Exempt from school impact fees if under 500 sq ft' },
+    { item: 'Plumbing Trenching & Sewer Utility Connection', range: '$8,000 - $18,000', note: 'Independent subpanel & dedicated water tie-in' },
+    { item: 'Structural Foundation & Framing Scope', range: '$35,000 - $85,000', note: 'Engineered slab pour or garage envelope retrofit' },
+    { item: 'Interior Finishes, Kitchen & Bath Turnkey', range: '$28,000 - $55,000', note: 'Quartz counters, mini-split HVAC & custom cabinetry' },
+  ];
+
   return (
-    <div className="py-16 sm:py-24 px-6 max-w-7xl mx-auto space-y-24">
+    <div className="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto space-y-16 sm:space-y-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -99,7 +114,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       />
 
       {/* Hero Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
         <div className="lg:col-span-7 space-y-6">
           <div className="flex items-center gap-2 text-brand-amber text-xs font-mono font-bold uppercase tracking-wider">
             <span>Service {service.number} &bull; {service.category}</span>
@@ -119,110 +134,103 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               <div className="text-xl font-black text-brand-amber">{service.turnaroundTime}</div>
             </div>
             <div className="p-4 bg-brand-dark rounded-2xl border border-brand-borderDark">
-              <div className="text-xs text-slate-400">Permit Guarantee</div>
-              <div className="text-xl font-black text-brand-emerald">100% Pass</div>
+              <div className="text-xs text-slate-400">City Permits</div>
+              <div className="text-xl font-black text-white">100% In-House</div>
             </div>
             <div className="p-4 bg-brand-dark rounded-2xl border border-brand-borderDark col-span-2 sm:col-span-1">
-              <div className="text-xs text-slate-400">Contract Scope</div>
-              <div className="text-xl font-black text-white">Turnkey</div>
+              <div className="text-xs text-slate-400">Contractor License</div>
+              <div className="text-xl font-black text-brand-emerald">Class B Alliance</div>
             </div>
+          </div>
+
+          <div className="pt-2">
+            <a
+              href="#assessment"
+              className="inline-block px-8 py-4 bg-brand-amber hover:bg-white text-black font-black text-xs uppercase tracking-wider rounded-full shadow transition-all"
+            >
+              Get Free Feasibility for This Scope &rarr;
+            </a>
           </div>
         </div>
 
-        {/* Hero Image */}
-        <div className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden bg-brand-dark border border-brand-borderDark shadow-xl">
-          <img
-            src={service.imageUrl}
-            alt={service.title}
-            className="w-full h-full object-cover"
-          />
+        <div className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden bg-brand-dark border border-brand-borderDark shadow-2xl">
+          <img src={service.imageUrl} alt={service.title} className="w-full h-full object-cover" />
         </div>
       </div>
 
-      {/* Features & Scope List */}
-      <div className="p-8 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark space-y-8">
+      {/* 2026 Line-Item Cost Breakdown Table */}
+      <div className="p-6 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark space-y-8 shadow-xl">
         <div className="max-w-3xl space-y-2">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-amber">
-            WHAT IS INCLUDED IN THIS SCOPE
+            2026 COST BREAKDOWN &bull; LINE-ITEM TRANSPARENCY
           </span>
           <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight">
-            Turnkey Deliverables & Engineering
+            Estimated Line-Item Costs for {service.title}
           </h2>
-          <p className="text-sm text-slate-300">
-            One single contract covering all phases with zero surprise change-orders.
+          <p className="text-xs sm:text-sm text-slate-300">
+            Real budget allocations across architectural drawings, city permit fees, utility trenching, and turnkey construction in Orange County.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {service.features.map((feat, i) => (
-            <div
-              key={i}
-              className="p-6 bg-brand-black rounded-2xl border border-brand-borderDark flex items-start gap-4"
-            >
-              <div className="w-8 h-8 rounded-lg bg-brand-amber/10 text-brand-amber flex items-center justify-center shrink-0 font-mono font-bold text-sm">
-                0{i + 1}
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs font-mono text-slate-300 border-collapse">
+            <thead>
+              <tr className="border-b border-brand-borderDark text-brand-amber uppercase font-bold">
+                <th className="py-3 px-4">Cost Component</th>
+                <th className="py-3 px-4">Typical Range</th>
+                <th className="py-3 px-4">Key Details & Code Notes</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-borderDark/60">
+              {serviceCostBreakdown.map((row, idx) => (
+                <tr key={idx}>
+                  <td className="py-3.5 px-4 font-bold text-white font-sans">{row.item}</td>
+                  <td className="py-3.5 px-4 text-brand-amber font-bold">{row.range}</td>
+                  <td className="py-3.5 px-4 text-slate-400 font-sans">{row.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Features & Scope Detail Cards */}
+      <div className="p-6 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark space-y-8 shadow-xl">
+        <div className="max-w-3xl space-y-2">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-amber">
+            SCOPE SPECIFICATIONS
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight">
+            What's Included in Your Single-Contract Scope
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {service.features.map((feature, i) => (
+            <div key={i} className="p-5 bg-brand-black rounded-2xl border border-brand-borderDark flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-brand-emerald shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-white font-bold text-sm block">{feature}</strong>
+                <span className="text-xs text-slate-400">Full architectural compliance and licensed Class B construction oversight.</span>
               </div>
-              <p className="text-sm text-white font-medium leading-relaxed pt-1">
-                {feat}
-              </p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Sibling Services Navigation */}
-      <div className="space-y-6">
-        <div className="border-b border-brand-borderDark pb-4">
-          <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold">
-            OTHER DESIGN-BUILD SERVICES
-          </span>
-          <h3 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight mt-1">
-            Explore All 5 Core ADU Scopes
-          </h3>
+      {/* Embedded Live GHL Assessment Hub */}
+      <div id="assessment" className="space-y-6 pt-6">
+        <div className="text-center max-w-2xl mx-auto space-y-2">
+          <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight">
+            Request Your {service.title} Quote
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300">
+            Get exact line-item estimates and municipal permit review details for your property within 1 business day.
+          </p>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {ADU_SERVICES.filter((s) => s.slug !== service.slug).map((sibling) => (
-            <Link
-              key={sibling.id}
-              href={`/services/${sibling.slug}`}
-              className="p-6 bg-brand-dark rounded-2xl border border-brand-borderDark hover:border-brand-amber transition-all space-y-2 group block"
-            >
-              <span className="text-xs font-mono text-brand-amber font-bold">Service {sibling.number}</span>
-              <h4 className="text-base font-bold text-white group-hover:text-brand-amber transition-colors">
-                {sibling.title}
-              </h4>
-              <p className="text-xs text-slate-400 line-clamp-2">
-                {sibling.tagline}
-              </p>
-            </Link>
-          ))}
-        </div>
+        <GhlLeadForm minHeight="920px" />
       </div>
 
-      {/* Lead Generation CTA */}
-      <div className="text-center p-12 bg-gradient-to-r from-brand-dark to-brand-black rounded-3xl border border-brand-borderDark space-y-6">
-        <h2 className="text-3xl font-black uppercase text-white tracking-tight">
-          Request a Feasibility Review for {service.title}
-        </h2>
-        <p className="text-sm text-slate-300 max-w-xl mx-auto">
-          We evaluate your property setbacks, existing utilities, and municipal zoning rules within 24 hours. Free 30-minute consultation with our licensed builders.
-        </p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <Link
-            href={`/free-feasibility?service=${service.slug}`}
-            className="px-8 py-4 bg-brand-amber hover:bg-white text-black font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all"
-          >
-            Get Free {service.title} Plan &rarr;
-          </Link>
-          <a
-            href="tel:+16572984061"
-            className="px-8 py-4 bg-brand-black hover:bg-brand-dark text-white border border-brand-borderDark font-bold text-xs uppercase tracking-wider rounded-full transition-all"
-          >
-            Call (657) 298-4061
-          </a>
-        </div>
-      </div>
     </div>
   );
 }
