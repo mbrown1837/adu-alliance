@@ -70,7 +70,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
-  const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.evoadu.com/assets/images/Home_Pic_5_Two_Home.jpg';
+  const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/localized/adu_asset_52dc4cc0e2.jpg';
   const category = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'ADU Guide';
   const authorName = post._embedded?.['author']?.[0]?.name || 'ADU Alliance Technical Team';
 

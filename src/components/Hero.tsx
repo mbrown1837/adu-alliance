@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Background Cinematic Visual */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://www.adubuildlosangeles.com/_next/image?url=%2Fimages%2Fnew-images%2FHero%2FModern_ADU_in_suburban_backyard_202607271433.jpeg&w=3840&q=75"
+          src="/images/localized/adu_asset_7b7dec0f36.jpeg"
           alt="Modern ADU built by ADU Alliance"
           className="w-full h-full object-cover object-center scale-105"
         />

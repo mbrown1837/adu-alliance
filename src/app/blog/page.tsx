@@ -45,7 +45,7 @@ export default async function BlogIndex() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post: any) => {
-             const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://www.evoadu.com/assets/images/Home_Pic_5_Two_Home.jpg';
+             const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/localized/adu_asset_52dc4cc0e2.jpg';
              const category = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'ADU Guide';
              let rawExcerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '');
              rawExcerpt = rawExcerpt.replace(/&[a-z]+;/gi, '');

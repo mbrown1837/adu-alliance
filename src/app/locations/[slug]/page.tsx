@@ -53,7 +53,7 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
     url: `https://adualliance.com/locations/${city.slug}`,
     telephone: '+1-657-298-4061',
     priceRange: '$149,000 - $350,000',
-    image: 'https://www.evoadu.com/assets/images/Home_Pic_5_Two_Home.jpg',
+    image: '/images/localized/adu_asset_52dc4cc0e2.jpg',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '2372 Morse Ave',

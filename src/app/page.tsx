@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: 'ADU Alliance',
     images: [
       {
-        url: 'https://www.evoadu.com/assets/images/Home_Pic_1_Hero_Home.jpg',
+        url: '/images/localized/adu_asset_2d7f1775c8.jpg',
         width: 1200,
         height: 630,
         alt: 'Modern ADU in Orange County Backyard',

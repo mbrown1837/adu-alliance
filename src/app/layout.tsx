@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'ADU Alliance',
     images: [
       {
-        url: 'https://www.adubuildlosangeles.com/_next/image?url=%2Fimages%2Fnew-images%2FHero%2FModern_ADU_in_suburban_backyard_202607271433.jpeg&w=3840&q=75',
+        url: '/images/localized/adu_asset_7b7dec0f36.jpeg',
         width: 1200,
         height: 630,
         alt: 'Modern ADU Built by ADU Alliance in Orange County',
@@ -56,7 +56,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'GeneralContractor',
     name: 'ADU Alliance',
-    image: 'https://www.adubuildlosangeles.com/_next/image?url=%2Fimages%2Fnew-images%2FHero%2FModern_ADU_in_suburban_backyard_202607271433.jpeg&w=3840&q=75',
+    image: '/images/localized/adu_asset_7b7dec0f36.jpeg',
     '@id': 'https://adualliance.com/#organization',
     url: 'https://adualliance.com',
     telephone: '+1-657-298-4061',
