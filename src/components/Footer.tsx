@@ -5,7 +5,7 @@ import { ShieldCheck, Phone, MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black text-slate-400 pt-16 pb-28 sm:pb-20 px-6 border-t border-brand-borderDark text-xs">
+    <footer className="bg-brand-black text-slate-400 pt-16 pb-28 sm:pb-20 px-6 border-t border-brand-borderDark text-xs force-dark">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">

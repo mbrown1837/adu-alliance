@@ -47,11 +47,11 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 lg:gap-7 text-xs font-bold uppercase tracking-wider text-slate-300">
-          <Link href="/models" className="hover:text-white transition-colors">Models</Link>
+          <Link href="/#models" className="hover:text-white transition-colors">Models</Link>
           <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-          <Link href="/process" className="hover:text-white transition-colors">Process</Link>
+          <Link href="/#process" className="hover:text-white transition-colors">Process</Link>
           <Link href="/calculator" className="hover:text-white transition-colors">Estimator</Link>
-          <Link href="/projects" className="hover:text-white transition-colors">Projects</Link>
+          <Link href="/#projects" className="hover:text-white transition-colors">Projects</Link>
           <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
           <Link href="/about" className="hover:text-white transition-colors">About</Link>
         </nav>
@@ -89,11 +89,11 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-brand-dark border-b border-brand-borderDark px-6 py-6 space-y-4">
           <nav className="flex flex-col gap-4 text-base font-semibold text-slate-300">
-            <Link href="/models" onClick={() => setMenuOpen(false)} className="hover:text-white">Models</Link>
+            <Link href="/#models" onClick={() => setMenuOpen(false)} className="hover:text-white">Models</Link>
             <Link href="/services" onClick={() => setMenuOpen(false)} className="hover:text-white">Services</Link>
-            <Link href="/process" onClick={() => setMenuOpen(false)} className="hover:text-white">Process</Link>
+            <Link href="/#process" onClick={() => setMenuOpen(false)} className="hover:text-white">Process</Link>
             <Link href="/calculator" onClick={() => setMenuOpen(false)} className="hover:text-white">Estimator</Link>
-            <Link href="/projects" onClick={() => setMenuOpen(false)} className="hover:text-white">Projects</Link>
+            <Link href="/#projects" onClick={() => setMenuOpen(false)} className="hover:text-white">Projects</Link>
             <Link href="/blog" onClick={() => setMenuOpen(false)} className="hover:text-white">Blog</Link>
             <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-white">About</Link>
           </nav>

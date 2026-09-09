@@ -39,33 +39,31 @@
   }
 }
 
-/* Light mode component overrides */
-html.light .bg-brand-black,
-html.light .bg-brand-dark,
-html.light .bg-brand-canvas {
-  background-color: var(--bg-canvas) !important;
+/* Force Dark Container Context (Hero, Dark Cards, Footer, Portal) */
+.force-dark {
+  background-color: #111111 !important;
+  color: #ffffff !important;
 }
-
-html.light .bg-brand-gray-900,
-html.light .bg-brand-gray-800 {
-  background-color: var(--bg-card) !important;
+.force-dark .text-white,
+.force-dark .text-brand-white,
+.force-dark h1,
+.force-dark h2,
+.force-dark h3,
+.force-dark h4 {
+  color: #ffffff !important;
 }
-
-html.light .border-brand-borderDark,
-html.light .border-brand-gray-800 {
-  border-color: var(--border-main) !important;
+.force-dark .text-slate-300,
+.force-dark .text-slate-400,
+.force-dark .text-brand-gray-300,
+.force-dark .text-brand-gray-400,
+.force-dark p {
+  color: #cbd5e1 !important;
 }
-
-html.light .text-white,
-html.light .text-brand-white {
-  color: var(--text-main) !important;
+.force-dark .text-brand-amber {
+  color: #ffac00 !important;
 }
-
-html.light .text-slate-300,
-html.light .text-slate-400,
-html.light .text-brand-gray-300,
-html.light .text-brand-gray-400 {
-  color: var(--text-sub) !important;
+.force-dark .border-brand-borderDark {
+  border-color: #262626 !important;
 }
 
 .glass-nav-dark {

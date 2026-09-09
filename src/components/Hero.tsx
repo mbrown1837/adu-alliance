@@ -3,7 +3,7 @@ import { ArrowRight, Star, ShieldCheck } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90dvh] flex flex-col justify-end pt-28 sm:pt-36 pb-12 sm:pb-20 px-4 sm:px-6 overflow-hidden bg-brand-black text-white">
+    <section className="relative min-h-[90dvh] flex flex-col justify-end pt-28 sm:pt-36 pb-12 sm:pb-20 px-4 sm:px-6 overflow-hidden bg-brand-black text-white force-dark">
       {/* Background Cinematic Visual */}
       <div className="absolute inset-0 z-0">
         <img

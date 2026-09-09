@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { trackFormSubmission } from '@/lib/gtm';
+import { Phone, Loader2 } from 'lucide-react';
 
 interface GhlLeadFormProps {
   className?: string;
@@ -9,6 +10,8 @@ interface GhlLeadFormProps {
 }
 
 export default function GhlLeadForm({ className = '', minHeight = '920px' }: GhlLeadFormProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     // Dynamically inject GHL form embed script if not already present
     const existingScript = document.querySelector('script[src="https://link.westlanddre.com/js/form_embed.js"]');
@@ -35,15 +38,27 @@ export default function GhlLeadForm({ className = '', minHeight = '920px' }: Ghl
   }, []);
 
   return (
-    <div className={`w-full overflow-hidden rounded-2xl bg-brand-dark border border-brand-borderDark shadow-2xl p-2 sm:p-6 ${className}`}>
+    <div className={`w-full overflow-hidden rounded-2xl bg-brand-dark border border-brand-borderDark shadow-2xl p-2 sm:p-6 force-dark ${className}`}>
+      
+      {/* Loading Skeleton */}
+      {isLoading && (
+        <div className="w-full py-16 flex flex-col items-center justify-center space-y-3 text-slate-400 font-mono text-xs animate-pulse">
+          <Loader2 className="w-8 h-8 text-brand-amber animate-spin" />
+          <span>Loading Secure Lot Assessment Form...</span>
+        </div>
+      )}
+
+      {/* GHL Iframe Embed */}
       <iframe
         src="https://link.westlanddre.com/widget/form/5SviqisRQjnrGLdX2rLq"
+        onLoad={() => setIsLoading(false)}
         style={{
           width: '100%',
           minHeight,
           border: 'none',
           borderRadius: '8px',
           background: 'transparent',
+          display: isLoading ? 'none' : 'block',
         }}
         id="inline-5SviqisRQjnrGLdX2rLq"
         data-layout="{'id':'INLINE'}"
@@ -61,6 +76,17 @@ export default function GhlLeadForm({ className = '', minHeight = '920px' }: Ghl
         data-cookie-consent-provider="auto"
         title="ADU Alliance Official Feasibility Assessment Form"
       />
+
+      {/* Fallback Assistance Banner */}
+      <div className="mt-4 p-3.5 bg-brand-black rounded-xl border border-brand-borderDark/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-slate-300 text-center sm:text-left">
+        <span>Having trouble loading the form?</span>
+        <a
+          href="tel:6572984061"
+          className="text-brand-amber hover:text-white font-bold flex items-center gap-1.5 shrink-0"
+        >
+          <Phone className="w-3.5 h-3.5" /> Call Planning Desk: (657) 298-4061
+        </a>
+      </div>
     </div>
   );
 }

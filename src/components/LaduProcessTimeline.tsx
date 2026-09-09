@@ -4,7 +4,7 @@ import { CheckCircle2, Clock, ShieldCheck, ArrowRight, Check } from 'lucide-reac
 
 export default function LaduProcessTimeline() {
   return (
-    <section id="process" className="py-24 px-6 bg-brand-dark border-y border-brand-borderDark relative overflow-hidden">
+    <section id="process" className="py-24 px-6 bg-brand-dark border-y border-brand-borderDark relative overflow-hidden force-dark">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-amber/5 rounded-full blur-[140px] pointer-events-none" />
 

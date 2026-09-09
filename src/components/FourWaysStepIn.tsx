@@ -57,7 +57,7 @@ export default function FourWaysStepIn() {
 
                 <div className="pt-6 mt-4 border-t border-brand-borderDark">
                   <a
-                    href="#assessment"
+                    href={opt.href || "#assessment"}
                     className={`w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 ${
                       opt.popular
                         ? 'bg-brand-amber hover:bg-brand-amberDark text-black'

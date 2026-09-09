@@ -63,7 +63,7 @@ export const ADU_SERVICES: ADUService[] = [
     category: 'Conversion Specialist',
     tagline: 'Transform Existing Footprint for Maximum Space Efficiency',
     description: 'Convert your underutilized 2-car garage into a legal, permitted 1-bedroom or studio living space. Because the existing foundation and framing are utilized, garage conversions offer the fastest timeline and highest cost efficiency in Orange County.',
-    imageUrl: '/images/localized/adu_asset_6f93b1c435.jpeg',
+    imageUrl: '/images/localized/adu_asset_19f8aacb8b.jpg',
     features: [
       'Zero yard space sacrificed & existing envelope repurposed',
       'No replacement parking required under California state law',
@@ -257,7 +257,7 @@ export const ENTRY_PATHWAYS = [
     subtitle: '15-Minute Expert Q&A',
     description: 'Prefer to talk? Call our Irvine planning desk directly for immediate answers on costs, city permits, and timelines.',
     cta: 'Call (657) 298-4061',
-    href: 'tel:+16572984061',
+    href: 'tel:6572984061',
     popular: false,
   },
   {
@@ -266,7 +266,7 @@ export const ENTRY_PATHWAYS = [
     subtitle: '28-Page Comprehensive PDF',
     description: 'Line-item cost tables, city permit timelines, floor plans, and zoning rules across all 34 Orange County cities.',
     cta: 'Download Free PDF',
-    href: '/free-feasibility?type=guide-download',
+    href: '#assessment',
     popular: false,
   },
 ];
