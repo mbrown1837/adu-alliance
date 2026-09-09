@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, ArrowRight, ShieldCheck, Phone } from 'lucide-react';
-import ThemeToggle from '@/components/ThemeToggle';
 import { trackPhoneCallClick } from '@/lib/gtm';
 
 export default function Navbar() {
@@ -57,7 +56,6 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <ThemeToggle />
           <a
             href="tel:6572984061"
             onClick={() => trackPhoneCallClick('6572984061', 'DesktopHeaderNav')}
@@ -74,7 +72,6 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3 md:hidden">
-          <ThemeToggle />
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="p-2 text-white"

@@ -8,73 +8,23 @@
     --color-dark: #151515;
     --color-charcoal: #1E293B;
     --color-amber: #FFAC00;
+    --color-amberLight: #FFC44D;
     --color-terracotta: #C85A32;
-    --color-linen: #F0EEEB;
-    --color-sand: #F5F5F4;
     --color-border: #262626;
-
-    --bg-canvas: #111111;
-    --bg-surface: #151515;
-    --bg-card: #18181B;
-    --text-main: #FFFFFF;
-    --text-sub: #94A3B8;
-    --border-main: #262626;
-  }
-
-  html.light {
-    --bg-canvas: #FAF8F5;
-    --bg-surface: #FFFFFF;
-    --bg-card: #F4F1EA;
-    --text-main: #0F172A;
-    --text-sub: #475569;
-    --border-main: #E2E8F0;
   }
 
   body {
-    background-color: var(--bg-canvas);
-    color: var(--text-main);
+    background-color: #111111;
+    color: #ffffff;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     letter-spacing: -0.015em;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
-}
-
-/* Force Dark Container Context (Hero, Dark Cards, Footer, Portal) */
-.force-dark {
-  background-color: #111111 !important;
-  color: #ffffff !important;
-}
-.force-dark .text-white,
-.force-dark .text-brand-white,
-.force-dark h1,
-.force-dark h2,
-.force-dark h3,
-.force-dark h4 {
-  color: #ffffff !important;
-}
-.force-dark .text-slate-300,
-.force-dark .text-slate-400,
-.force-dark .text-brand-gray-300,
-.force-dark .text-brand-gray-400,
-.force-dark p {
-  color: #cbd5e1 !important;
-}
-.force-dark .text-brand-amber {
-  color: #ffac00 !important;
-}
-.force-dark .border-brand-borderDark {
-  border-color: #262626 !important;
 }
 
 .glass-nav-dark {
   background: rgba(17, 17, 17, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-}
-
-html.light .glass-nav-dark {
-  background: rgba(250, 248, 245, 0.92) !important;
-  border-color: var(--border-main) !important;
 }
 
 .no-scrollbar::-webkit-scrollbar {
