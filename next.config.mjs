@@ -2,6 +2,7 @@
 const nextConfig = {
   staticPageGenerationTimeout: 300,
   images: {
+    unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'www.evoadu.com' },
       { protocol: 'https', hostname: 'evoadu.com' },
