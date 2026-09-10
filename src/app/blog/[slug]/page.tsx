@@ -82,6 +82,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     'adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide'
   ].includes(post.slug);
 
+  // Clean up WP HTML content: convert CMS links to native blog URLs & fix entities
+  let cleanContent = post.content.rendered
+    .replace(/https:\/\/cms\.adualliance\.com\/([a-z0-9\-]+)\/?/gi, '/blog/$1')
+    .replace(/&#8217;/g, "'")
+    .replace(/&#8220;/g, '"')
+    .replace(/&#8221;/g, '"')
+    .replace(/&amp;/g, '&');
+
   return (
     <div className="min-h-screen flex flex-col pt-32">
       <Navbar />
@@ -94,7 +102,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 {category}
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-white mb-8 tracking-tight leading-tight" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-brand-white mb-8 tracking-tight leading-tight" dangerouslySetInnerHTML={{ __html: post.title.rendered.replace(/&#8217;/g, "'") }} />
             
             <div className="flex items-center justify-center space-x-6 text-brand-gray-400 font-mono text-sm">
               <span className="flex items-center">
@@ -126,7 +134,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </div>
 
           {/* Content Block */}
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
             {isHighValueLeadPage && (
               <div className="mb-12">
                  {/* High-value conversion logic: stick a lead form at the very top for SEO migrated pages */}
@@ -134,17 +142,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               </div>
             )}
             
-            <div className="prose prose-invert prose-brand prose-lg max-w-none
-                            prose-headings:font-display prose-headings:font-bold prose-headings:text-brand-white
-                            prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:border-b prose-h2:border-brand-gray-800 prose-h2:pb-4
-                            prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                            prose-p:text-brand-gray-300 prose-p:leading-relaxed
-                            prose-a:text-brand-amber prose-a:no-underline hover:prose-a:underline
-                            prose-strong:text-brand-white
-                            prose-ul:text-brand-gray-300 prose-li:marker:text-brand-amber
-                            prose-blockquote:border-brand-amber prose-blockquote:bg-brand-gray-900 prose-blockquote:py-1 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic prose-blockquote:text-brand-gray-100"
-                 dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-            />
+            <div className="blog-prose" dangerouslySetInnerHTML={{ __html: cleanContent }} />
             
             {/* Bottom CTA for all blogs */}
             <div className="mt-16 bg-brand-gray-900 border border-brand-gray-800 rounded-2xl p-8 sm:p-12 text-center relative overflow-hidden">
