@@ -2,8 +2,6 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import FeasibilityForm from '@/components/FeasibilityForm';
 
 async function getPost(slug: string) {
@@ -91,9 +89,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     .replace(/&amp;/g, '&');
 
   return (
-    <div className="min-h-screen flex flex-col pt-32">
-      <Navbar />
-      <main className="flex-grow w-full">
+    <div className="py-12 sm:py-16 w-full">
+      <main className="w-full">
         <article>
           {/* Post Header */}
           <header className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
@@ -159,7 +156,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </div>
         </article>
       </main>
-      <Footer />
     </div>
   );
 }

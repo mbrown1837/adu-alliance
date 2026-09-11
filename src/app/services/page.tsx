@@ -3,8 +3,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ADU_SERVICES } from '@/lib/data';
 import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Layers, DollarSign, Home } from 'lucide-react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'ADU Services in Orange County, CA | Turnkey Design, Permits & Build',
