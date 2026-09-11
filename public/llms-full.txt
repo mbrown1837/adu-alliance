@@ -45,11 +45,11 @@
 
 | Model Name | Square Footage | Layout | Base Turnkey Price | Key Features |
 |---|---|---|---|---|
-| **EVO Compact** | 350 sq ft | Studio · 1 Bath | $149,000 | Ultra-efficient layout, full galley kitchen, walk-in shower, built-in oak storage. |
-| **EVO Studio** | 430 sq ft | Studio + Nook · 1 Bath | $159,500 | Dedicated work-from-home office nook, vaulted ceilings, Low-E slider. |
-| **EVO One** | 560 sq ft | 1 Bed · 1 Bath | $182,000 | Private master bedroom retreat, walk-in closet, kitchen island with seating. |
-| **EVO Two** | 715 sq ft | 2 Bed · 1 Bath | $208,000 | Dual private bedrooms, open central living/dining, ideal for family living. |
-| **EVO Two+** | 800 sq ft | 2 Bed · 2 Bath | $242,000 | Dual ensuite bathrooms, 9ft vaulted ceilings, 12ft sliding glass wall system. |
+| **The Balboa Studio** | 350 sq ft | Studio · 1 Bath | $149,000 | Ultra-efficient layout, full galley kitchen, walk-in shower, built-in oak storage. |
+| **The Laguna Suite** | 430 sq ft | Studio + Nook · 1 Bath | $159,500 | Dedicated work-from-home office nook, vaulted ceilings, Low-E slider. |
+| **The Monarch One** | 560 sq ft | 1 Bed · 1 Bath | $182,000 | Private master bedroom retreat, walk-in closet, kitchen island with seating. |
+| **The Pacifica Two** | 715 sq ft | 2 Bed · 1 Bath | $208,000 | Dual private bedrooms, open central living/dining, ideal for family living. |
+| **The Catalina Grand** | 800 sq ft | 2 Bed · 2 Bath | $242,000 | Dual ensuite bathrooms, 9ft vaulted ceilings, 12ft sliding glass wall system. |
 
 ---
 

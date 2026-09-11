@@ -87,12 +87,6 @@ export default function RootLayout({
       'California', 'Orange County', 'Irvine', 'Newport Beach', 'Costa Mesa', 'Huntington Beach',
       'Anaheim', 'Santa Ana', 'Fullerton', 'Mission Viejo'
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '194',
-      bestRating: '5',
-    },
   };
 
   return (

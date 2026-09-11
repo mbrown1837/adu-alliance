@@ -97,7 +97,7 @@ export const ADU_SERVICES: ADUService[] = [
 export const EVO_MODELS: ADUModel[] = [
   {
     id: 'compact',
-    name: 'EVO Compact',
+    name: 'The Balboa Studio',
     slug: 'compact',
     sqft: 350,
     startingPrice: 149000,
@@ -112,7 +112,7 @@ export const EVO_MODELS: ADUModel[] = [
   },
   {
     id: 'studio',
-    name: 'EVO Studio',
+    name: 'The Laguna Suite',
     slug: 'studio',
     sqft: 430,
     startingPrice: 159500,
@@ -127,7 +127,7 @@ export const EVO_MODELS: ADUModel[] = [
   },
   {
     id: 'one',
-    name: 'EVO One',
+    name: 'The Monarch One',
     slug: 'one',
     sqft: 560,
     startingPrice: 182000,
@@ -142,7 +142,7 @@ export const EVO_MODELS: ADUModel[] = [
   },
   {
     id: 'two',
-    name: 'EVO Two',
+    name: 'The Pacifica Two',
     slug: 'two',
     sqft: 715,
     startingPrice: 208000,
@@ -157,7 +157,7 @@ export const EVO_MODELS: ADUModel[] = [
   },
   {
     id: 'twoplus',
-    name: 'EVO Two+',
+    name: 'The Catalina Grand',
     slug: 'twoplus',
     sqft: 800,
     startingPrice: 242000,
