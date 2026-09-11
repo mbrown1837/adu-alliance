@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="space-y-1 text-xs font-mono text-slate-300">
               <div>Verified CSLB Licensed Builder Network</div>
               <div>Direct Planning Desk: <a href="tel:6572984061" className="text-white hover:text-brand-amber font-bold">(657) 298-4061</a></div>
-              <div>2372 Morse Ave, Irvine, CA 92614 &bull; Orange County Headquarters</div>
+              <div className="text-brand-amber font-bold">Serving All Over California</div>
             </div>
           </div>
 

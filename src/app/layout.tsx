@@ -69,9 +69,7 @@ export default function RootLayout({
     priceRange: '$$$$',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Irvine',
       addressRegion: 'CA',
-      postalCode: '92618',
       addressCountry: 'US',
     },
     geo: {
@@ -86,8 +84,8 @@ export default function RootLayout({
       closes: '18:00',
     },
     areaServed: [
-      'Irvine', 'Newport Beach', 'Costa Mesa', 'Huntington Beach',
-      'Anaheim', 'Santa Ana', 'Fullerton', 'Mission Viejo', 'Orange County'
+      'California', 'Orange County', 'Irvine', 'Newport Beach', 'Costa Mesa', 'Huntington Beach',
+      'Anaheim', 'Santa Ana', 'Fullerton', 'Mission Viejo'
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
