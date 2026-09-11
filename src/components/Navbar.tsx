@@ -32,9 +32,11 @@ export default function Navbar() {
       {/* Main Bar */}
       <div className="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-black font-black text-lg tracking-tighter shadow-sm">
-            A<span className="text-brand-amber">A</span>
-          </div>
+          <img
+            src="/images/logo-transparent.png"
+            alt="ADU Alliance Logo"
+            className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
+          />
           <div>
             <span className="font-black text-xl tracking-tighter text-white uppercase block leading-none">
               ADU ALLIANCE
