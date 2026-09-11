@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     'modern prefab ADU California',
     'backyard ADU plans Orange County',
   ],
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-32x32.png',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: 'ADU Alliance | Orange County ADU Builders',
     description: 'We only build ADUs. Single-contract design, permits, and full construction in Orange County.',
