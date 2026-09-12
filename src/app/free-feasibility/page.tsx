@@ -4,8 +4,8 @@ import { MapPin, Phone, Clock } from 'lucide-react';
 import FeasibilityForm from '@/components/FeasibilityForm';
 
 export const metadata: Metadata = {
-  title: 'Free ADU Property Feasibility Review | Orange County | ADU Alliance',
-  description: 'Request a free 30-minute accessory dwelling unit lot feasibility assessment in Orange County, CA. We evaluate setbacks, utility connections, and city zoning rules before you spend a dollar.',
+  title: 'Get a Free ADU Property Assessment | Orange County | ADU Alliance',
+  description: 'Request a free property assessment for your accessory dwelling unit in Orange County, CA. We evaluate setbacks, utility connections, and city zoning rules before you spend a dollar.',
   alternates: {
     canonical: 'https://adualliance.com/free-feasibility',
   },

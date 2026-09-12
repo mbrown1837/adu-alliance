@@ -48,7 +48,7 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 lg:gap-7 text-xs font-bold uppercase tracking-wider text-slate-300">
-          <Link href="/#models" className="hover:text-white transition-colors">Models</Link>
+          <Link href="/#models" className="hover:text-white transition-colors">Layouts</Link>
           <Link href="/services" className="hover:text-white transition-colors">Services</Link>
           <Link href="/#process" className="hover:text-white transition-colors">Process</Link>
           <Link href="/calculator" className="hover:text-white transition-colors">Estimator</Link>
@@ -69,7 +69,7 @@ export default function Navbar() {
             href="/free-feasibility"
             className="px-5 py-2.5 bg-brand-amber hover:bg-brand-amberDark text-black font-black text-xs uppercase tracking-wider rounded-full shadow-md transition-all flex items-center gap-1"
           >
-            Free Feasibility <ArrowRight className="w-3.5 h-3.5" />
+            Free Assessment <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 

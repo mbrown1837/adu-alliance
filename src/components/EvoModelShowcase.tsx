@@ -19,14 +19,14 @@ export default function EvoModelShowcase() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-brand-borderDark pb-6">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold">
-                FIVE SIGNATURE MODELS &bull; STUDIOS TO TWO-BEDROOM HOMES
+                100% ON-SITE STICK-BUILT &bull; 0% PREFAB
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-white mt-1">
-                Find your ADU
+                Custom Architectural Layout Concepts
               </h2>
             </div>
             <a href="#assessment" className="text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-white shrink-0">
-              Compare all models &rarr;
+              Get Custom Layout Estimate &rarr;
             </a>
           </div>
 

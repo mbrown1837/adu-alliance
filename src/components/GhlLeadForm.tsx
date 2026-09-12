@@ -29,7 +29,7 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
         event.data?.formId === '6hD0FF59AuNJ7LflDzVg' ||
         (typeof event.data === 'string' && event.data.includes('6hD0FF59AuNJ7LflDzVg'))
       ) {
-        trackFormSubmission('6hD0FF59AuNJ7LflDzVg', 'ADU Alliance Multi-Step Feasibility Survey');
+        trackFormSubmission('6hD0FF59AuNJ7LflDzVg', 'ADU Alliance Free Property Assessment');
       }
     };
 
@@ -44,7 +44,7 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
       {isLoading && (
         <div className="w-full py-16 flex flex-col items-center justify-center space-y-3 text-slate-400 font-mono text-xs animate-pulse">
           <Loader2 className="w-8 h-8 text-brand-amber animate-spin" />
-          <span>Loading Secure Multi-Step Feasibility Survey...</span>
+          <span>Loading Secure Property Assessment Form...</span>
         </div>
       )}
 
@@ -68,13 +68,13 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
         data-activation-value=""
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
-        data-form-name="ADU Alliance Multi-Step Feasibility Survey"
+        data-form-name="ADU Alliance Free Property Assessment"
         data-height="750"
         data-layout-iframe-id="6hD0FF59AuNJ7LflDzVg"
         data-form-id="6hD0FF59AuNJ7LflDzVg"
         data-cookie-consent="true"
         data-cookie-consent-provider="auto"
-        title="ADU Alliance Multi-Step Property Feasibility Survey"
+        title="ADU Alliance Free Property Assessment"
       />
 
       {/* Fallback Assistance Banner */}
