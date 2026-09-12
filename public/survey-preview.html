@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADU Alliance Multi-Step Survey Visual Preview</title>
+<style>
+  :root {
+    --bg-black: #0D0D0D;
+    --bg-dark: #141414;
+    --bg-card: #1C1C1C;
+    --border-card: #2A2A2A;
+    --border-active: #FFAC00;
+    --text-main: #FFFFFF;
+    --text-muted: #94A3B8;
+    --accent-amber: #FFAC00;
+    --accent-amber-dark: #E09600;
+    --accent-emerald: #10B981;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  
+  body {
+    background-color: var(--bg-black);
+    color: var(--text-main);
+    padding: 24px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .survey-container {
+    width: 100%;
+    max-width: 680px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-card);
+    border-radius: 24px;
+    padding: 32px 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Progress Bar */
+  .progress-wrapper {
+    margin-bottom: 28px;
+  }
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .progress-bar-bg {
+    height: 6px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    width: 25%;
+    background: linear-gradient(90deg, #FFAC00, #F59E0B);
+    border-radius: 99px;
+    transition: width 0.4s ease;
+  }
+
+  /* Step Content */
+  .step-panel {
+    display: none;
+    animation: fadeIn 0.3s ease forwards;
+  }
+  .step-panel.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .step-title {
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+    color: var(--text-main);
+  }
+  .step-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  /* Cards Grid */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 520px) {
+    .cards-grid { grid-template-columns: 1fr; }
+  }
+
+  .option-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+  .option-card:hover {
+    border-color: rgba(255, 172, 0, 0.5);
+    background: #222222;
+    transform: translateY(-2px);
+  }
+  .option-card.selected {
+    border-color: var(--border-active);
+    background: rgba(255, 172, 0, 0.08);
+    box-shadow: 0 0 15px rgba(255, 172, 0, 0.15);
+  }
+  .card-icon {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  .card-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+  .card-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.3;
+  }
+
+  /* Input Fields */
+  .form-group {
+    margin-bottom: 16px;
+  }
+  .form-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .form-input, .form-select {
+    width: 100%;
+    padding: 12px 14px;
+    background: #181818;
+    border: 1px solid var(--border-card);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s ease;
+  }
+  .form-input:focus, .form-select:focus {
+    border-color: var(--accent-amber);
+    box-shadow: 0 0 0 2px rgba(255, 172, 0, 0.2);
+  }
+
+  /* Buttons */
+  .btn-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+  .btn-back {
+    background: transparent;
+    border: 1px solid var(--border-card);
+    color: var(--text-muted);
+    padding: 10px 18px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn-back:hover {
+    color: #fff;
+    border-color: #555;
+  }
+  .btn-next {
+    background: var(--accent-amber);
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: auto;
+  }
+  .btn-next:hover {
+    background: var(--accent-amber-dark);
+    transform: scale(1.02);
+  }
+
+  .badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 99px;
+    font-size: 10px;
+    font-family: monospace;
+    color: var(--accent-emerald);
+    margin-bottom: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="survey-container">
+  
+  <!-- Header Badge -->
+  <div class="badge-tag">
+    <span style="width:6px;height:6px;background:#10B981;border-radius:50%;"></span>
+    INSTANT ORANGE COUNTY PROPERTY FEASIBILITY
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-wrapper">
+    <div class="progress-header">
+      <span id="step-counter">STEP 1 OF 4</span>
+      <span id="progress-percent">25% COMPLETED</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- STEP 1: ADU SCOPE -->
+  <div class="step-panel active" id="step-1">
+    <h2 class="step-title">Select Desired ADU Scope</h2>
+    <p class="step-subtitle">What type of secondary dwelling are you planning to construct on your parcel?</p>
+    
+    <div class="cards-grid">
+      <div class="option-card" onclick="selectCard(this, 'step-1')">
+        <div class="card-icon">🏡</div>
+        <div class="card-label">Detached Backyard ADU</div>
+        <div class="card-desc">Standalone 350 to 1,200 sq ft cottage built ground-up in rear yard.</div>
+      </div>
+      <div class="option-card" onclick="selectCard(this, 'step-1')">
+        <div class="card-icon">🚗</div>
+        <div class="card-label">Garage Conversion</div>
+        <div class="card-desc">Convert existing 2-car garage into livable home. Fastest ROI.</div>
+      </div>
+      <div class="option-card" onclick="selectCard(this, 'step-1')">
+        <div class="card-icon">🚪</div>
+        <div class="card-label">Junior ADU (JADU)</div>
+        <div class="card-desc">Interior conversion up to 500 sq ft within primary home footprint.</div>
+      </div>
+      <div class="option-card" onclick="selectCard(this, 'step-1')">
+        <div class="card-icon">📐</div>
+        <div class="card-label">Attached Addition</div>
+        <div class="card-desc">Seamless structural home extension with private external entry.</div>
+      </div>
+    </div>
+
+    <div class="btn-nav">
+      <button class="btn-next" onclick="goToStep(2)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: LOT CONDITION -->
+  <div class="step-panel" id="step-2">
+    <h2 class="step-title">Property & Lot Condition</h2>
+    <p class="step-subtitle">What is the current layout or state of your backyard space?</p>
+    
+    <div class="cards-grid">
+      <div class="option-card" onclick="selectCard(this, 'step-2')">
+        <div class="card-icon">🌿</div>
+        <div class="card-label">Flat Open Yard</div>
+        <div class="card-desc">Grass or dirt yard with clear access for ground-up construction.</div>
+      </div>
+      <div class="option-card" onclick="selectCard(this, 'step-2')">
+        <div class="card-icon">🏗️</div>
+        <div class="card-label">Existing Garage</div>
+        <div class="card-desc">Existing 2-car garage ready for conversion or replacement.</div>
+      </div>
+      <div class="option-card" onclick="selectCard(this, 'step-2')">
+        <div class="card-icon">⛰️</div>
+        <div class="card-label">Sloped / Hillside</div>
+        <div class="card-desc">Requires structural retaining engineering or site grading.</div>
+      </div>
+      <div class="option-card" onclick="selectCard(this, 'step-2')">
+        <div class="card-icon">🏊</div>
+        <div class="card-label">Patio / Pool Yard</div>
+        <div class="card-desc">Yard has existing hardscape or pool needing setback mapping.</div>
+      </div>
+    </div>
+
+    <div class="btn-nav">
+      <button class="btn-back" onclick="goToStep(1)">&larr; Back</button>
+      <button class="btn-next" onclick="goToStep(3)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: PRIMARY GOAL & TIMELINE -->
+  <div class="step-panel" id="step-3">
+    <h2 class="step-title">Primary Goal & Timeline</h2>
+    <p class="step-subtitle">What is your main objective for building this ADU?</p>
+    
+    <div class="cards-grid">
+      <div class="option-card" onclick="selectCard(this, 'step-3')">
+        <div class="card-icon">💰</div>
+        <div class="card-label">Rental Cash Flow</div>
+        <div class="card-desc">Targeting $2,400 – $3,400/mo passive rental income in OC.</div>
+      </div>
+      <div class="option-card" onclick="selectCard(this, 'step-3')">
+        <div class="card-icon">👨👩👧</div>
+        <div class="card-label">Family Living</div>
+        <div class="card-desc">Housing aging parents, adult children, or multi-gen family.</div>
+      </div>
+      <div class="option-card" onclick="selectCard(this, 'step-3')">
+        <div class="card-icon">💼</div>
+        <div class="card-label">Executive Studio</div>
+        <div class="card-desc">Dedicated quiet home office, creative studio, or guest house.</div>
+      </div>
+      <div class="option-card" onclick="selectCard(this, 'step-3')">
+        <div class="card-icon">📈</div>
+        <div class="card-label">Property Value</div>
+        <div class="card-desc">Maximizing home equity ($150k – $300k+ added equity).</div>
+      </div>
+    </div>
+
+    <div class="btn-nav">
+      <button class="btn-back" onclick="goToStep(2)">&larr; Back</button>
+      <button class="btn-next" onclick="goToStep(4)">Continue &rarr;</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: CONTACT & PROPERTY ADDRESS -->
+  <div class="step-panel" id="step-4">
+    <h2 class="step-title">Property & Contact Info</h2>
+    <p class="step-subtitle">Where should we deliver your free Orange County feasibility assessment?</p>
+    
+    <div class="form-group">
+      <label class="form-label">Property Street Address *</label>
+      <input type="text" class="form-input" placeholder="e.g. 14202 Culver Dr" required>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Orange County City *</label>
+      <select class="form-select">
+        <option>Irvine</option>
+        <option>Newport Beach</option>
+        <option>Huntington Beach</option>
+        <option>Costa Mesa</option>
+        <option>Anaheim</option>
+        <option>Fullerton</option>
+        <option>Mission Viejo</option>
+        <option>Other OC City</option>
+      </select>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="form-group">
+        <label class="form-label">Full Name *</label>
+        <input type="text" class="form-input" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number *</label>
+        <input type="tel" class="form-input" placeholder="(657) 298-4061" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Email Address *</label>
+      <input type="email" class="form-input" placeholder="john@example.com" required>
+    </div>
+
+    <div class="btn-nav">
+      <button class="btn-back" onclick="goToStep(3)">&larr; Back</button>
+      <button class="btn-next" style="background:#10B981;color:#fff;" onclick="submitSurvey()">Get Free Assessment &rarr;</button>
+    </div>
+  </div>
+
+  <!-- CONFIRMATION -->
+  <div class="step-panel" id="step-success" style="text-align:center;padding:24px 0;">
+    <div style="font-size:48px;margin-bottom:12px;">🎉</div>
+    <h2 class="step-title" style="color:#10B981;">Assessment Requested!</h2>
+    <p class="step-subtitle">Thank you! Our Orange County Planning Desk is reviewing your parcel zoning rules. We will reach out shortly.</p>
+  </div>
+
+</div>
+
+<script>
+  let currentStep = 1;
+
+  function selectCard(card, stepId) {
+    const parent = card.parentElement;
+    parent.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    
+    // Auto advance to next step after 300ms delay for high conversion
+    setTimeout(() => {
+      if (currentStep < 4) {
+        goToStep(currentStep + 1);
+      }
+    }, 300);
+  }
+
+  function goToStep(step) {
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(`step-${step}`).classList.add('active');
+    currentStep = step;
+
+    // Update Progress
+    const percent = step * 25;
+    document.getElementById('step-counter').innerText = `STEP ${step} OF 4`;
+    document.getElementById('progress-percent').innerText = `${percent}% COMPLETED`;
+    document.getElementById('progress-fill').style.width = `${percent}%`;
+  }
+
+  function submitSurvey() {
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('step-success').classList.add('active');
+    document.getElementById('step-counter').innerText = `COMPLETED`;
+    document.getElementById('progress-percent').innerText = `100%`;
+    document.getElementById('progress-fill').style.width = `100%`;
+  }
+</script>
+
+</body>
+</html>

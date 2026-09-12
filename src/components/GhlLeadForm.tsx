@@ -9,7 +9,7 @@ interface GhlLeadFormProps {
   minHeight?: string;
 }
 
-export default function GhlLeadForm({ className = '', minHeight = '920px' }: GhlLeadFormProps) {
+export default function GhlLeadForm({ className = '', minHeight = '750px' }: GhlLeadFormProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -25,11 +25,11 @@ export default function GhlLeadForm({ className = '', minHeight = '920px' }: Ghl
     // Listen for GHL submission message events
     const handleGhlMessage = (event: MessageEvent) => {
       if (
-        event.data?.type === 'ghl_form_submitted' ||
-        event.data?.formId === '5SviqisRQjnrGLdX2rLq' ||
-        (typeof event.data === 'string' && event.data.includes('5SviqisRQjnrGLdX2rLq'))
+        event.data?.type === 'ghl_survey_submitted' ||
+        event.data?.formId === '6hD0FF59AuNJ7LflDzVg' ||
+        (typeof event.data === 'string' && event.data.includes('6hD0FF59AuNJ7LflDzVg'))
       ) {
-        trackFormSubmission('5SviqisRQjnrGLdX2rLq', 'ADU Alliance Assessment Lead Form');
+        trackFormSubmission('6hD0FF59AuNJ7LflDzVg', 'ADU Alliance Multi-Step Feasibility Survey');
       }
     };
 
@@ -44,13 +44,13 @@ export default function GhlLeadForm({ className = '', minHeight = '920px' }: Ghl
       {isLoading && (
         <div className="w-full py-16 flex flex-col items-center justify-center space-y-3 text-slate-400 font-mono text-xs animate-pulse">
           <Loader2 className="w-8 h-8 text-brand-amber animate-spin" />
-          <span>Loading Secure Lot Assessment Form...</span>
+          <span>Loading Secure Multi-Step Feasibility Survey...</span>
         </div>
       )}
 
-      {/* GHL Iframe Embed */}
+      {/* GHL Survey Iframe Embed */}
       <iframe
-        src="https://link.westlanddre.com/widget/form/5SviqisRQjnrGLdX2rLq"
+        src="https://link.westlanddre.com/widget/survey/6hD0FF59AuNJ7LflDzVg"
         onLoad={() => setIsLoading(false)}
         style={{
           width: '100%',
@@ -60,7 +60,7 @@ export default function GhlLeadForm({ className = '', minHeight = '920px' }: Ghl
           background: 'transparent',
           display: isLoading ? 'none' : 'block',
         }}
-        id="inline-5SviqisRQjnrGLdX2rLq"
+        id="6hD0FF59AuNJ7LflDzVg"
         data-layout="{'id':'INLINE'}"
         data-trigger-type="alwaysShow"
         data-trigger-value=""
@@ -68,13 +68,13 @@ export default function GhlLeadForm({ className = '', minHeight = '920px' }: Ghl
         data-activation-value=""
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
-        data-form-name="Lead Form"
-        data-height="920"
-        data-layout-iframe-id="inline-5SviqisRQjnrGLdX2rLq"
-        data-form-id="5SviqisRQjnrGLdX2rLq"
+        data-form-name="ADU Alliance Multi-Step Feasibility Survey"
+        data-height="750"
+        data-layout-iframe-id="6hD0FF59AuNJ7LflDzVg"
+        data-form-id="6hD0FF59AuNJ7LflDzVg"
         data-cookie-consent="true"
         data-cookie-consent-provider="auto"
-        title="ADU Alliance Official Feasibility Assessment Form"
+        title="ADU Alliance Multi-Step Property Feasibility Survey"
       />
 
       {/* Fallback Assistance Banner */}
