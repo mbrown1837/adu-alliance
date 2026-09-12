@@ -25,7 +25,7 @@ export default function PropertyAssessmentTool() {
 
         {/* Live GoHighLevel Assessment Embed */}
         <div className="space-y-4">
-          <GhlLeadForm minHeight="950px" />
+          <GhlLeadForm minHeight="750px" />
 
           {/* Micro Trust Strip */}
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-4 text-xs font-mono text-slate-400">

@@ -76,7 +76,7 @@ export default function LaduProcessTimeline() {
 
                     {/* Phase Badge & Title */}
                     <div>
-                      <span className="text-[10px] font-mono font-bold tracking-widest text-brand-amber uppercase block mb-1">
+                      <span className="text-xs font-mono font-bold tracking-widest text-brand-amber uppercase block mb-1">
                         {item.phase}
                       </span>
                       <h3 className="text-xl font-bold uppercase text-white tracking-tight group-hover:text-brand-amber transition-colors">

@@ -43,22 +43,22 @@ export default function EvoModelShowcase() {
                   alt={`${model.name} ADU`}
                   className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent" />
 
                 <div className="relative z-10 p-5 sm:p-8 space-y-3">
-                  <h3 className="font-black uppercase text-white leading-tight tracking-tighter text-3xl sm:text-4xl lg:text-6xl">
+                  <h3 className="font-black uppercase text-white tracking-tight text-xl sm:text-2xl lg:text-3xl leading-[1.1] mb-2">
                     {model.name}
                   </h3>
 
-                  <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-white/20">
-                    <p className="text-xs sm:text-base font-semibold text-white/90">
-                      From <span className="font-mono text-brand-amber font-bold">{model.priceFormatted}</span> &bull; {model.sqft} sq ft
+                  <div className="flex flex-col items-start gap-4">
+                    <p className="text-sm font-semibold text-slate-200">
+                      From <span className="font-mono text-brand-amber font-bold">{model.priceFormatted}</span> &nbsp;&bull;&nbsp; {model.sqft} sq ft
                     </p>
                     <a
                       href="#assessment"
-                      className="px-4 py-2 bg-white/20 hover:bg-white text-white hover:text-black font-bold text-xs uppercase rounded-full backdrop-blur-md transition-all shrink-0"
+                      className="px-5 py-2.5 border border-white/30 text-white font-bold text-xs uppercase tracking-wider rounded-full hover:bg-brand-amber hover:text-black hover:border-brand-amber transition-colors"
                     >
-                      Configure &rarr;
+                      Layout Details &rarr;
                     </a>
                   </div>
                 </div>

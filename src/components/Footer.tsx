@@ -70,7 +70,7 @@ export default function Footer() {
 
         {/* 34 OC Cities Strip */}
         <div className="pt-8 border-t border-brand-borderDark/60 space-y-2">
-          <div className="text-[10px] font-mono uppercase font-bold text-slate-400">
+          <div className="text-xs font-bold text-slate-300 font-mono uppercase font-bold text-slate-400">
             Dedicated In-House Permitting & Construction Across All 34 Orange County Municipalities:
           </div>
           <div className="flex flex-wrap gap-2 text-[11px] text-slate-300">

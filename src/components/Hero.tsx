@@ -55,19 +55,19 @@ export default function Hero() {
           <div className="space-y-0.5">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-mono font-black text-white">200+</div>
             <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-200">ADUs Completed</div>
-            <div className="text-[10px] sm:text-[11px] text-slate-400 font-mono hidden sm:block">Across Southern California</div>
+            <div className="text-xs sm:text-[11px] text-slate-400 font-mono hidden sm:block">Across Southern California</div>
           </div>
 
           <div className="space-y-0.5 sm:border-l sm:border-brand-borderDark/80 sm:pl-6">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-mono font-black text-brand-amber">15+ Years</div>
             <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-200">ADU-Exclusive Focus</div>
-            <div className="text-[10px] sm:text-[11px] text-slate-400 font-mono hidden sm:block">Dedicated specialist team</div>
+            <div className="text-xs sm:text-[11px] text-slate-400 font-mono hidden sm:block">Dedicated specialist team</div>
           </div>
 
           <div className="space-y-0.5 border-t border-brand-borderDark/60 lg:border-t-0 sm:border-l sm:border-brand-borderDark/80 pt-3 lg:pt-0 sm:pl-6">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-mono font-black text-white">100%</div>
             <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-200">City Permit Approval</div>
-            <div className="text-[10px] sm:text-[11px] text-slate-400 font-mono hidden sm:block">Zero rejected plan checks</div>
+            <div className="text-xs sm:text-[11px] text-slate-400 font-mono hidden sm:block">Zero rejected plan checks</div>
           </div>
 
           <div className="space-y-0.5 border-t border-brand-borderDark/60 lg:border-t-0 sm:border-l sm:border-brand-borderDark/80 pt-3 lg:pt-0 sm:pl-6">
@@ -75,7 +75,7 @@ export default function Hero() {
               <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-brand-emerald shrink-0" /> Class B
             </div>
             <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-200">Licensed & Insured</div>
-            <div className="text-[10px] sm:text-[11px] text-slate-400 font-mono hidden sm:block">Verified CSLB Licensed Network</div>
+            <div className="text-xs sm:text-[11px] text-slate-400 font-mono hidden sm:block">Verified CSLB Licensed Network</div>
           </div>
         </div>
 

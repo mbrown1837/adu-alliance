@@ -55,7 +55,7 @@ export default function BeforeAfterSlider() {
                       alt={`${cs.title} After`}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <span className="absolute top-3 right-3 px-2.5 py-1 text-[10px] font-mono font-bold bg-brand-emerald text-black rounded-md shadow z-10">
+                    <span className="absolute top-3 right-3 px-2.5 py-1 text-xs font-mono font-bold bg-brand-emerald text-black rounded-md shadow z-10">
                       AFTER
                     </span>
 
@@ -69,7 +69,7 @@ export default function BeforeAfterSlider() {
                         alt={`${cs.title} Before`}
                         className="absolute inset-0 w-full h-full object-cover"
                       />
-                      <span className="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-mono font-bold bg-black/80 text-white rounded-md shadow z-10">
+                      <span className="absolute top-3 left-3 px-2.5 py-1 text-xs font-mono font-bold bg-black/80 text-white rounded-md shadow z-10">
                         BEFORE
                       </span>
                     </div>
@@ -104,7 +104,7 @@ export default function BeforeAfterSlider() {
                 <div className="space-y-4">
                   <div className="flex flex-wrap items-start justify-between gap-2 border-b border-brand-borderDark pb-3">
                     <div>
-                      <span className="text-[10px] font-mono uppercase bg-brand-black px-2 py-0.5 rounded font-bold text-brand-amber border border-brand-borderDark">
+                      <span className="text-xs font-mono uppercase bg-brand-black px-2 py-0.5 rounded font-bold text-brand-amber border border-brand-borderDark">
                         {cs.type}
                       </span>
                       <h3 className="font-bold font-display text-xl text-white mt-1.5">{cs.title}</h3>
@@ -119,15 +119,15 @@ export default function BeforeAfterSlider() {
                   {/* Highlights */}
                   <div className="grid grid-cols-3 gap-2 text-xs font-mono py-2.5 bg-brand-black rounded-xl border border-brand-borderDark px-3">
                     <div>
-                      <span className="text-slate-400 block text-[9px] uppercase">Permit Time</span>
+                      <span className="text-slate-400 block text-xs text-slate-400 uppercase">Permit Time</span>
                       <strong className="text-white text-xs">{cs.permitWeeks}</strong>
                     </div>
                     <div>
-                      <span className="text-slate-400 block text-[9px] uppercase">Est. Rent</span>
+                      <span className="text-slate-400 block text-xs text-slate-400 uppercase">Est. Rent</span>
                       <strong className="text-brand-emerald text-xs">{cs.rentalIncome}</strong>
                     </div>
                     <div>
-                      <span className="text-slate-400 block text-[9px] uppercase">Added Equity</span>
+                      <span className="text-slate-400 block text-xs text-slate-400 uppercase">Added Equity</span>
                       <strong className="text-brand-amber text-xs">{cs.equityAdded || '$150K+ Equity'}</strong>
                     </div>
                   </div>
