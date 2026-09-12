@@ -70,10 +70,10 @@ export default function Footer() {
 
         {/* 34 OC Cities Strip */}
         <div className="pt-8 border-t border-brand-borderDark/60 space-y-2">
-          <div className="text-[10px] font-mono uppercase font-bold text-slate-500">
+          <div className="text-[10px] font-mono uppercase font-bold text-slate-400">
             Dedicated In-House Permitting & Construction Across All 34 Orange County Municipalities:
           </div>
-          <div className="flex flex-wrap gap-2 text-[11px] text-slate-400">
+          <div className="flex flex-wrap gap-2 text-[11px] text-slate-300">
             {ORANGE_COUNTY_CITIES.map((c, i) => (
               <Link
                 key={c.slug}
@@ -87,14 +87,14 @@ export default function Footer() {
         </div>
 
         {/* Legal Disclaimer */}
-        <div className="pt-6 border-t border-brand-borderDark/40 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-500 font-mono">
+        <div className="pt-6 border-t border-brand-borderDark/40 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-400 font-mono">
           <div>
             &copy; {new Date().getFullYear()} ADU Alliance. All Rights Reserved. Verified CSLB Licensed Builder Alliance.
           </div>
           <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-slate-400">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-slate-400">Terms of Service</Link>
-            <Link href="/process" className="hover:text-slate-400">California ADU Laws</Link>
+            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white">Terms of Service</Link>
+            <Link href="/process" className="hover:text-white">California ADU Laws</Link>
           </div>
         </div>
       </div>

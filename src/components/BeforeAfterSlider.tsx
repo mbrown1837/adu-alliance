@@ -95,7 +95,7 @@ export default function BeforeAfterSlider() {
                     />
                   </div>
 
-                  <div className="text-center text-[11px] font-mono text-slate-500">
+                  <div className="text-center text-[11px] font-mono text-slate-400">
                     &larr; Drag slider to reveal full transformation &rarr;
                   </div>
                 </div>
@@ -119,15 +119,15 @@ export default function BeforeAfterSlider() {
                   {/* Highlights */}
                   <div className="grid grid-cols-3 gap-2 text-xs font-mono py-2.5 bg-brand-black rounded-xl border border-brand-borderDark px-3">
                     <div>
-                      <span className="text-slate-500 block text-[9px] uppercase">Permit Time</span>
+                      <span className="text-slate-400 block text-[9px] uppercase">Permit Time</span>
                       <strong className="text-white text-xs">{cs.permitWeeks}</strong>
                     </div>
                     <div>
-                      <span className="text-slate-500 block text-[9px] uppercase">Est. Rent</span>
+                      <span className="text-slate-400 block text-[9px] uppercase">Est. Rent</span>
                       <strong className="text-brand-emerald text-xs">{cs.rentalIncome}</strong>
                     </div>
                     <div>
-                      <span className="text-slate-500 block text-[9px] uppercase">Added Equity</span>
+                      <span className="text-slate-400 block text-[9px] uppercase">Added Equity</span>
                       <strong className="text-brand-amber text-xs">{cs.equityAdded || '$150K+ Equity'}</strong>
                     </div>
                   </div>

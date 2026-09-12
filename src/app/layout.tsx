@@ -21,14 +21,14 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'ADU Alliance | Premier Orange County ADU Builders & Architects',
+  title: 'ADU Builders Orange County | ADU Alliance',
   description:
-    'Dedicated ADU design-build general contractor in Orange County, CA. Custom architectural plans, in-house city permitting across 34 OC cities, and high-craft construction. Call (657) 298-4061.',
+    'Orange County ADU design-build general contractor. Custom detached ADUs & garage conversions with 100% city permit approval. Call (657) 298-4061.',
   keywords: [
     'ADU builders Orange County',
     'ADU contractor Irvine',
     'Newport Beach garage conversion',
-    'modern prefab ADU California',
+    'custom stick built ADU California',
     'backyard ADU plans Orange County',
   ],
   icons: {
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'ADU Alliance | Orange County ADU Builders',
-    description: 'We only build ADUs. Single-contract design, permits, and full construction in Orange County.',
+    title: 'ADU Builders Orange County | ADU Alliance',
+    description: 'Orange County ADU design-build general contractor. Custom detached ADUs & garage conversions with 100% city permit approval.',
     url: 'https://adualliance.com',
     siteName: 'ADU Alliance',
     images: [
       {
-        url: '/images/localized/adu_asset_7b7dec0f36.jpeg',
+        url: 'https://adualliance.com/images/localized/adu_asset_7b7dec0f36.jpeg',
         width: 1200,
         height: 630,
         alt: 'Modern ADU Built by ADU Alliance in Orange County',
@@ -69,11 +69,13 @@ export default function RootLayout({
     priceRange: '$$$$',
     address: {
       '@type': 'PostalAddress',
+      '@id': 'https://adualliance.com/#address',
       addressRegion: 'CA',
       addressCountry: 'US',
     },
     geo: {
       '@type': 'GeoCoordinates',
+      '@id': 'https://adualliance.com/#geo',
       latitude: 33.6846,
       longitude: -117.8265,
     },
