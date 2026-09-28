@@ -44,7 +44,7 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
       {isLoading && (
         <div className="w-full py-16 flex flex-col items-center justify-center space-y-3 text-slate-400 font-mono text-xs animate-pulse">
           <Loader2 className="w-8 h-8 text-brand-amber animate-spin" />
-          <span>Loading Secure Property Assessment Form...</span>
+          <span>Loading Multi-Step Property Assessment Survey...</span>
         </div>
       )}
 
@@ -79,7 +79,7 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
 
       {/* Fallback Assistance Banner */}
       <div className="mt-4 p-3.5 bg-brand-black rounded-xl border border-brand-borderDark/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-slate-300 text-center sm:text-left">
-        <span>Having trouble loading the form?</span>
+        <span>Having trouble loading the survey?</span>
         <a
           href="tel:6572984061"
           className="text-brand-amber hover:text-white font-bold flex items-center gap-1.5 shrink-0"

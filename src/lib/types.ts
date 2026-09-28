@@ -14,6 +14,7 @@ export interface ADUService {
 export interface ADUModel {
   id: string;
   name: string;
+  heroDescription?: string;
   slug: string;
   sqft: number;
   startingPrice: number;
@@ -45,6 +46,9 @@ export interface CaseStudy {
 
 export interface CityInfo {
   name: string;
+  heroDescription?: string;
+  aeoSnippet?: string;
+  faqs?: { q: string, a: string }[];
   slug: string;
   county: string;
   population: string;
@@ -56,6 +60,7 @@ export interface CityInfo {
 
 export interface TeamMember {
   name: string;
+  heroDescription?: string;
   role: string;
   experience: string;
   imageUrl: string;

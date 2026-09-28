@@ -11,7 +11,7 @@ export default function Hero() {
           alt="Modern ADU built by ADU Alliance"
           className="w-full h-full object-cover object-center scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/75 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-dark/80 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10 space-y-6 sm:space-y-8">

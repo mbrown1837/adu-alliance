@@ -1,6 +1,6 @@
 import React from 'react';
 import { LADU_PROJECT_PLAN } from '@/lib/data';
-import { CheckCircle2, Clock, ShieldCheck, ArrowRight, Check } from 'lucide-react';
+import { Clock, ShieldCheck, ArrowRight, Check } from 'lucide-react';
 
 export default function LaduProcessTimeline() {
   return (
@@ -41,7 +41,7 @@ export default function LaduProcessTimeline() {
         {/* Interconnected 4-Phase Roadmap Track */}
         <div className="relative">
           {/* Connecting Rope / Line Track (Desktop) */}
-          <div className="hidden lg:block absolute top-[52px] left-[8%] right-[8%] h-[3px] bg-gradient-to-r from-brand-amber via-brand-amber/80 to-brand-amber/40 z-0 shadow-[0_0_12px_rgba(255,172,0,0.5)]" />
+          <div className="hidden lg:block absolute top-[52px] left-[8%] right-[8%] h-[3px] bg-gradient-to-r from-brand-amber via-brand-amber/80 to-transparent z-0 shadow-[0_0_12px_rgba(255,172,0,0.5)]" />
 
           {/* 4-Phase Grid: 4-in-1 row on LG, 2x2 on MD, 1 on mobile */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">

@@ -8,19 +8,21 @@ import StickyBottomBar from '@/components/StickyBottomBar';
 
 const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  
   variable: '--font-outfit',
   display: 'swap',
 });
 
 const jetbrains = JetBrains_Mono({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  
   variable: '--font-mono',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://adualliance.com'),
+  twitter: { card: 'summary_large_image' },
   title: 'ADU Builders Orange County | ADU Alliance',
   description:
     'Orange County ADU design-build general contractor. Custom detached ADUs & garage conversions with 100% city permit approval. Call (657) 298-4061.',

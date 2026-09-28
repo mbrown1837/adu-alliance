@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Sparkles, ShieldCheck, Clock, Phone, CheckCircle2 } from 'lucide-react';
+import { Sparkles, ShieldCheck, Clock, Phone } from 'lucide-react';
 import GhlLeadForm from '@/components/GhlLeadForm';
 
 export default function PropertyAssessmentTool() {
@@ -19,11 +19,11 @@ export default function PropertyAssessmentTool() {
             <span className="font-normal italic text-brand-amber">your lot?</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
-            Tell us about your property. We confirm your ADU options, municipal setback allowances across Orange County, and share realistic budget ranges within 1 business day.
+            Complete our interactive multi-step survey below to tell us about your property. We confirm your ADU options, municipal setback allowances across Orange County, and share realistic budget ranges within 1 business day.
           </p>
         </div>
 
-        {/* Live GoHighLevel Assessment Embed */}
+        {/* Live GoHighLevel Multi-Step Survey Embed */}
         <div className="space-y-4">
           <GhlLeadForm minHeight="750px" />
 

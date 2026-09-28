@@ -41,9 +41,6 @@ export default function Navbar() {
             <span className="font-black text-xl tracking-tighter text-white uppercase block leading-none">
               ADU ALLIANCE
             </span>
-            <span className="text-[9px] font-mono uppercase tracking-widest text-slate-400">
-              Orange County Design-Build
-            </span>
           </div>
         </Link>
 
@@ -53,7 +50,6 @@ export default function Navbar() {
           <Link href="/#process" className="hover:text-white transition-colors">Process</Link>
           <Link href="/calculator" className="hover:text-white transition-colors">Estimator</Link>
           <Link href="/#projects" className="hover:text-white transition-colors">Projects</Link>
-          <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
           <Link href="/about" className="hover:text-white transition-colors">About</Link>
         </nav>
 
@@ -93,7 +89,6 @@ export default function Navbar() {
             <Link href="/#process" onClick={() => setMenuOpen(false)} className="hover:text-white">Process</Link>
             <Link href="/calculator" onClick={() => setMenuOpen(false)} className="hover:text-white">Estimator</Link>
             <Link href="/#projects" onClick={() => setMenuOpen(false)} className="hover:text-white">Projects</Link>
-            <Link href="/blog" onClick={() => setMenuOpen(false)} className="hover:text-white">Blog</Link>
             <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-white">About</Link>
           </nav>
           <div className="pt-2 flex flex-col gap-3">

@@ -32,7 +32,7 @@ export default function PrivacyPage() {
       <section className="space-y-4">
         <h2 className="text-xl font-bold text-white uppercase">3. Contact Us</h2>
         <p>
-          If you have any questions regarding our privacy policy, contact us at info@adualliance.com or visit our Orange County headquarters at 2372 Morse Ave, Irvine, CA 92614.
+          If you have any questions regarding our privacy policy, contact us at info@adualliance.com or visit our Orange County headquarters at Orange County, CA.
         </p>
       </section>
     </div>

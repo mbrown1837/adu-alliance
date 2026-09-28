@@ -185,7 +185,7 @@ export default function ServicesIndexPage() {
               FREE PROPERTY FEASIBILITY
             </span>
             <h3 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight">
-              Ready to explore your lot's potential?
+              Ready to explore your lot&apos;s potential?
             </h3>
             <p className="text-xs sm:text-sm text-slate-300">
               Get an exact setback analysis and preliminary budget for your property within 1 business day.

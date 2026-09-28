@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { CASE_STUDIES } from '@/lib/data';
-import { Sparkles, CheckCircle2 } from 'lucide-react';
+
 
 export default function BeforeAfterSlider() {
   const [sliderPos, setSliderPos] = useState<Record<string, number>>({

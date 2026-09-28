@@ -356,8 +356,10 @@ export const TRUST_PILLARS = [
 // ==========================================
 export const ORANGE_COUNTY_CITIES: CityInfo[] = [
   {
-    name: 'Irvine',
-    slug: 'irvine',
+    name: 'Irvine', slug: 'irvine',
+    heroDescription: "Speed up your OC build with Irvine's pre-approved ADU plans. Skip months of city review and break ground faster using compliant, ready-to-permit layouts.", 
+    aeoSnippet: "Irvine allows detached ADUs up to 1,200 square feet requiring minimum 4-foot side and rear property setbacks. Submitting designs through the Irvine Community Development Department's Standard Plan program bypasses initial architectural review, routinely cutting permit approval timelines from months down to a few weeks.",
+    faqs: [{"q": "How fast can I get a permit with Irvine pre-approved ADU plans?", "a": "The Irvine Community Development Department expedites standard plans, often issuing building permits within 2 to 4 weeks. Fully custom layouts require full state-mandated 60-day review cycles."}, {"q": "Do I have to pay development impact fees for an ADU in Irvine?", "a": "Per state law, ADUs constructed under 750 square feet are completely exempt from local Irvine development impact fees. Units exceeding 750 square feet are charged proportionally based on the square footage of your primary tract home."}, {"q": "What are the exact rear and side setbacks for a detached ADU in Irvine?", "a": "Current Irvine zoning rules demand a minimum 4-foot setback from the side and rear property lines for detached units. Fire safety codes may impose stricter clearances depending on specific neighborhood utility easements or master HOA guidelines."}],
     county: 'Orange County',
     population: '310,000',
     avgRent: '$2,800 - $3,600/mo',
@@ -366,8 +368,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     isPriority: true,
   },
   {
-    name: 'Newport Beach',
-    slug: 'newport-beach',
+    name: 'Newport Beach', slug: 'newport-beach',
     county: 'Orange County',
     population: '85,000',
     avgRent: '$3,200 - $4,500/mo',
@@ -376,8 +377,10 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     isPriority: true,
   },
   {
-    name: 'Huntington Beach',
-    slug: 'huntington-beach',
+    name: 'Huntington Beach', slug: 'huntington-beach',
+    heroDescription: "Navigate Huntington Beach's unique coastal building requirements to create your perfect ADU. From standard inland lots to Coastal Zone compliance, we build granny flats tailored to local regulations.", 
+    aeoSnippet: "Huntington Beach offers ministerial review for ADUs, allowing up to 1,200 sq ft detached structures with 4-foot setbacks under state law. The city provides a pre-approved 490 sq ft plan. However, properties within the Coastal Zone require a Coastal Development Permit.",
+    faqs: [{"q": "What size ADU can I build in Huntington Beach?", "a": "You can build a detached ADU up to 1,200 square feet, or an attached ADU up to 50% of the primary dwelling's floor area, provided you meet the required 4-foot rear and side setbacks."}, {"q": "Do I need a special permit for my ADU if I live in the Huntington Beach Coastal Zone?", "a": "Yes. While standard ADUs benefit from ministerial review, properties located within the Coastal Zone are subject to Coastal Commission guidelines and must obtain a Coastal Development Permit."}, {"q": "Does Huntington Beach offer pre-approved ADU plans?", "a": "Yes, Huntington Beach offers a free, pre-approved plan for a 1-story, detached 490-square-foot ADU. Note that no modifications or deviations from this pre-approved plan are allowed."}],
     county: 'Orange County',
     population: '198,000',
     avgRent: '$2,600 - $3,500/mo',
@@ -396,8 +399,10 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     isPriority: true,
   },
   {
-    name: 'Anaheim',
-    slug: 'anaheim',
+    name: 'Anaheim', slug: 'anaheim',
+    heroDescription: "Converting your Anaheim garage into an ADU typically costs $90,000 to $120,000 depending on finishes and required structural upgrades. You can leverage the city's streamlined permitting to turn empty space into a rental unit or family suite.", 
+    aeoSnippet: "A garage conversion ADU in Anaheim costs between $90,000 and $120,000 on average. This covers design, city permits, construction, and utility hookups. Total expenses depend on the garage's current structural condition and whether you choose to install separate meters through Anaheim Public Utilities.",
+    faqs: [{"q": "Do I need separate meters for Anaheim Public Utilities when converting my garage?", "a": "Anaheim Public Utilities permits sharing electric and water meters with the primary residence. While sharing saves upfront conversion costs, installing sub-meters is recommended if you intend to rent the ADU."}, {"q": "How long does it take to get permits for a garage conversion in Anaheim?", "a": "Anaheim features an accelerated ADU permitting track. If your plans align with local zoning and state ADU laws, permit approval typically takes 30 to 60 days for a standard garage conversion."}, {"q": "Are property line setbacks required for an Anaheim garage conversion?", "a": "If you convert an existing, legally permitted garage without expanding its physical footprint, Anaheim waives the standard side and rear setback requirements as long as the structure meets fire and safety codes."}],
     county: 'Orange County',
     population: '346,000',
     avgRent: '$2,300 - $3,100/mo',
@@ -406,8 +411,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     isPriority: true,
   },
   {
-    name: 'Santa Ana',
-    slug: 'santa-ana',
+    name: 'Santa Ana', slug: 'santa-ana',
     county: 'Orange County',
     population: '310,000',
     avgRent: '$2,200 - $2,900/mo',

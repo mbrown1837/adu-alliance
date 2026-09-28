@@ -1,28 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { localBlogs } from '@/lib/local-blogs';
 async function getPosts() {
-  const allPosts: any[] = [];
-  let page = 1;
-  let hasMore = true;
-  
-  while (hasMore) {
-    try {
-      const res = await fetch(`https://cms.adualliance.com/wp-json/wp/v2/posts?_embed&per_page=50&page=${page}`, {
-        next: { revalidate: 3600 },
-      });
-      if (!res.ok) break;
-      const posts = await res.json();
-      if (posts.length === 0) break;
-      allPosts.push(...posts);
-      const totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1');
-      hasMore = page < totalPages;
-      page++;
-    } catch {
-      break;
-    }
-  }
-  return allPosts;
+  return localBlogs;
 }
 
 export default async function BlogIndex() {

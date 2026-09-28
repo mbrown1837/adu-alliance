@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { MapPin, Phone, Clock } from 'lucide-react';
-import FeasibilityForm from '@/components/FeasibilityForm';
+import GhlLeadForm from '@/components/GhlLeadForm';
 
 export const metadata: Metadata = {
   title: 'Get a Free ADU Property Assessment | Orange County | ADU Alliance',
@@ -35,7 +35,7 @@ export default function FreeFeasibilityPage() {
         {/* Left Form Card */}
         <div className="lg:col-span-7 p-8 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark relative">
           <div className="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-brand-amber to-brand-amberLight rounded-t" />
-          <FeasibilityForm />
+          <GhlLeadForm minHeight="920px" />
         </div>
 
         {/* Right Authority Card */}
@@ -77,11 +77,11 @@ export default function FreeFeasibilityPage() {
             <div className="space-y-2 text-xs text-slate-300">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-brand-amber" />
-                <span>2372 Morse Ave, Irvine, CA 92614</span>
+                <span>Orange County, CA</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-brand-amber" />
-                <a href="tel:+16572984061" className="text-brand-amber font-mono font-bold hover:underline">
+                <a href="tel:+165****4061" className="text-brand-amber font-mono font-bold hover:underline">
                   (657) 298-4061
                 </a>
               </div>

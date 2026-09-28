@@ -2,9 +2,10 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ORANGE_COUNTY_CITIES, EVO_MODELS, LADU_PROJECT_PLAN } from '@/lib/data';
-import { ShieldCheck, MapPin, Clock, CheckCircle2, Phone, Home, Building2, HelpCircle, ArrowRight } from 'lucide-react';
+import { ShieldCheck, MapPin, Clock, CheckCircle2, Phone, Mail, Home, Building2, HelpCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import GhlLeadForm from '@/components/GhlLeadForm';
+import ContactCards from '@/components/ContactCards';
 
 interface LocationPageProps {
   params: Promise<{
@@ -48,20 +49,13 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
   // City-specific HomeAndConstructionBusiness & Breadcrumbs JSON-LD schema
   const localSchema = {
     '@context': 'https://schema.org',
-    '@type': 'HomeAndConstructionBusiness',
+    '@type': 'ServiceAreaBusiness',
     name: `ADU Alliance - ${city.name} ADU Builders`,
     url: `https://adualliance.com/locations/${city.slug}`,
     telephone: '+1-657-298-4061',
     priceRange: '$149,000 - $350,000',
     image: '/images/localized/adu_asset_52dc4cc0e2.jpg',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '2372 Morse Ave',
-      addressLocality: 'Irvine',
-      addressRegion: 'CA',
-      postalCode: '92614',
-      addressCountry: 'US',
-    },
+    
     geo: {
       '@type': 'GeoCoordinates',
       latitude: 33.6839,
@@ -96,10 +90,10 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
     ],
   };
 
-  const localFaqs = [
+  const localFaqs = city.faqs || [
     {
       q: `What are the ADU rear and side setback requirements in ${city.name}?`,
-      a: `Under California state law (AB 68 and Govt Code 65852.2), ${city.name} cannot mandate more than 4-foot rear and side setbacks for detached single-story ADUs up to 16–18 feet in height. Garage conversions within existing footprints require 0-foot additional setback.`,
+      a: `Under California state law (AB 68 and Govt Code 65852.2), ${city.name} cannot mandate more than 4-foot rear and side setbacks for detached single-story ADUs up to 16-18 feet in height. Garage conversions within existing footprints require 0-foot additional setback.`,
     },
     {
       q: `Do I need to replace garage parking when converting a garage into an ADU in ${city.name}?`,
@@ -142,7 +136,7 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
         </h1>
 
         <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
-          Looking to build a detached backyard home or convert a garage in {city.name}? ADU Alliance provides a single-source design-build contract covering architecture, structural engineering, {city.name} building department plan check, and ground-up construction.
+          {city.heroDescription || `Looking to build a detached backyard home or convert a garage in ${city.name}? ADU Alliance provides a single-source design-build contract covering architecture, structural engineering, ${city.name} building department plan check, and ground-up construction.`}
         </p>
 
         {/* 2026 AEO Direct Answer Passage Box for Google AI Overviews */}
@@ -151,7 +145,7 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
             DIRECT ANSWER &bull; 2026 {city.name.toUpperCase()} ADU LAWS & PERMITS
           </span>
           <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans">
-            Under California state law (AB 1033 & AB 68), single-family residential lots in {city.name} are entitled to construct a detached ADU up to 1,200 sq ft with 4-foot rear and side setbacks, or convert an existing garage with zero replacement parking required. Municipal plan check review in {city.name} averages <strong>{city.permitTurnaroundWeeks}</strong>.
+            {city.aeoSnippet || `Under California state law (AB 1033 & AB 68), single-family residential lots in ${city.name} are entitled to construct a detached ADU up to 1,200 sq ft with 4-foot rear and side setbacks, or convert an existing garage with zero replacement parking required. Municipal plan check review in ${city.name} averages <strong>${city.permitTurnaroundWeeks}</strong>.`}
           </p>
         </div>
 
@@ -296,6 +290,7 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
         <GhlLeadForm minHeight="920px" />
       </div>
 
+      <ContactCards />
     </div>
   );
 }

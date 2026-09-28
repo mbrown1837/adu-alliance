@@ -2,46 +2,15 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import FeasibilityForm from '@/components/FeasibilityForm';
+import GhlLeadForm from '@/components/GhlLeadForm';
 
+import { localBlogs } from '@/lib/local-blogs';
 async function getPost(slug: string) {
-  try {
-    const res = await fetch(`https://cms.adualliance.com/wp-json/wp/v2/posts?slug=${slug}&_embed`, {
-      next: { revalidate: 3600 },
-    });
-    if (!res.ok) return null;
-    const contentType = res.headers.get('content-type') || '';
-    if (!contentType.includes('application/json')) return null;
-    const posts = await res.json();
-    return posts[0] || null;
-  } catch {
-    return null;
-  }
+  return localBlogs.find((p: any) => p.slug === slug) || null;
 }
 
 export async function generateStaticParams() {
-  const allSlugs: { slug: string }[] = [];
-  let page = 1;
-  let hasMore = true;
-  
-  while (hasMore) {
-    try {
-      const res = await fetch(`https://cms.adualliance.com/wp-json/wp/v2/posts?per_page=50&page=${page}&_fields=slug`, {
-        next: { revalidate: 3600 },
-      });
-      if (!res.ok) break;
-      const posts = await res.json();
-      if (posts.length === 0) break;
-      allSlugs.push(...posts.map((p: any) => ({ slug: p.slug })));
-      const totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1');
-      hasMore = page < totalPages;
-      page++;
-    } catch {
-      break;
-    }
-  }
-  
-  return allSlugs;
+  return localBlogs.map((p: any) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -57,6 +26,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title.rendered.replace(/&#8217;/g, "'")} | ADU Alliance`,
     description: rawExcerpt,
+    alternates: {
+      canonical: `https://adualliance.com/blog/${slug}`,
+    }
   };
 }
 
@@ -135,7 +107,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             {isHighValueLeadPage && (
               <div className="mb-12">
                  {/* High-value conversion logic: stick a lead form at the very top for SEO migrated pages */}
-                 <FeasibilityForm />
+                 <GhlLeadForm minHeight="920px" />
               </div>
             )}
             
@@ -144,7 +116,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             {/* Bottom CTA for all blogs */}
             <div className="mt-16 bg-brand-gray-900 border border-brand-gray-800 rounded-2xl p-8 sm:p-12 text-center relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-amber/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-              <h3 className="text-3xl font-display font-bold text-brand-white mb-4 relative z-10">Ready to unlock your property's potential?</h3>
+              <h3 className="text-3xl font-display font-bold text-brand-white mb-4 relative z-10">Ready to unlock your property&apos;s potential?</h3>
               <p className="text-xl text-brand-gray-300 mb-8 relative z-10 max-w-2xl mx-auto">
                 Get a free, custom feasibility report detailing exactly what you can build on your Orange County lot in 2026.
               </p>

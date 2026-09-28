@@ -32,3 +32,15 @@ yarn-error.log*
 # Python cache
 __pycache__/
 *.pyc
+
+# Work and Reporting Files (Hermes / Scripts)
+*.csv
+*.md
+!README.md
+!DESIGN.md
+*.py
+gsc_*.json
+bing_*.json
+*.html
+!public/*.html
+scripts/

@@ -3,6 +3,7 @@ const nextConfig = {
   staticPageGenerationTimeout: 300,
   async headers() {
     return [
+
       {
         source: '/(.*)',
         headers: [
@@ -34,6 +35,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+            "source": "/blog/:path*",
+            "destination": "/",
+            "permanent": false
+      },
+      {
             "source": "/garage-conversion-adu-in-huntington-beach/",
             "destination": "/locations/huntington-beach",
             "permanent": true
@@ -55,22 +61,22 @@ const nextConfig = {
       },
       {
             "source": "/ab-462-adu-laws-2025-in-orange-county/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/ab-462-adu-laws-2025-in-orange-county",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/above-garage-adu-in-san-diego-county/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/above-garage-adu-in-san-diego-county",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -85,12 +91,12 @@ const nextConfig = {
       },
       {
             "source": "/adu-builder-in-orange-county/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-builder-in-orange-county",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -105,22 +111,22 @@ const nextConfig = {
       },
       {
             "source": "/adu-education/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-education",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/california-adu-laws-2025/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/california-adu-laws-2025",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -155,22 +161,22 @@ const nextConfig = {
       },
       {
             "source": "/orange-county-adu-laws-2025/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/orange-county-adu-laws-2025",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/carlsbad/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/carlsbad",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -185,32 +191,32 @@ const nextConfig = {
       },
       {
             "source": "/2023-adu-laws-in-chula-vista/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/2023-adu-laws-in-chula-vista",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/2023-adu-laws-in-san-diego-county/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/2023-adu-laws-in-san-diego-county",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/2026-best-adu-builders-near-me-in-orange-county/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/2026-best-adu-builders-near-me-in-orange-county",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -225,12 +231,12 @@ const nextConfig = {
       },
       {
             "source": "/7-mistakes-you-are-making-and-how-to-fix-them/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/7-mistakes-you-are-making-and-how-to-fix-them",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -255,12 +261,12 @@ const nextConfig = {
       },
       {
             "source": "/above-garage-adu/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/above-garage-adu",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -275,12 +281,12 @@ const nextConfig = {
       },
       {
             "source": "/adu-apartments-in-orange-county-ca/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-apartments-in-orange-county-ca",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -295,12 +301,12 @@ const nextConfig = {
       },
       {
             "source": "/adu-attached-to-garage-in-san-diego-county/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-attached-to-garage-in-san-diego-county",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -370,12 +376,12 @@ const nextConfig = {
       },
       {
             "source": "/adu-builders-in-orange-county-90-days-dream-units/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-builders-in-orange-county-90-days-dream-units",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -390,12 +396,12 @@ const nextConfig = {
       },
       {
             "source": "/adu-construction-in-california-permits-tips-2026/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-construction-in-california-permits-tips-2026",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -435,22 +441,22 @@ const nextConfig = {
       },
       {
             "source": "/adu-contractor-in-orange-county/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-contractor-in-orange-county",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-contractor-orange-county/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-contractor-orange-county",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -545,12 +551,12 @@ const nextConfig = {
       },
       {
             "source": "/adu-home-builders-backyard-cash-solutions-in-orange-county/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-home-builders-backyard-cash-solutions-in-orange-county",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -565,72 +571,72 @@ const nextConfig = {
       },
       {
             "source": "/adu-laws-in-el-cajon/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-el-cajon",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-imperial-beach/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-imperial-beach",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-la-mesa-ca/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-la-mesa-ca",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-lemon-grove/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-lemon-grove",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-national-city/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-national-city",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-oceanside/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-oceanside",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-san-diego/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-laws-in-san-diego",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -645,12 +651,12 @@ const nextConfig = {
       },
       {
             "source": "/adu-meaning-in-carlsbad/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-meaning-in-carlsbad",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -705,32 +711,32 @@ const nextConfig = {
       },
       {
             "source": "/adu-orange-county/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-orange-county",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-permits-orange-county/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-permits-orange-county",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-what-does-adu-stand-for-in-san-diego-county/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-what-does-adu-stand-for-in-san-diego-county",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -850,22 +856,22 @@ const nextConfig = {
       },
       {
             "source": "/best-adu-contractors-in-fallbrook/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/best-adu-contractors-in-fallbrook",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/blogs/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/blogs",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -1075,22 +1081,22 @@ const nextConfig = {
       },
       {
             "source": "/local-adu-architect-in-orange-county-ca/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/local-adu-architect-in-orange-county-ca",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/locations/la-palma/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/locations/la-palma",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -1105,32 +1111,32 @@ const nextConfig = {
       },
       {
             "source": "/new-adu-laws-california-2026-in-orange-county/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/new-adu-laws-california-2026-in-orange-county",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/new-adu-rules-california-2026-expert-guide/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/new-adu-rules-california-2026-expert-guide",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/new-adu-rules-california-2026-guide-property-value/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/new-adu-rules-california-2026-guide-property-value",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -1145,102 +1151,102 @@ const nextConfig = {
       },
       {
             "source": "/san-deigo-county/chula-vista/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/chula-vista",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/coronado/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/coronado",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/del-mar/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/del-mar",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/el-cajon/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/el-cajon",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/encinitas/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/encinitas",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/escondido/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/escondido",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/fallbrook/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/fallbrook",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/imperial-beach/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/imperial-beach",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/la-mesa/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/la-mesa",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/san-marcos/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/san-deigo-county/san-marcos",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -1255,12 +1261,12 @@ const nextConfig = {
       },
       {
             "source": "/services/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/services",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -1285,12 +1291,12 @@ const nextConfig = {
       },
       {
             "source": "/services/adu-consultation/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/services/adu-consultation",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -1305,32 +1311,32 @@ const nextConfig = {
       },
       {
             "source": "/services/adu-permitting/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/services/adu-permitting",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/services/adu-regulatory-assistance/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/services/adu-regulatory-assistance",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/top-adu-builders-in-orange-county/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/top-adu-builders-in-orange-county",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -1355,12 +1361,12 @@ const nextConfig = {
       },
       {
             "source": "/ultimate-guide-adu-regulations-california-2026/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/ultimate-guide-adu-regulations-california-2026",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -1375,12 +1381,12 @@ const nextConfig = {
       },
       {
             "source": "/what-is-adu-in-orange-county-ca/",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/what-is-adu-in-orange-county-ca",
-            "destination": "/",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
@@ -1390,52 +1396,52 @@ const nextConfig = {
       },
       {
             "source": "/zero-hassle-adu-permit-california-2026-guide/",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/zero-hassle-adu-permit-california-2026-guide",
-            "destination": "/process",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-garage-conversion-cost-in-orange-county",
-            "destination": "/blog/adu-garage-conversion-cost-in-orange-county",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-garage-conversion-cost-in-orange-county/",
-            "destination": "/blog/adu-garage-conversion-cost-in-orange-county",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too",
-            "destination": "/blog/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too/",
-            "destination": "/blog/adu-orange-county-2025-why-everyone-is-talking-about-new-laws-and-you-should-too",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/orange-county-adu-permits-sb-543",
-            "destination": "/blog/orange-county-adu-permits-sb-543",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/orange-county-adu-permits-sb-543/",
-            "destination": "/blog/orange-county-adu-permits-sb-543",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide",
-            "destination": "/blog/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide",
+            "destination": "/services/adu-construction/",
             "permanent": true
       },
       {
             "source": "/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide/",
-            "destination": "/blog/adu-construction-cost-per-square-foot-2026-in-orange-county-exposed-guide",
+            "destination": "/services/adu-construction/",
             "permanent": true
       }
 ];

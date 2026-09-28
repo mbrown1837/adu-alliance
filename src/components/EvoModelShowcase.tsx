@@ -43,7 +43,7 @@ export default function EvoModelShowcase() {
                   alt={`${model.name} ADU`}
                   className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-dark/80 to-transparent" />
 
                 <div className="relative z-10 p-5 sm:p-8 space-y-3">
                   <h3 className="font-black uppercase text-white tracking-tight text-xl sm:text-2xl lg:text-3xl leading-[1.1] mb-2">

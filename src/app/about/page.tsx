@@ -17,11 +17,11 @@ export default function AboutPage() {
     '@type': 'GeneralContractor',
     name: 'ADU Alliance',
     url: 'https://adualliance.com/about',
-    telephone: '+16572984061',
+    telephone: '+165****4061',
     priceRange: '$149,000 - $350,000',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '2372 Morse Ave',
+      
       addressLocality: 'Irvine',
       addressRegion: 'CA',
       postalCode: '92614',
@@ -164,11 +164,11 @@ export default function AboutPage() {
           <div className="space-y-2 text-xs font-mono text-slate-300 pt-2 border-t border-brand-borderDark">
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-brand-amber" />
-              <span>2372 Morse Ave, Irvine, CA 92614</span>
+              <span>Orange County, CA</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-brand-amber" />
-              <a href="tel:+16572984061" className="text-brand-amber hover:underline">
+              <a href="tel:+165****4061" className="text-brand-amber hover:underline">
                 (657) 298-4061
               </a>
             </div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
             Request Free Lot Feasibility Plan &rarr;
           </Link>
           <a
-            href="tel:+16572984061"
+            href="tel:+165****4061"
             className="px-8 py-4 bg-brand-black hover:bg-brand-dark text-white border border-brand-borderDark font-bold text-xs uppercase tracking-wider rounded-full transition-all"
           >
             Call Us: (657) 298-4061

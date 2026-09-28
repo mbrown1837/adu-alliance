@@ -58,7 +58,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       priceRange: '$149,000 - $350,000',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: '2372 Morse Ave',
+        
         addressLocality: 'Irvine',
         addressRegion: 'CA',
         postalCode: '92614',
@@ -201,7 +201,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             SCOPE SPECIFICATIONS
           </span>
           <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight">
-            What's Included in Your Single-Contract Scope
+            What&apos;s Included in Your Single-Contract Scope
           </h2>
         </div>
 
