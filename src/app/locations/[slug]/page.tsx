@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { ORANGE_COUNTY_CITIES, EVO_MODELS, LADU_PROJECT_PLAN } from '@/lib/data';
-import { ShieldCheck, MapPin, Clock, CheckCircle2, Phone, Mail, Home, Building2, HelpCircle, ArrowRight } from 'lucide-react';
+import { ORANGE_COUNTY_CITIES, EVO_MODELS } from '@/lib/data';
+import { MapPin, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import GhlLeadForm from '@/components/GhlLeadForm';
 import ContactCards from '@/components/ContactCards';

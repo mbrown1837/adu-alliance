@@ -39,9 +39,7 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'ADU Builders Orange County | ADU Alliance',
-    description: 'Orange County ADU design-build general contractor. Custom detached ADUs & garage conversions with 100% city permit approval.',
-    url: 'https://adualliance.com',
+    type: 'website',
     siteName: 'ADU Alliance',
     images: [
       {

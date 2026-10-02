@@ -19,9 +19,7 @@ export default function ServicesIndexPage() {
     name: 'Orange County ADU Design-Build Services',
     provider: {
       '@type': 'GeneralContractor',
-      name: 'ADU Alliance',
-      telephone: '+1-657-298-4061',
-      url: 'https://adualliance.com',
+      '@id': 'https://adualliance.com/#organization',
     },
     areaServed: 'Orange County, CA',
     hasOfferCatalog: {

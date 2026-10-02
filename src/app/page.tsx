@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import ServicesSection from '@/components/ServicesSection';
 import EvoModelShowcase from '@/components/EvoModelShowcase';
@@ -8,6 +9,12 @@ import FourWaysStepIn from '@/components/FourWaysStepIn';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import FaqSection from '@/components/FaqSection';
 import PropertyAssessmentTool from '@/components/PropertyAssessmentTool';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://adualliance.com',
+  },
+};
 
 export default function HomePage() {
   return (

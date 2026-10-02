@@ -52,18 +52,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     name: `${service.title} - Orange County`,
     provider: {
       '@type': 'GeneralContractor',
-      name: 'ADU Alliance',
-      telephone: '+1-657-298-4061',
-      url: 'https://adualliance.com',
-      priceRange: '$149,000 - $350,000',
-      address: {
-        '@type': 'PostalAddress',
-        
-        addressLocality: 'Irvine',
-        addressRegion: 'CA',
-        postalCode: '92614',
-        addressCountry: 'US',
-      },
+      '@id': 'https://adualliance.com/#organization',
     },
     areaServed: 'Orange County, California',
     description: service.description,

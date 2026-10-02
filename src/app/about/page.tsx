@@ -12,36 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'GeneralContractor',
-    name: 'ADU Alliance',
-    url: 'https://adualliance.com/about',
-    telephone: '+165****4061',
-    priceRange: '$149,000 - $350,000',
-    address: {
-      '@type': 'PostalAddress',
-      
-      addressLocality: 'Irvine',
-      addressRegion: 'CA',
-      postalCode: '92614',
-      addressCountry: 'US',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 33.6846,
-      longitude: -117.8265,
-    },
-    description: "Orange County's dedicated ADU design-build contractor specializing in turnkey accessory dwelling units and garage conversions under CSLB License Verified CSLB Alliance.",
-  };
-
   return (
     <div className="py-16 sm:py-24 px-6 max-w-7xl mx-auto space-y-24">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-
       {/* Header */}
       <div className="max-w-4xl space-y-6">
         <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-amber">
