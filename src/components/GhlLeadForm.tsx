@@ -26,10 +26,10 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
     const handleGhlMessage = (event: MessageEvent) => {
       if (
         event.data?.type === 'ghl_survey_submitted' ||
-        event.data?.formId === '6hD0FF59AuNJ7LflDzVg' ||
-        (typeof event.data === 'string' && event.data.includes('6hD0FF59AuNJ7LflDzVg'))
+        event.data?.formId === 'ZNe5dhYHKIoH4EyvJqNP' ||
+        (typeof event.data === 'string' && event.data.includes('ZNe5dhYHKIoH4EyvJqNP'))
       ) {
-        trackFormSubmission('6hD0FF59AuNJ7LflDzVg', 'ADU Alliance Free Property Assessment');
+        trackFormSubmission('ZNe5dhYHKIoH4EyvJqNP', 'ADU Alliance Free Property Assessment');
       }
     };
 
@@ -50,7 +50,7 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
 
       {/* GHL Survey Iframe Embed */}
       <iframe
-        src="https://link.westlanddre.com/widget/survey/6hD0FF59AuNJ7LflDzVg"
+        src="https://link.westlanddre.com/widget/survey/ZNe5dhYHKIoH4EyvJqNP"
         onLoad={() => setIsLoading(false)}
         style={{
           width: '100%',
@@ -60,7 +60,7 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
           background: 'transparent',
           display: isLoading ? 'none' : 'block',
         }}
-        id="6hD0FF59AuNJ7LflDzVg"
+        id="ZNe5dhYHKIoH4EyvJqNP"
         data-layout="{'id':'INLINE'}"
         data-trigger-type="alwaysShow"
         data-trigger-value=""
@@ -70,8 +70,8 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
         data-deactivation-value=""
         data-form-name="ADU Alliance Free Property Assessment"
         data-height="750"
-        data-layout-iframe-id="6hD0FF59AuNJ7LflDzVg"
-        data-form-id="6hD0FF59AuNJ7LflDzVg"
+        data-layout-iframe-id="ZNe5dhYHKIoH4EyvJqNP"
+        data-form-id="ZNe5dhYHKIoH4EyvJqNP"
         data-cookie-consent="true"
         data-cookie-consent-provider="auto"
         title="ADU Alliance Free Property Assessment"
@@ -81,10 +81,10 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
       <div className="mt-4 p-3.5 bg-brand-black rounded-xl border border-brand-borderDark/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-slate-300 text-center sm:text-left">
         <span>Having trouble loading the survey?</span>
         <a
-          href="tel:6572984061"
+          href="tel:9498229561"
           className="text-brand-amber hover:text-white font-bold flex items-center gap-1.5 shrink-0"
         >
-          <Phone className="w-3.5 h-3.5" /> Call Planning Desk: (657) 298-4061
+          <Phone className="w-3.5 h-3.5" /> Call Planning Desk: (949) 822-9561
         </a>
       </div>
     </div>

@@ -38,7 +38,7 @@ export default function PropertyAssessmentTool() {
             </span>
             <span className="hidden sm:inline text-slate-600">&bull;</span>
             <span className="flex items-center gap-1.5">
-              <Phone className="w-4 h-4 text-slate-300" /> Direct Planning Desk: <a href="tel:6572984061" className="text-white hover:text-brand-amber font-bold font-sans">(657) 298-4061</a>
+              <Phone className="w-4 h-4 text-slate-300" /> Direct Planning Desk: <a href="tel:9498229561" className="text-white hover:text-brand-amber font-bold font-sans">(949) 822-9561</a>
             </span>
           </div>
         </div>

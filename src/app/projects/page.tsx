@@ -230,10 +230,10 @@ export default function ProjectsPage() {
             Schedule Free Property Feasibility Walk &rarr;
           </Link>
           <a
-            href="tel:+16572984061"
+            href="tel:+19498229561"
             className="px-8 py-4 bg-brand-black hover:bg-brand-dark text-white border border-brand-borderDark font-bold text-xs uppercase tracking-wider rounded-full transition-all"
           >
-            Call Us: (657) 298-4061
+            Call Us: (949) 822-9561
           </a>
         </div>
       </div>

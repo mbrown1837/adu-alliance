@@ -14,7 +14,7 @@ export default function ContactCards() {
             <div className="bg-white border border-slate-100 shadow-xl rounded-xl p-8 flex flex-col items-center justify-center space-y-4 hover:-translate-y-1 transition-transform duration-300">
                <Phone className="w-8 h-8 text-brand-amber" strokeWidth={1.5} />
                <h3 className="text-gray-900 font-black tracking-widest text-sm uppercase">Call Us</h3>
-               <a href="tel:6572984061" className="text-black font-medium hover:text-brand-amber transition-colors">(657) 298-4061</a>
+               <a href="tel:9498229561" className="text-black font-medium hover:text-brand-amber transition-colors">(949) 822-9561</a>
             </div>
 
             {/* Card 2 */}

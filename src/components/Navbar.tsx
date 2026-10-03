@@ -22,8 +22,8 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-3">
             <span>Direct Planning Desk:</span>
-            <a href="tel:6572984061" onClick={() => trackPhoneCallClick('6572984061', 'MicroTrustBar')} className="text-white hover:text-brand-amber font-bold">
-              (657) 298-4061
+            <a href="tel:9498229561" onClick={() => trackPhoneCallClick('9498229561', 'MicroTrustBar')} className="text-white hover:text-brand-amber font-bold">
+              (949) 822-9561
             </a>
           </div>
         </div>
@@ -55,11 +55,11 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="tel:6572984061"
-            onClick={() => trackPhoneCallClick('6572984061', 'DesktopHeaderNav')}
+            href="tel:9498229561"
+            onClick={() => trackPhoneCallClick('9498229561', 'DesktopHeaderNav')}
             className="text-xs font-mono font-bold text-slate-300 hover:text-white flex items-center gap-1.5"
           >
-            <Phone className="w-3.5 h-3.5 text-brand-amber" /> (657) 298-4061
+            <Phone className="w-3.5 h-3.5 text-brand-amber" /> (949) 822-9561
           </a>
           <Link
             href="/free-feasibility"
@@ -93,11 +93,11 @@ export default function Navbar() {
           </nav>
           <div className="pt-2 flex flex-col gap-3">
             <a
-              href="tel:6572984061"
-              onClick={() => trackPhoneCallClick('6572984061', 'MobileNavDrawer')}
+              href="tel:9498229561"
+              onClick={() => trackPhoneCallClick('9498229561', 'MobileNavDrawer')}
               className="py-3 bg-brand-black border border-brand-borderDark text-white text-center font-bold text-xs rounded-xl flex items-center justify-center gap-2"
             >
-              <Phone className="w-4 h-4 text-brand-amber" /> Call (657) 298-4061
+              <Phone className="w-4 h-4 text-brand-amber" /> Call (949) 822-9561
             </a>
             <Link
               href="/free-feasibility"

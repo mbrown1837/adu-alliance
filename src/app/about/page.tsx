@@ -140,8 +140,8 @@ export default function AboutPage() {
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-brand-amber" />
-              <a href="tel:+165****4061" className="text-brand-amber hover:underline">
-                (657) 298-4061
+              <a href="tel:+19498229561" className="text-brand-amber hover:underline">
+                (949) 822-9561
               </a>
             </div>
             <div className="flex items-center gap-2">
@@ -178,10 +178,10 @@ export default function AboutPage() {
             Request Free Lot Feasibility Plan &rarr;
           </Link>
           <a
-            href="tel:+165****4061"
+            href="tel:+19498229561"
             className="px-8 py-4 bg-brand-black hover:bg-brand-dark text-white border border-brand-borderDark font-bold text-xs uppercase tracking-wider rounded-full transition-all"
           >
-            Call Us: (657) 298-4061
+            Call Us: (949) 822-9561
           </a>
         </div>
       </div>

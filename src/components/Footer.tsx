@@ -25,7 +25,7 @@ export default function Footer() {
             </p>
             <div className="space-y-1 text-xs font-mono text-slate-300">
               <div>Verified CSLB Licensed Builder Network</div>
-              <div>Direct Planning Desk: <a href="tel:6572984061" className="text-white hover:text-brand-amber font-bold">(657) 298-4061</a></div>
+              <div>Direct Planning Desk: <a href="tel:9498229561" className="text-white hover:text-brand-amber font-bold">(949) 822-9561</a></div>
               <div className="text-brand-amber font-bold">Serving All Over California</div>
             </div>
           </div>

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 
   return {
     title: `ADU Builders in ${city.name}, CA | Turnkey Design & Permits | ADU Alliance`,
-    description: `Turnkey ADU builder in ${city.name}, Orange County. Guaranteed ${city.name} city permits, 4-ft setbacks, custom floor plans, and fixed-price construction from $149,000. Call (657) 298-4061.`,
+    description: `Turnkey ADU builder in ${city.name}, Orange County. Guaranteed ${city.name} city permits, 4-ft setbacks, custom floor plans, and fixed-price construction from $149,000. Call (949) 822-9561.`,
     alternates: {
       canonical: `https://adualliance.com/locations/${city.slug}`,
     },
@@ -52,7 +52,7 @@ export default async function CityLocationPage({ params }: LocationPageProps) {
     '@type': 'ServiceAreaBusiness',
     name: `ADU Alliance - ${city.name} ADU Builders`,
     url: `https://adualliance.com/locations/${city.slug}`,
-    telephone: '+1-657-298-4061',
+    telephone: '+1-949-822-9561',
     priceRange: '$149,000 - $350,000',
     image: '/images/localized/adu_asset_52dc4cc0e2.jpg',
     

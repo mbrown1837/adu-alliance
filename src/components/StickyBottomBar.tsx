@@ -23,12 +23,12 @@ export default function StickyBottomBar() {
         {/* Mobile Action Bar */}
         <div className="flex items-center justify-between w-full sm:w-auto gap-2">
           <a
-            href="tel:6572984061"
-            onClick={() => trackPhoneCallClick('6572984061', 'MobileStickyBar')}
+            href="tel:9498229561"
+            onClick={() => trackPhoneCallClick('9498229561', 'MobileStickyBar')}
             className="flex-1 sm:flex-none py-2.5 px-3 bg-brand-black border border-brand-borderDark rounded-full text-xs font-mono font-bold text-white hover:border-brand-amber transition-colors flex items-center justify-center gap-1.5 shrink-0"
           >
             <Phone className="w-3.5 h-3.5 text-brand-amber shrink-0" />
-            <span>(657) 298-4061</span>
+            <span>(949) 822-9561</span>
           </a>
 
           <Link

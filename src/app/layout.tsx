@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' },
   title: 'ADU Builders Orange County | ADU Alliance',
   description:
-    'Orange County ADU design-build general contractor. Custom detached ADUs & garage conversions with 100% city permit approval. Call (657) 298-4061.',
+    'Orange County ADU design-build general contractor. Custom detached ADUs & garage conversions with 100% city permit approval. Call (949) 822-9561.',
   keywords: [
     'ADU builders Orange County',
     'ADU contractor Irvine',
@@ -65,7 +65,7 @@ export default function RootLayout({
     image: 'https://adualliance.com/images/localized/adu_asset_7b7dec0f36.jpeg',
     '@id': 'https://adualliance.com/#organization',
     url: 'https://adualliance.com',
-    telephone: '+1-657-298-4061',
+    telephone: '+1-949-822-9561',
     priceRange: '$$$$',
     address: {
       '@type': 'PostalAddress',

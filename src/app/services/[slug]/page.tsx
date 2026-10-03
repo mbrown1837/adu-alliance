@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   return {
     title: `${service.title} in Orange County, CA | ADU Alliance`,
-    description: `${service.description.slice(0, 150)} Guaranteed municipal permits across 34 OC cities. Call (657) 298-4061 for lot assessment.`,
+    description: `${service.description.slice(0, 150)} Guaranteed municipal permits across 34 OC cities. Call (949) 822-9561 for lot assessment.`,
     alternates: {
       canonical: `https://adualliance.com/services/${service.slug}`,
     },

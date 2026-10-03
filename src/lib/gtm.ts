@@ -7,7 +7,7 @@ declare global {
   }
 }
 
-export const trackPhoneCallClick = (phoneNumber: string = '6572984061', label: string = 'Header/CTA') => {
+export const trackPhoneCallClick = (phoneNumber: string = '9498229561', label: string = 'Header/CTA') => {
   if (typeof window === 'undefined') return;
 
   // Push to dataLayer for Google Tag Manager (GTM-KNC2GR4)

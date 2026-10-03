@@ -256,8 +256,8 @@ export const ENTRY_PATHWAYS = [
     title: 'Phone Consultation',
     subtitle: '15-Minute Expert Q&A',
     description: 'Prefer to talk? Call our Irvine planning desk directly for immediate answers on costs, city permits, and timelines.',
-    cta: 'Call (657) 298-4061',
-    href: 'tel:6572984061',
+    cta: 'Call (949) 822-9561',
+    href: 'tel:9498229561',
     popular: false,
   },
   {
