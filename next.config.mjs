@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Development and production servers must never overwrite each other's assets.
-  distDir: process.env.NODE_ENV === 'development' ? '.next-dev' : '.next-production',
+  distDir: process.env.NODE_ENV === 'development' ? '.next-dev' : '.next',
   staticPageGenerationTimeout: 300,
   async headers() {
     return [
