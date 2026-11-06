@@ -8,6 +8,8 @@ coverage/
 
 # Next.js build output
 .next/
+.next-dev/
+.next-production/
 out/
 build/
 dist/
@@ -44,3 +46,5 @@ bing_*.json
 *.html
 !public/*.html
 scripts/
+
+.seo-cache/

@@ -27,14 +27,14 @@ export const ADU_SERVICES: ADUService[] = [
     title: 'ADU Permits & City Approvals',
     slug: 'adu-permits',
     category: 'Municipal Permitting',
-    tagline: '100% In-House Permit Expediting Across All 34 OC Cities',
-    description: 'Our in-house permit team submits directly to your local building department (Irvine, Newport Beach, Anaheim, Santa Ana, Costa Mesa, etc.). We manage all plan check reviews, city comments, and correction notices until your building permit is fully issued.',
+    tagline: 'Plan Check Support Across Orange County',
+    description: 'Discuss permit-document preparation, submission and agency corrections with your selected professional. The responsible authority decides the application.',
     imageUrl: '/images/localized/adu_asset_23f3e83858.jpeg',
     features: [
       'Direct submissions to all Orange County building departments',
       'Prompt resolution of city plan check correction notices',
       'HOA architectural review and compliance coordination',
-      'Guaranteed permit approval with zero contractor handoffs',
+      'Permit documentation and plan-check coordination',
     ],
     turnaroundTime: '6 to 12 Weeks (City Dependent)',
   },
@@ -75,19 +75,19 @@ export const ADU_SERVICES: ADUService[] = [
   {
     id: 'junior-adu',
     number: '05',
-    title: 'Junior ADU (JADU) & Attached Extensions',
+    title: 'Junior ADU (JADU) Planning',
     slug: 'junior-adu',
-    category: 'Interior & Attached',
-    tagline: 'Create Living Space Within or Attached to Primary Home',
-    description: 'Create a compliant Junior ADU (up to 500 sq ft) within your existing home footprint or build an attached suite extension. Ideal for aging parents, college students, or private guest quarters with lower upfront construction investment.',
+    category: 'Interior Conversion',
+    tagline: 'Explore a Smaller Unit Within Your Single-Family Home',
+    description: 'Explore a Junior ADU of up to 500 sq ft contained within a single-family residence. A JADU differs from an attached ADU extension; review the existing layout, access, kitchen and bathroom arrangements with your design professional and responsible authority.',
     imageUrl: '/images/localized/adu_asset_6da88e4404.jpeg',
     features: [
       'Up to 500 sq ft space with private exterior entrance',
-      'Efficiency kitchen & full private bathroom',
-      'Seamless architectural blending with main residence',
-      'Fastest municipal permit approval pathway',
+      'Efficiency kitchen and qualifying bathroom arrangements',
+      'Review of the existing home layout and unit access',
+      'Property-specific eligibility and permit requirements',
     ],
-    turnaroundTime: '8 to 12 Weeks Build Time',
+    turnaroundTime: 'Confirm after property review',
   },
 ];
 
@@ -216,7 +216,7 @@ export const LADU_PROJECT_PLAN = [
     name: 'City Permitting',
     timeline: 'Wk 6-16',
     duration: '6 - 10 Weeks',
-    desc: 'Plan check submission, city comment resolution, and guaranteed permit issuance across Orange County.',
+    desc: 'Plan check submission, city comments and required corrections before the authority decides the application.',
   },
   {
     phase: 'Phase 04',
@@ -260,15 +260,7 @@ export const ENTRY_PATHWAYS = [
     href: 'tel:9498229561',
     popular: false,
   },
-  {
-    badge: 'INSTANT DOWNLOAD',
-    title: '2026 OC ADU Guide',
-    subtitle: '28-Page Comprehensive PDF',
-    description: 'Line-item cost tables, city permit timelines, floor plans, and zoning rules across all 34 Orange County cities.',
-    cta: 'Download Free PDF',
-    href: '#assessment',
-    popular: false,
-  },
+  { badge: 'START PLANNING', title: 'Property Assessment', subtitle: 'Explore Your ADU Options', description: 'Share your property and project goals to discuss layouts, budget factors and next steps.', cta: 'Request Free Assessment', href: '/free-feasibility', popular: false },
 ];
 
 // ==========================================
@@ -319,42 +311,19 @@ export const CASE_STUDIES: CaseStudy[] = [
 // 6. TRUST PILLARS
 // ==========================================
 export const TRUST_PILLARS = [
-  {
-    number: '01',
-    title: 'Licensed General Contractor (B)',
-    description: 'ADU Alliance holds an active California General Contractor (B) license Verified CSLB Alliance with comprehensive general liability and workers compensation coverage.',
-  },
-  {
-    number: '02',
-    title: '200+ ADUs Completed in Southern California',
-    description: 'Our portfolio spans detached backyard builds, garage conversions, JADUs, and attached extensions across every major Orange County municipality.',
-  },
-  {
-    number: '03',
-    title: '15+ Years ADU-Exclusive Focus',
-    description: 'Many contractors treat ADUs as a side gig. We focus exclusively on ADU design, permitting, and construction every single day.',
-  },
-  {
-    number: '04',
-    title: 'Transparent, Fixed-Price Contracts',
-    description: 'We do not use open-ended billing or surprise change-orders. Each scope starts with clear, itemized pricing covering architecture, permits, and construction.',
-  },
-  {
-    number: '05',
-    title: 'In-House Permit Management Across 34 Cities',
-    description: 'We submit and manage permits directly with Irvine, Newport Beach, Anaheim, Santa Ana, Huntington Beach, and local building departments to prevent avoidable delays.',
-  },
-  {
-    number: '06',
-    title: 'Single-Source Design-Build Accountability',
-    description: 'One team, one contract, and one dedicated project manager from initial lot assessment through final city inspection and key handover.',
-  },
+  { number: '01', title: 'Know Your Contractor', description: 'Construction contracts are made directly with an independent contractor. Confirm the current license, insurance, scope and responsible professionals before signing.' },
+  { number: '02', title: 'Start with Your Property', description: 'Lot access, existing structures, utilities and local requirements shape which ADU options may be practical.' },
+  { number: '03', title: 'Compare Your Options', description: 'Explore detached ADUs, garage conversions and junior ADUs before choosing a layout or construction scope.' },
+  { number: '04', title: 'Understand the Budget', description: 'Ask for an itemized proposal covering design, approvals, sitework, utilities and finishes, including exclusions and change-order terms.' },
+  { number: '05', title: 'Check Local Requirements', description: 'Confirm the current rules and submission process with the city or county responsible for your property.' },
+  { number: '06', title: 'Clear Next Steps', description: 'Use the property assessment to describe your project and discuss suitable next steps with the planning desk.' },
 ];
 
 // ==========================================
 // 7. ALL 34 ORANGE COUNTY MUNICIPALITIES DATA
 // ==========================================
 export const ORANGE_COUNTY_CITIES: CityInfo[] = [
+  { name: 'La Palma', slug: 'la-palma', county: 'Orange County', population: '', avgRent: '', permitTurnaroundWeeks: 'Property dependent', keyZoningNotes: 'For your La Palma property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.', isPriority: false },
   {
     name: 'Irvine', slug: 'irvine',
     heroDescription: "Speed up your OC build with Irvine's pre-approved ADU plans. Skip months of city review and break ground faster using compliant, ready-to-permit layouts.", 
@@ -364,7 +333,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '310,000',
     avgRent: '$2,800 - $3,600/mo',
     permitTurnaroundWeeks: '8 - 12 wks',
-    keyZoningNotes: 'Allows up to 1,200 sq ft detached ADU + 500 sq ft JADU. 4ft rear/side setbacks strictly enforced. Master-planned HOA aesthetic guidelines fully handled.',
+    keyZoningNotes: 'For your Irvine property, discuss applicable community or association requirements. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -373,7 +342,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '85,000',
     avgRent: '$3,200 - $4,500/mo',
     permitTurnaroundWeeks: '10 - 14 wks',
-    keyZoningNotes: 'Coastal zone properties require Coastal Commission exemption review. High luxury home values ($2M+). Architectural plan sets expedite city plan check.',
+    keyZoningNotes: 'For your Newport Beach property, discuss whether coastal review applies. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -385,7 +354,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '198,000',
     avgRent: '$2,600 - $3,500/mo',
     permitTurnaroundWeeks: '8 - 12 wks',
-    keyZoningNotes: 'Allows up to 16-18ft height limits for detached single-story. Strong demand for detached garage conversions and coastal guest suites.',
+    keyZoningNotes: 'For your Huntington Beach property, discuss whether coastal review applies, the condition and conversion suitability of existing garages. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -395,7 +364,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '111,000',
     avgRent: '$2,500 - $3,400/mo',
     permitTurnaroundWeeks: '6 - 10 wks',
-    keyZoningNotes: 'High ADU construction density. Fast municipal turnaround on garage conversions, junior ADUs (JADUs), and detached backyard cottages.',
+    keyZoningNotes: 'For your Costa Mesa property, discuss the condition and conversion suitability of existing garages. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -407,7 +376,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '346,000',
     avgRent: '$2,300 - $3,100/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'City of Anaheim Planning Dept offers expedited review for standard pre-checked floor plans. Large lot footprints accommodate up to 1,200 sq ft.',
+    keyZoningNotes: 'For your Anaheim property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -416,7 +385,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '310,000',
     avgRent: '$2,200 - $2,900/mo',
     permitTurnaroundWeeks: '8 - 12 wks',
-    keyZoningNotes: 'High demand for multi-generational family living suites. Deep lots accommodate maximum 1,200 sq ft detached homes and 2-car garage conversions.',
+    keyZoningNotes: 'For your Santa Ana property, discuss the condition and conversion suitability of existing garages. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -426,7 +395,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '139,000',
     avgRent: '$2,400 - $3,200/mo',
     permitTurnaroundWeeks: '7 - 12 wks',
-    keyZoningNotes: 'Old Towne Orange historic district requires specific exterior architectural styling. Standard residential zones approve fast 60-day permits.',
+    keyZoningNotes: 'For your Orange property, discuss any historic-property design review. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -436,7 +405,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '143,000',
     avgRent: '$2,300 - $3,100/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'Great lot depths in established neighborhoods. Excellent permit turnaround for detached secondary suites and detached garage conversions.',
+    keyZoningNotes: 'For your Fullerton property, discuss the condition and conversion suitability of existing garages. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -446,7 +415,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '23,000',
     avgRent: '$3,500 - $5,000/mo',
     permitTurnaroundWeeks: '12 - 16 wks',
-    keyZoningNotes: 'Hillside terrain and coastal development regulations apply. Custom structural engineering and grading analysis included in our turnkey scope.',
+    keyZoningNotes: 'For your Laguna Beach property, discuss whether coastal review applies, site grading, soil and engineering needs. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -456,7 +425,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '93,000',
     avgRent: '$2,600 - $3,400/mo',
     permitTurnaroundWeeks: '8 - 12 wks',
-    keyZoningNotes: 'South Orange County master planned lots. Standard 4ft rear and side setbacks. HOA architectural guidelines coordinated directly by our team.',
+    keyZoningNotes: 'For your Mission Viejo property, discuss applicable community or association requirements. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -466,7 +435,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '88,000',
     avgRent: '$2,500 - $3,300/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'Rapidly expanding residential ADU activity. City planning streamlines detached 1-2 bedroom backyard builds under state mandate.',
+    keyZoningNotes: 'For your Lake Forest property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -476,7 +445,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '52,000',
     avgRent: '$2,600 - $3,400/mo',
     permitTurnaroundWeeks: '8 - 12 wks',
-    keyZoningNotes: 'Established residential subdivisions. High demand for modern attached suites and garage conversions for aging family members.',
+    keyZoningNotes: 'For your Aliso Viejo property, discuss the condition and conversion suitability of existing garages. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -486,7 +455,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '64,000',
     avgRent: '$2,800 - $3,800/mo',
     permitTurnaroundWeeks: '9 - 14 wks',
-    keyZoningNotes: 'Spanish Colonial Revival styling considerations in specific zones. Coastal proximity and high demand for turnkey backyard guest cottages.',
+    keyZoningNotes: 'For your San Clemente property, discuss whether coastal review applies. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -496,7 +465,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '33,000',
     avgRent: '$2,900 - $4,000/mo',
     permitTurnaroundWeeks: '9 - 14 wks',
-    keyZoningNotes: 'Scenic coastal community with strong property values. State ADU laws allow detached standalone construction with 4ft setbacks.',
+    keyZoningNotes: 'For your Dana Point property, discuss whether coastal review applies. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: true,
   },
   {
@@ -506,7 +475,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '47,000',
     avgRent: '$2,400 - $3,200/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'North OC community with spacious lots. Fast municipal review process for detached modular and stick-built ADU designs.',
+    keyZoningNotes: 'For your Brea property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -516,7 +485,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '68,000',
     avgRent: '$2,700 - $3,600/mo',
     permitTurnaroundWeeks: '8 - 12 wks',
-    keyZoningNotes: 'Large equestrian and residential parcels allowing maximum 1,200 sq ft detached residences and attached luxury additions.',
+    keyZoningNotes: 'For your Yorba Linda property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -526,7 +495,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '80,000',
     avgRent: '$2,500 - $3,300/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'Central Orange County location with straightforward municipal guidelines for detached and garage conversion ADUs.',
+    keyZoningNotes: 'For your Tustin property, discuss the condition and conversion suitability of existing garages. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -536,7 +505,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '35,000',
     avgRent: '$2,700 - $3,600/mo',
     permitTurnaroundWeeks: '8 - 13 wks',
-    keyZoningNotes: 'Historic and equestrian character. Turnkey custom designs engineered to complement traditional California architecture.',
+    keyZoningNotes: 'For your San Juan Capistrano property, discuss any historic-property design review. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -546,7 +515,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '55,000',
     avgRent: '$2,500 - $3,300/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'Flat residential lots with excellent utility access. High volume of garage conversions and detached studio builds.',
+    keyZoningNotes: 'For your Fountain Valley property, discuss the condition and conversion suitability of existing garages. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -556,7 +525,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '172,000',
     avgRent: '$2,300 - $3,000/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'Substantial lot depths allowing dual-unit configurations (detached ADU + Junior ADU) on qualified single-family lots.',
+    keyZoningNotes: 'For your Garden Grove property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -566,7 +535,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '51,000',
     avgRent: '$2,400 - $3,100/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'Standard municipal permitting under California state framework. Fast plan checks for 1-bedroom and studio backyard homes.',
+    keyZoningNotes: 'For your Placentia property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -576,7 +545,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '83,000',
     avgRent: '$2,300 - $3,000/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'Established residential tracts with high suitability for garage conversions and cost-effective turnkey construction.',
+    keyZoningNotes: 'For your Buena Park property, discuss the condition and conversion suitability of existing garages. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -586,7 +555,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '50,000',
     avgRent: '$2,400 - $3,200/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'Quiet residential neighborhoods. Fast city building approvals for pre-engineered detached ADUs with 4ft setbacks.',
+    keyZoningNotes: 'For your Cypress property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -596,7 +565,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '25,000',
     avgRent: '$2,700 - $3,700/mo',
     permitTurnaroundWeeks: '9 - 14 wks',
-    keyZoningNotes: 'Coastal enclave with tight lot lines. High-precision architectural drafting ensures 100% compliance with coastal zoning.',
+    keyZoningNotes: 'For your Seal Beach property, discuss whether coastal review applies. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -606,7 +575,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '47,000',
     avgRent: '$2,600 - $3,400/mo',
     permitTurnaroundWeeks: '8 - 12 wks',
-    keyZoningNotes: 'Master planned HOA communities. California AB 1033 compliant architectural designs streamline HOA and city approval.',
+    keyZoningNotes: 'For your Rancho Santa Margarita property, discuss applicable community or association requirements. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -616,7 +585,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '64,000',
     avgRent: '$2,700 - $3,700/mo',
     permitTurnaroundWeeks: '8 - 12 wks',
-    keyZoningNotes: 'Rolling topography with hillside views. Structural engineering packages optimized for slope and soil conditions.',
+    keyZoningNotes: 'For your Laguna Niguel property, discuss site grading, soil and engineering needs. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -626,7 +595,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '31,000',
     avgRent: '$2,600 - $3,500/mo',
     permitTurnaroundWeeks: '8 - 12 wks',
-    keyZoningNotes: 'Generous single-family parcels with strong demand for multi-generational guest suites and detached modern cottages.',
+    keyZoningNotes: 'For your Laguna Hills property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -636,7 +605,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '16,000',
     avgRent: '$2,300 - $3,000/mo',
     permitTurnaroundWeeks: '8 - 12 wks',
-    keyZoningNotes: 'Specialized 55+ residential community regulations. Single-story accessible ADU designs with zero-threshold entries.',
+    keyZoningNotes: 'For your Laguna Woods property, discuss applicable community or association requirements. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -646,7 +615,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '12,000',
     avgRent: '$2,500 - $3,300/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'Established residential streets with straightforward municipal plan check guidelines and fast 60-day permit cycles.',
+    keyZoningNotes: 'For your Los Alamitos property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -656,7 +625,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '63,000',
     avgRent: '$2,300 - $3,000/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'North OC border community with deep lots and high demand for cost-effective detached units and garage transformations.',
+    keyZoningNotes: 'For your La Habra property, discuss the condition and conversion suitability of existing garages. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -666,7 +635,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '38,000',
     avgRent: '$2,200 - $2,900/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'High-density residential areas benefiting from state ADU parking exemption and streamlined building inspections.',
+    keyZoningNotes: 'For your Stanton property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -676,7 +645,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '6,000',
     avgRent: '$3,200 - $4,600/mo',
     permitTurnaroundWeeks: '8 - 13 wks',
-    keyZoningNotes: 'Large half-acre and full-acre lots. Accommodates expansive 1,200 sq ft custom guest estates with luxury architectural finishes.',
+    keyZoningNotes: 'For your Villa Park property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -686,7 +655,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '90,000',
     avgRent: '$2,300 - $3,100/mo',
     permitTurnaroundWeeks: '7 - 11 wks',
-    keyZoningNotes: 'Wide lots with excellent rear yard access for cranes and materials. High demand for 2-bedroom detached family homes.',
+    keyZoningNotes: 'For your Westminster property, discuss lot access, existing structures and utility connections. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
   {
@@ -696,7 +665,7 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
     population: '15,000',
     avgRent: '$3,400 - $5,000/mo',
     permitTurnaroundWeeks: '9 - 14 wks',
-    keyZoningNotes: 'Gated luxury community with strict architectural guidelines. Turnkey design-build coordination with local gate and architectural review committees.',
+    keyZoningNotes: 'For your Coto de Caza property, discuss applicable community or association requirements. Confirm current requirements and the submission process with the responsible authority; suitability depends on the parcel.',
     isPriority: false,
   },
 ];
@@ -706,30 +675,30 @@ export const ORANGE_COUNTY_CITIES: CityInfo[] = [
 // ==========================================
 export const FAQS: FaqItem[] = [
   {
-    category: 'General ADU',
-    question: 'How do I know what I can legally build on my Orange County property?',
-    answer: 'Before any architectural design begins, our team conducts a free property feasibility review. We analyze your lot dimensions, municipal setbacks (typically 4ft rear/side in OC), existing main house footprint, utility tie-in locations, and your city specific zoning rules. We confirm exactly what is buildable before you spend a single dollar.',
+    "category": "Planning",
+    "question": "How do I know which ADU options suit my property?",
+    "answer": "Start with existing structures, access, utilities and your goals. Request an initial assessment, then verify current requirements with the responsible authority and your design professional."
   },
   {
-    category: 'Permits & HOA',
-    question: 'Can my Orange County HOA prevent me from building an ADU?',
-    answer: 'No. Under California law (AB 68, SB 13, and AB 1033), Homeowners Associations cannot prohibit the construction of an ADU or JADU on single-family lots. While HOAs can enforce reasonable architectural guidelines (such as matching exterior paint tones or roof tile aesthetics), state law prevents them from blocking compliant builds.',
+    "category": "Services",
+    "question": "How does a garage conversion differ from a detached ADU?",
+    "answer": "A garage conversion adapts an existing structure, while a detached ADU creates a separate home. Existing condition, foundation work, utilities and the desired layout affect suitability and cost."
   },
   {
-    category: 'Costs & Taxes',
-    question: 'Will building an ADU trigger a full reassessment of my primary home’s property taxes?',
-    answer: 'No. Under California Prop 13, adding an ADU triggers only a "partial blended reassessment" on the newly constructed square footage itself. Your primary home retains its existing protected tax valuation. Typically, an ADU adds $900 to $1,800/year in property taxes, which is vastly offset by substantial equity and property appreciation.',
+    "category": "Process",
+    "question": "Who contracts for and carries out the construction?",
+    "answer": "ADU Alliance connects homeowners with independent contractor partners. The homeowner contracts directly with the chosen contractor. Confirm current licensing, insurance, scope, pricing and responsibilities."
   },
   {
-    category: 'Process',
-    question: 'Does ADU Alliance handle everything, or will I need to hire separate architects and subcontractors?',
-    answer: 'We handle the entire project under one single contract. Our in-house team oversees feasibility, 3D architectural drawings, structural engineering, city plan check permits, and turnkey ground-up construction. You have one dedicated project superintendent and one accountable point of contact from kickoff to keys.',
+    "category": "Budget",
+    "question": "What should an ADU budget include?",
+    "answer": "Ask for an itemized proposal covering design, engineering, approvals, sitework, utilities, construction and finishes. Check exclusions, allowances and change-order terms. An online estimate is an illustration rather than a quote."
   },
   {
-    category: 'Timelines',
-    question: 'How long does the complete ADU process take from start to finish?',
-    answer: 'Typical projects in Orange County complete in 6 to 9 months total: 2 to 4 weeks for architectural design, 8 to 14 weeks for city plan check permit issuance, and 3 to 5 months for physical construction. Garage conversions can complete even faster (3 to 4 months total).',
-  },
+    "category": "Timing",
+    "question": "How long does an ADU project take?",
+    "answer": "Timing depends on design, site conditions, reviews, corrections, utilities, inspections and availability. Request a project-specific schedule that distinguishes permit review from construction."
+  }
 ];
 
 // ==========================================

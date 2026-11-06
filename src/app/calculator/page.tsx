@@ -1,64 +1,9 @@
-import React from 'react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import CostEstimator from '@/components/CostEstimator';
-
-export const metadata: Metadata = {
-  title: 'ADU Cost & Home Value Estimator 2026 | Orange County | ADU Alliance',
-  description: 'Estimate the cost of building an accessory dwelling unit in Orange County, CA. Interactive pricing calculator covering 350 to 1,200 sq ft builds, home equity added, and permit timelines.',
-  alternates: {
-    canonical: 'https://adualliance.com/calculator',
-  },
-};
-
+export const metadata: Metadata = { title: 'ADU Budget Scenario Calculator | ADU Alliance', description: 'Compare ADU budget scenarios using your own area, construction-rate assumptions and project allowances. See the calculation and exclusions.', alternates: { canonical: 'https://adualliance.com/calculator' } };
 export default function CalculatorPage() {
-  return (
-    <div className="py-16 sm:py-24 px-6 max-w-7xl mx-auto space-y-24">
-      {/* Header */}
-      <div className="max-w-3xl space-y-4">
-        <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-amber">
-          FINANCIAL TRANSPARENCY &bull; ORANGE COUNTY
-        </span>
-        <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-white">
-          ADU Cost & Home Value Estimator. <br />
-          <span className="font-normal italic text-brand-amber">
-            Real data, zero guesswork.
-          </span>
-        </h1>
-        <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-          Estimate your complete turnkey build investment, immediate home equity addition, and construction timeline across Orange County.
-        </p>
-      </div>
-
-      {/* Interactive Client Calculator Component */}
-      <CostEstimator />
-
-      {/* Financial Facts FAQ Section */}
-      <div className="p-8 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark space-y-8">
-        <div className="max-w-2xl space-y-2">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-amber">
-            ORANGE COUNTY FINANCIAL FACTS
-          </span>
-          <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight">
-            How ADUs Impact Property Taxes & Grants
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 bg-brand-black rounded-2xl border border-brand-borderDark space-y-2">
-            <h3 className="font-bold text-white text-base">California Prop 13 Protection</h3>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Adding an ADU does NOT trigger a reassessment of your primary house. Only the newly constructed square footage is assessed at current value, typically adding only $900 - $1,600/year to your total tax bill.
-            </p>
-          </div>
-
-          <div className="p-6 bg-brand-black rounded-2xl border border-brand-borderDark space-y-2">
-            <h3 className="font-bold text-white text-base">CalHFA $40,000 ADU Grant</h3>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              California Housing Finance Agency provides up to $40,000 in non-repayable grants toward pre-development costs (permits, architectural design, engineering) for qualifying homeowners.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+ return <div className="pilot-page"><header className="max-w-3xl py-7 mb-10"><p>Plan with assumptions you can see</p><h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight my-5">Compare Your ADU Budget Scenarios</h1><p>Enter low and high assumptions from proposals or your own research. This worksheet performs arithmetic; it does not supply Orange County market rates, a property valuation or a construction quote.</p></header><CostEstimator />
+ <div className="pilot-sections mt-12"><section><h2>Compare the Same Scope</h2><div><p>Ask what each proposal covers. Design, engineering, authority fees, site preparation, utilities, construction and finishes may be priced separately.</p><p>Per-square-foot rates can hide differences in scope. Enter separately identified allowances only once and ask for a written list of exclusions.</p><nav><Link href="/services/adu-design">Design deliverables and exclusions →</Link><Link href="/services/adu-permits">Permit coordination responsibilities →</Link></nav></div></section><section><h2>Investigate the Property</h2><div><p>Access, structures, grading, utilities and specialist investigations can affect cost. The worksheet cannot establish these conditions or whether a proposed size is permitted.</p><p>Financing costs, taxes, operating expenses and work you have not entered are excluded. Discuss a property-specific scope and schedule with your selected professionals.</p><nav><Link href="/locations">Local planning resources →</Link><Link href="/process">Plan the project stages →</Link></nav></div></section></div>
+ <section className="pilot-final"><div><h2>Need to Define the Scope First?</h2><p>Describe the property, project type and information you have.</p></div><Link href="/free-feasibility" className="pilot-button">Discuss Your Starting Point</Link></section></div>;
 }

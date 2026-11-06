@@ -1,0 +1,21 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ORANGE_COUNTY_CITIES } from '@/lib/data';
+export const metadata: Metadata = {
+  title: 'Orange County ADU Locations & Local Planning | ADU Alliance',
+  description: 'Explore ADU planning in all 34 Orange County cities and Coto de Caza. Find local authority resources, compare ADU options and request a property assessment.',
+  alternates: { canonical: 'https://adualliance.com/locations' },
+};
+export default function LocationsPage() {
+  const cities = [...ORANGE_COUNTY_CITIES].filter(c => c.slug !== 'coto-de-caza').sort((a, b) => a.name.localeCompare(b.name));
+  const priority = ['irvine', 'garden-grove', 'newport-beach'];
+  const itemList = { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Orange County ADU planning locations', itemListElement: [...cities, ...ORANGE_COUNTY_CITIES.filter(c => c.slug === 'coto-de-caza')].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, url: `https://adualliance.com/locations/${c.slug}` })) };
+  return <div className="pilot-page"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }} />
+    <header className="pilot-hero"><div><p className="text-brand-amber text-sm">Orange County, California</p><h1>Find ADU Planning for Your Community</h1><p>Start with your property’s responsible authority. Explore local application resources and compare ADU options across Orange County’s 34 cities and Coto de Caza.</p><Link href="/free-feasibility" className="pilot-button">Request a Property Assessment</Link><p className="text-sm">ADU Alliance connects homeowners with independent contractor partners. Availability and project suitability depend on the property.</p></div><img src="/images/localized/adu-planning-960.webp" srcSet="/images/localized/adu-planning-640.webp 640w, /images/localized/adu-planning-960.webp 960w, /images/localized/adu-planning-1280.webp 1280w" sizes="(max-width: 767px) 100vw, 50vw" alt="Backyard dwelling design inspiration" width="2752" height="1536" fetchPriority="high" /></header>
+    <div className="pilot-sections"><section><h2>Start with a Local Planning Guide</h2><div><p>Irvine’s application route, Garden Grove’s ADU Go program and Newport Beach’s coastal review questions offer different starting points. Open your community’s guide for the relevant authority and next steps.</p><nav aria-label="Featured local ADU guides">{priority.map(slug => <Link href={`/locations/${slug}`} key={slug}>{ORANGE_COUNTY_CITIES.find(c => c.slug === slug)?.name} →</Link>)}</nav></div></section></div>
+    <section className="pilot-resources"><h2>Orange County Cities</h2><p>Choose the city responsible for your parcel. A mailing address alone may not identify the permitting authority.</p><nav aria-label="All 34 Orange County cities">{cities.map(c => <Link href={`/locations/${c.slug}`} key={c.slug}>{c.name} →</Link>)}</nav></section>
+    <section className="pilot-resources"><h2>Unincorporated Community</h2><p>Coto de Caza is an unincorporated community. Its guide starts with County of Orange development services.</p><Link href="/locations/coto-de-caza">Coto de Caza ADU planning →</Link></section>
+    <div className="pilot-sections"><section><h2>Match the Service to Your Property</h2><div><p>Explore <Link href="/services/adu-design">ADU design and plans</Link>, <Link href="/services/adu-permits">permit planning</Link>, <Link href="/services/detached-adu">detached ADUs</Link>, <Link href="/services/garage-conversion">garage conversions</Link> and <Link href="/services/junior-adu">junior ADUs</Link>. Existing structures, access and utilities shape which options deserve a closer review.</p><p>Use the <a href="https://www.hcd.ca.gov/building-standards/adu">California HCD ADU resources</a> alongside current local guidance. Confirm the selected professional’s license, insurance and written responsibilities before signing.</p></div></section></div>
+    <section className="pilot-final"><div><h2>Start with Your Address and Goals</h2><p>Discuss the property, intended use and suitable next step.</p></div><Link href="/free-feasibility" className="pilot-button">Request a Property Assessment</Link></section>
+  </div>;
+}

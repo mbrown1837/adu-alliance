@@ -27,7 +27,7 @@ export default function ContactCards() {
             {/* Card 3 */}
             <div className="bg-white border border-slate-100 shadow-xl rounded-xl p-8 flex flex-col items-center justify-center space-y-4 hover:-translate-y-1 transition-transform duration-300">
                <Map className="w-8 h-8 text-brand-amber" strokeWidth={1.5} />
-               <h3 className="text-gray-900 font-black tracking-widest text-sm uppercase">Address</h3>
+               <h3 className="text-gray-900 font-black tracking-widest text-sm uppercase">Service Area</h3>
                <span className="text-black font-medium">Orange County, CA</span>
             </div>
          </div>

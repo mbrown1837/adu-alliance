@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { trackFormSubmission } from '@/lib/gtm';
 import { Phone, Loader2 } from 'lucide-react';
+import { ENQUIRY_CITIES } from '@/lib/enquiry-context';
 
 interface GhlLeadFormProps {
   className?: string;
@@ -11,8 +12,19 @@ interface GhlLeadFormProps {
 
 export default function GhlLeadForm({ className = '', minHeight = '750px' }: GhlLeadFormProps) {
   const [isLoading, setIsLoading] = useState(true);
+  const frameRef = useRef<HTMLIFrameElement>(null);
+  const submissionTracked = useRef(false);
+  const [frameSrc, setFrameSrc] = useState('https://link.westlanddre.com/widget/survey/ZNe5dhYHKIoH4EyvJqNP');
 
   useEffect(() => {
+    // Standard city query-prefill was verified against the live survey input.
+    // Other project fields are not mapped until their provider keys are verified.
+    const city = new URLSearchParams(window.location.search).get('city') || '';
+    if (Object.hasOwn(ENQUIRY_CITIES, city)) {
+      const url = new URL('https://link.westlanddre.com/widget/survey/ZNe5dhYHKIoH4EyvJqNP');
+      url.searchParams.set('city', ENQUIRY_CITIES[city]);
+      setFrameSrc(url.href);
+    }
     // Dynamically inject GHL form embed script if not already present
     const existingScript = document.querySelector('script[src="https://link.westlanddre.com/js/form_embed.js"]');
     if (!existingScript) {
@@ -24,13 +36,20 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
 
     // Listen for GHL submission message events
     const handleGhlMessage = (event: MessageEvent) => {
-      if (
-        event.data?.type === 'ghl_survey_submitted' ||
-        event.data?.formId === 'ZNe5dhYHKIoH4EyvJqNP' ||
-        (typeof event.data === 'string' && event.data.includes('ZNe5dhYHKIoH4EyvJqNP'))
-      ) {
-        trackFormSubmission('ZNe5dhYHKIoH4EyvJqNP', 'ADU Alliance Free Property Assessment');
-      }
+      // A form ID alone is also present in load/resize messages. Require the
+      // success bridge from this exact embedded survey, and count it once.
+      // Integration requirement: configure this custom message in the survey's
+      // confirmed-success callback. Native load/resize events are not success.
+      // Until that bridge is verified, CRM submissions remain the lead source.
+      if (event.origin !== 'https://link.westlanddre.com' ||
+          !frameRef.current?.contentWindow ||
+          event.source !== frameRef.current.contentWindow ||
+          typeof event.data !== 'object' || event.data === null ||
+          event.data.type !== 'ghl_survey_submitted' ||
+          event.data.formId !== 'ZNe5dhYHKIoH4EyvJqNP' ||
+          submissionTracked.current) return;
+      submissionTracked.current = true;
+      trackFormSubmission('ZNe5dhYHKIoH4EyvJqNP', 'ADU Alliance Property Assessment');
     };
 
     window.addEventListener('message', handleGhlMessage);
@@ -50,7 +69,8 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
 
       {/* GHL Survey Iframe Embed */}
       <iframe
-        src="https://link.westlanddre.com/widget/survey/ZNe5dhYHKIoH4EyvJqNP"
+        ref={frameRef}
+        src={frameSrc}
         onLoad={() => setIsLoading(false)}
         style={{
           width: '100%',
@@ -68,13 +88,13 @@ export default function GhlLeadForm({ className = '', minHeight = '750px' }: Ghl
         data-activation-value=""
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
-        data-form-name="ADU Alliance Free Property Assessment"
+        data-form-name="ADU Alliance Property Assessment"
         data-height="750"
         data-layout-iframe-id="ZNe5dhYHKIoH4EyvJqNP"
         data-form-id="ZNe5dhYHKIoH4EyvJqNP"
         data-cookie-consent="true"
         data-cookie-consent-provider="auto"
-        title="ADU Alliance Free Property Assessment"
+        title="ADU Alliance Property Assessment"
       />
 
       {/* Fallback Assistance Banner */}

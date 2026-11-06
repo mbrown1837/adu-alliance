@@ -1,130 +1,16 @@
-import React from 'react';
 import type { Metadata } from 'next';
-import { LADU_PROJECT_PLAN } from '@/lib/data';
-import { ShieldCheck, Clock, FileCheck, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
-
-export const metadata: Metadata = {
-  title: 'Turnkey ADU Process & California Laws 2026 | Orange County | ADU Alliance',
-  description: 'Learn how ADU Alliance takes your Orange County ADU project from site feasibility to move-in keys in 6 to 9 months under California SB 9 and AB 1033.',
-  alternates: {
-    canonical: 'https://adualliance.com/process',
-  },
-};
-
+export const metadata: Metadata = { title: 'ADU Planning, Permits & Build Process | ADU Alliance', description: 'Plan ADU inputs, responsibilities and deliverables from initial property questions to design, permitting and construction.', alternates: { canonical: 'https://adualliance.com/process' } };
+const steps = [
+ ['1. Describe the Property and Goal','Property location, intended use, existing structures, photographs and any drawings you have.','The homeowner shares available information. The initial conversation identifies questions that need professional investigation.','A project brief and questions about site access, utilities and local requirements.','/free-feasibility','Discuss your starting point'],
+ ['2. Select Providers and Agree Scope','The project brief, relevant references and itemized proposals.','The homeowner checks credentials and agrees directly with the selected independent provider.','Written inclusions, exclusions, fees, responsibilities, communication and change procedures.','/about','Understand the network relationship'],
+ ['3. Develop the Design','Site information, required surveys or specialist reports and layout goals.','The professionals named in your agreement prepare their documents and coordinate the agreed design work.','Design deliverables, revision records and a coordinated submission package. A concept image is not a permit-ready plan.','/services/adu-design','Explore design deliverables'],
+ ['4. Submit and Respond to Review','The responsible authority’s current checklist, forms, drawings and supporting documents.','The agreed applicant submits the package. The authority reviews it; named professionals respond to technical comments.','A recorded application status and any required corrections. Confirm approvals and preconstruction conditions before work begins.','/services/adu-permits','Explore permit planning'],
+ ['5. Build, Inspect and Record Changes','Approved documents, construction agreement, site arrangements and schedule assumptions.','The independent contractor manages the agreed work and inspection coordination. Agree how changes are authorized and priced.','Progress records, written change orders and relevant inspection records.','/services','Compare construction options'],
+ ['6. Complete the Handover','Completion checklist, authority requirements and outstanding items.','The homeowner and contractor review the work and agree how outstanding items are resolved. Confirm required authority sign-off separately.','Applicable final records, operating information, written warranty terms and follow-up contacts.','/projects','Questions about project references'],
+];
 export default function ProcessPage() {
-  return (
-    <div className="py-16 sm:py-24 px-6 max-w-7xl mx-auto space-y-24">
-      {/* Header */}
-      <div className="max-w-3xl space-y-4">
-        <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-amber">
-          PROCESS TRANSPARENCY &bull; 6 TO 9 MONTHS
-        </span>
-        <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-white">
-          From Site Visit to Keys. <br />
-          <span className="font-normal italic text-brand-amber">
-            One team, one single contract.
-          </span>
-        </h1>
-        <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-          Traditional contractors hand you off between separate architects, permit expediters, and trade crews. ADU Alliance coordinates all four inside a single transparent project plan with a 100% permit approval guarantee.
-        </p>
-      </div>
-
-      {/* 4-Stage Breakdown */}
-      <div className="space-y-12">
-        {LADU_PROJECT_PLAN.map((stage) => (
-          <div
-            key={stage.phase}
-            className="p-8 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
-          >
-            <div className="lg:col-span-3 space-y-2">
-              <span className="text-xs font-mono font-bold text-brand-amber bg-brand-black px-3 py-1.5 rounded-md border border-brand-borderDark inline-block">
-                {stage.phase}
-              </span>
-              <div className="text-3xl font-mono font-black text-white">{stage.timeline}</div>
-              <div className="text-xs text-slate-400 font-mono">Est. Duration: {stage.duration}</div>
-            </div>
-
-            <div className="lg:col-span-6 space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight">
-                {stage.name}
-              </h2>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                {stage.desc}
-              </p>
-            </div>
-
-            <div className="lg:col-span-3 flex lg:justify-end">
-              <div className="p-4 bg-brand-black rounded-2xl border border-brand-borderDark text-xs font-mono text-slate-300 space-y-1 w-full lg:w-auto text-center">
-                <div className="text-brand-emerald font-bold">✓ 100% Guaranteed</div>
-                <div className="text-slate-400">Fixed Milestone Delivery</div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* California 2026 Laws Breakdown */}
-      <div className="p-8 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark space-y-8">
-        <div className="max-w-2xl space-y-2">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-amber">
-            LEGAL FRAMEWORK &bull; CALIFORNIA 2026
-          </span>
-          <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight">
-            California State ADU Laws Homeowners Must Know
-          </h2>
-          <p className="text-sm text-slate-300">
-            Recent California legislation (AB 68, SB 13, and AB 1033) has made ADU permitting faster and legally protected across Orange County.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 bg-brand-black rounded-2xl border border-brand-borderDark space-y-3">
-            <h3 className="font-bold text-white text-lg">60-Day Mandatory Approval</h3>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Under California government code, local city building departments must act on compliant ADU permit applications within 60 days of complete submission.
-            </p>
-          </div>
-
-          <div className="p-6 bg-brand-black rounded-2xl border border-brand-borderDark space-y-3">
-            <h3 className="font-bold text-white text-lg">HOA Restrictions Prohibited</h3>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Under Assembly Bill 670, Homeowners Associations cannot prohibit or unreasonably restrict the construction of ADUs or Junior ADUs on single-family properties.
-            </p>
-          </div>
-
-          <div className="p-6 bg-brand-black rounded-2xl border border-brand-borderDark space-y-3">
-            <h3 className="font-bold text-white text-lg">4-Foot Setback Mandate</h3>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Cities cannot require more than 4-foot side and rear setbacks for detached ADUs up to 16-18 feet in height, maximizing your yard usability.
-            </p>
-          </div>
-
-          <div className="p-6 bg-brand-black rounded-2xl border border-brand-borderDark space-y-3">
-            <h3 className="font-bold text-white text-lg">No Replacement Parking Required</h3>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              When converting an existing garage into an ADU, California law prohibits cities from requiring replacement off-street parking spaces in almost all Orange County zones.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA Box */}
-      <div className="text-center p-12 bg-gradient-to-r from-brand-dark to-brand-black rounded-3xl border border-brand-borderDark space-y-6">
-        <h2 className="text-3xl font-black uppercase text-white tracking-tight">
-          Find Out What You Can Build on Your Lot
-        </h2>
-        <p className="text-sm text-slate-300 max-w-xl mx-auto">
-          We review your lot dimensions, setbacks, and city zoning bylaws before you spend a dollar.
-        </p>
-        <Link
-          href="/free-feasibility"
-          className="inline-block px-8 py-4 bg-brand-amber hover:bg-white text-black font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all"
-        >
-          Request Free Feasibility Assessment &rarr;
-        </Link>
-      </div>
-    </div>
-  );
+ return <div className="pilot-page"><header className="pilot-hero"><div><h1>Your ADU Project, Step by Step</h1><p>At each stage, agree the information needed, who is responsible and what you should receive. ADU Alliance connects homeowners with independent contractor partners.</p><Link href="/free-feasibility" className="pilot-button">Discuss Your Next Step</Link></div><img src="/images/localized/adu-planning-960.webp" alt="ADU exterior design inspiration" width="960" height="536" /></header>
+ <div className="pilot-sections">{steps.map(([title,input,owner,output,href,label])=><section key={title}><h2>{title}</h2><div><h3 className="text-lg font-semibold mb-2">Bring to this stage</h3><p>{input}</p><h3 className="text-lg font-semibold mt-5 mb-2">Agree responsibility</h3><p>{owner}</p><h3 className="text-lg font-semibold mt-5 mb-2">What to leave with</h3><p>{output}</p><nav><Link href={href}>{label} →</Link></nav></div></section>)}</div>
+ <section className="pilot-resources"><h2>Build a Schedule Around Your Property</h2><p>Site investigations, changes, utility work, agency comments and inspections can affect the sequence. Ask for milestones, dependencies and update arrangements. Application review is different from total time to permit issuance or completion.</p><nav><Link href="/locations">Find local planning resources →</Link><Link href="/calculator">Compare your budget assumptions →</Link></nav></section><section className="pilot-final"><div><h2>Already Have Plans?</h2><p>Explain their approval status and the scope you need.</p></div><Link href="/free-feasibility" className="pilot-button">Discuss Your Project</Link></section></div>;
 }

@@ -21,7 +21,7 @@ export default function WhyChooseUs() {
             </span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
-            As an experienced ADU contractor, we work with city reviewers, site constraints, and Title 24 code details every day so your project avoids common delays.
+            Understand your property, compare the available ADU options and confirm the responsibilities of your chosen independent contractor before committing to a build.
           </p>
         </div>
 

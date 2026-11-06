@@ -15,26 +15,26 @@ export default function LaduProcessTimeline() {
           <div className="space-y-3 max-w-3xl">
             <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-brand-amber animate-pulse" />
-              PROCESS TRANSPARENCY &bull; LADU ROADMAP
+              PROCESS TRANSPARENCY &bull; ADU PROJECT ROADMAP
             </span>
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-white">
-              From Site Visit to Keys in <br />
+              From Property Questions to <br />
               <span className="font-normal italic text-brand-amber">
-                6 to 9 months.
+                A Clear Project Scope.
               </span>
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              Other builders hand you off between independent designers, permit expediters, and contractors. ADU Alliance coordinates all four inside a single transparent project plan with zero rejected permits.
+              A typical project moves through feasibility, design, permitting and construction. Confirm the scope, responsible professionals and estimated schedule with your selected contractor; timelines vary by property and authority.
             </p>
           </div>
 
           {/* Social Proof Box */}
           <div className="p-6 bg-brand-black rounded-2xl border border-brand-borderDark space-y-2 shrink-0">
             <div className="flex items-center gap-2 text-brand-emerald font-mono font-bold text-sm">
-              <ShieldCheck className="w-5 h-5 text-brand-emerald" /> 100% Permit Approval
+              <ShieldCheck className="w-5 h-5 text-brand-emerald" /> Plan Before You Build
             </div>
-            <div className="text-2xl font-mono font-black text-white">Zero Rejected Permits</div>
-            <div className="text-xs text-slate-400 font-mono">Over 200+ Projects Completed in SoCal</div>
+            <div className="text-2xl font-mono font-black text-white">Property-Specific Review</div>
+            <div className="text-xs text-slate-400 font-mono">Approval is determined by the responsible authority</div>
           </div>
         </div>
 
@@ -110,13 +110,13 @@ export default function LaduProcessTimeline() {
           <div className="space-y-2 max-w-xl relative z-10">
             <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-brand-amber" />
-              DIGITAL CLIENT PORTAL
+              PROJECT COMMUNICATION
             </span>
             <h3 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight">
-              Watch your ADU come to life
+              Agree on project updates
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Your personal homeowner dashboard tracks every milestone from initial survey to move-in day with live city plan check logs and weekly job-site photo reports.
+              Ask your selected builder how permit status, site progress, decisions and change orders will be shared throughout your project.
             </p>
           </div>
 
