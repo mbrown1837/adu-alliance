@@ -48,3 +48,6 @@ bing_*.json
 scripts/
 
 .seo-cache/
+
+.open-next/
+.wrangler/
