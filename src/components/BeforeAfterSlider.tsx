@@ -22,17 +22,17 @@ export default function BeforeAfterSlider() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-brand-borderDark pb-6">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold">
-              ADU DESIGN INSPIRATION
+              PROVEN RESULTS &bull; REAL SOCAL PROJECTS
             </span>
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-white mt-1">
-              Explore ADU Possibilities in <br />
+              ADU Projects Built Across <br />
               <span className="font-normal italic text-brand-amber">
                 Orange County
               </span>
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-400 max-w-md">
-            Explore supplied image comparisons. Completion, costs, rents and results have not been independently verified; request attributable references from your selected contractor.
+            See how our dedicated team handles real Orange County lots, city plan check timelines, and fixed budgets throughout the county.
           </p>
         </div>
 

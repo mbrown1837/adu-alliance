@@ -27,7 +27,7 @@ export default function ThankYouPage() {
             Request <span className="font-normal italic text-brand-amber">Received</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl mx-auto">
-            Thank you for your enquiry. If you completed the assessment, the contact information and project details you supplied can be used to discuss next steps. If you did not receive confirmation or need to add information, use the contact details on this site.
+            Thank you for reaching out to ADU Alliance. Our planning desk has received your property details. A specialized ADU expert will review your lot parameters and contact you shortly.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export default function ThankYouPage() {
             href="/projects"
             className="px-8 py-4 bg-transparent border border-brand-borderDark text-white font-bold text-sm uppercase tracking-widest rounded-full hover:border-brand-amber transition-colors duration-300 flex items-center justify-center gap-2"
           >
-            Explore Design Ideas <ArrowRight className="w-4 h-4" />
+            View Our Projects <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

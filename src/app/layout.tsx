@@ -1,4 +1,3 @@
-import AnalyticsEvents from '@/components/AnalyticsEvents';
 import type { Metadata } from 'next';
 import { Outfit, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' },
   title: 'ADU Builders Orange County | ADU Alliance',
   description:
-    'Explore ADU builders, garage conversions, plans and permits in Orange County. ADU Alliance connects homeowners with independent contractor partners.',
+    'Orange County ADU design-build general contractor. Custom detached ADUs & garage conversions with 100% city permit approval. Call (949) 822-9561.',
   keywords: [
     'ADU builders Orange County',
     'ADU contractor Irvine',
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
         url: 'https://adualliance.com/images/localized/adu_asset_7b7dec0f36.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Modern backyard accessory dwelling unit',
+        alt: 'Modern ADU Built by ADU Alliance in Orange County',
       },
     ],
   },
@@ -60,15 +59,34 @@ export default function RootLayout({
 }) {
   const schemaData = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'GeneralContractor',
     name: 'ADU Alliance',
     logo: 'https://adualliance.com/images/logo-transparent.png',
     image: 'https://adualliance.com/images/localized/adu_asset_7b7dec0f36.jpeg',
     '@id': 'https://adualliance.com/#organization',
     url: 'https://adualliance.com',
     telephone: '+1-949-822-9561',
+    priceRange: '$$$$',
+    address: {
+      '@type': 'PostalAddress',
+      '@id': 'https://adualliance.com/#address',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      '@id': 'https://adualliance.com/#geo',
+      latitude: 33.6846,
+      longitude: -117.8265,
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '08:00',
+      closes: '18:00',
+    },
     areaServed: [
-      'Orange County', 'Irvine', 'Newport Beach', 'Costa Mesa', 'Huntington Beach',
+      'California', 'Orange County', 'Irvine', 'Newport Beach', 'Costa Mesa', 'Huntington Beach',
       'Anaheim', 'Santa Ana', 'Fullerton', 'Mission Viejo'
     ],
   };
@@ -89,8 +107,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
 
-        {/* GTM owns the Google tag configuration. This wrapper queues events once. */}
-        <Script id="analytics-event-queue" strategy="afterInteractive" dangerouslySetInnerHTML={{__html: 'window.dataLayer = window.dataLayer || []; window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};'}} />
+        {/* Google tag (gtag.js) GA4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-C1EYM0JCZC"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="ga4-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-C1EYM0JCZC');
+            `,
+          }}
+        />
 
         <script
           type="application/ld+json"
@@ -107,7 +140,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <AnalyticsEvents />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

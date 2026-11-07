@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { ADU_SERVICES } from '@/lib/data';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 
@@ -13,16 +12,16 @@ export default function ServicesSection() {
           <div className="space-y-3 max-w-2xl">
             <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-amber" />
-              EXPLORE YOUR ADU OPTIONS
+              WHAT WE DO &bull; SINGLE-CONTRACT EXECUTION
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-white leading-tight">
               ADU Services from an <br />
               <span className="font-normal italic text-brand-amber">
-                Orange County Contractor Network
+                Orange County Design-Build Team
               </span>
             </h2>
             <p className="text-xs sm:text-base text-slate-400">
-              Compare design, permitting and construction options. Your selected independent contractor defines the scope, price and responsibilities in your agreement.
+              From feasibility through final inspection, one dedicated contractor handles your full scope so timelines and construction quality stay clear.
             </p>
           </div>
 
@@ -84,12 +83,12 @@ export default function ServicesSection() {
                     <span className="text-xs font-mono text-slate-400">
                       Turnaround: <strong className="text-white font-sans">{service.turnaroundTime}</strong>
                     </span>
-                    <Link
-                      href={`/services/${service.slug}`}
+                    <a
+                      href="#assessment"
                       className="text-xs font-bold uppercase tracking-wider text-brand-amber hover:text-white flex items-center gap-1 transition-colors"
                     >
-                      Explore This Service &rarr;
-                    </Link>
+                      Get Quote for This Scope &rarr;
+                    </a>
                   </div>
                 </div>
               </div>

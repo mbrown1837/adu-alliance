@@ -1,28 +1,204 @@
+import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { HCD_ADU_GUIDE, SERVICE_CONTENT, SERVICE_IMAGE } from '@/lib/service-content';
-export const metadata:Metadata={title:'ADU Services in Orange County | ADU Alliance',description:'Compare Orange County ADU design, permit planning, detached homes, garage conversions and junior ADUs. Understand scope and the independent contractor relationship.',alternates:{canonical:'https://adualliance.com/services'},openGraph:{title:'ADU Services in Orange County | ADU Alliance',description:'Compare ADU options and the professional scope each needs.',url:'https://adualliance.com/services'}};
-export default function ServicesPage(){
- const catalog={'@context':'https://schema.org','@type':'ItemList',name:'Orange County ADU Planning Services',url:'https://adualliance.com/services',itemListElement:SERVICE_CONTENT.map((s,i)=>({'@type':'ListItem',position:i+1,url:'https://adualliance.com/services/'+s.slug,name:s.name}))};
- const crumbs={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://adualliance.com/'},{'@type':'ListItem',position:2,name:'ADU Services',item:'https://adualliance.com/services'}]};
- return <div className="pilot-page"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(catalog)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(crumbs)}}/>
- <header className="pilot-hero"><div><p className="!text-sm uppercase tracking-widest !text-amber-400">Orange County · Compare your options</p><h1>Choose the Right Starting Point for Your ADU</h1><p>Planning a separate backyard home, reusing a garage or exploring space within your home? Compare the project options, then define the design, permit and construction support you need.</p><Link href="/free-feasibility?service=compare-options" className="pilot-button">Discuss Your ADU Options</Link><p className="!text-sm mt-4">ADU Alliance is a planning and contractor-matching network. Construction agreements are made directly with the selected independent contractor.</p></div>
- <figure><img src={SERVICE_IMAGE} srcSet="/images/localized/adu-planning-640.webp 640w, /images/localized/adu-planning-960.webp 960w, /images/localized/adu-planning-1280.webp 1280w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1240px) 50vw, 600px" width={2752} height={1536} loading="eager" fetchPriority="high" alt="Backyard ADU design inspiration"/><figcaption className="text-sm text-slate-400 mt-3">Design inspiration; not a documented completed project or an approved plan.</figcaption></figure></header>
- <div className="pilot-sections">{SERVICE_CONTENT.map(s=><section key={s.slug}><h2><Link href={'/services/'+s.slug} className="hover:text-amber-400 underline decoration-amber-400/50 underline-offset-4">{s.name}</Link></h2><div><p>{s.intro}</p><p className="mt-4">{s.comparison}</p><Link href={'/services/'+s.slug} className="inline-block mt-5 text-amber-400 underline">Explore {s.name.toLowerCase()}</Link></div></section>)}</div>
- <section className="pilot-resources"><h2>Compare the Work, Not Just the Label</h2><p>Building options and professional services solve different problems. A property may need more than one stage of support; agree the responsibilities and exclusions for each.</p>
- <div className="overflow-x-auto mt-6"><table className="w-full text-left text-slate-300 leading-7 text-sm"><caption className="text-left text-slate-400 pb-4">A starting-point comparison; no fixed prices or delivery periods are implied.</caption><thead><tr className="border-b border-slate-600 text-white"><th scope="col" className="p-3">Option or service</th><th scope="col" className="p-3">Main question</th><th scope="col" className="p-3">Confirm before proceeding</th></tr></thead><tbody>{[
- ['Detached ADU','Where can a separate home fit?','Sitework, access and utility routes'],
- ['Garage conversion','What can safely be retained?','Condition, repairs and layout'],
- ['Junior ADU','Can the space qualify within the single-family home?','Classification, interior area and access'],
- ['Design and plans','Which documents are needed?','Professional roles, drawing stage and revisions'],
- ['Permit planning','What does the authority require?','Readiness, corrections and agency fees']
- ].map(row=><tr key={row[0]} className="border-b border-slate-700"><th scope="row" className="p-3 font-semibold text-white">{row[0]}</th><td className="p-3">{row[1]}</td><td className="p-3">{row[2]}</td></tr>)}</tbody></table></div></section>
- <div className="pilot-sections"><section><h2>Know Who Delivers Each Stage</h2><div><p>Agree design, engineering, permit coordination and construction responsibilities directly with the selected professionals. Ask who signs documents, answers comments, supervises work and manages changes. Check current contractor licensing, insurance and references before signing.</p><p className="mt-4">ADU Alliance helps frame your enquiry and potential independent contractor connections. Availability, deliverables, costs and timing must be confirmed for your property.</p></div></section>
- <section><h2>Bring the Information You Already Have</h2><div><p>Share your location, intended use, desired rooms and whether you have drawings or an application in progress. Photos and existing records can help identify the next investigation; they do not replace a site assessment, engineering or an authority decision.</p><p className="mt-4">A useful proposal separates professional work, agency charges, building work, utilities and exclusions. Ask how unknown conditions and changes are handled.</p></div></section></div>
- <section className="pilot-resources"><h2>Official Guidance and Local Information</h2><p>Start with state guidance, then check the responsible authority for your parcel. JADU classification differs from an attached ADU extension.</p><a href={HCD_ADU_GUIDE}>California HCD ADU and JADU Handbook</a><nav aria-label="Local ADU information"><Link href="/locations/irvine">Irvine planning information</Link><Link href="/locations/garden-grove">Garden Grove planning information</Link><Link href="/locations/newport-beach">Newport Beach planning information</Link><Link href="/locations">All Orange County locations</Link></nav></section>
- <section className="pilot-faq"><h2>Questions Before You Choose</h2><div>
- <details><summary>Can I enquire if I already have plans?</summary><p>Yes. Explain their approval status, who prepared them and what work you need. This helps distinguish design revisions, permit support and a construction enquiry.</p></details>
- <details><summary>Does one price cover every stage?</summary><p>Only the written proposal establishes what is included. Ask about specialist documents, authority fees, utilities, site conditions, revisions and restoration separately.</p></details>
- <details><summary>Is the initial discussion an approval or a quote?</summary><p>No. It helps identify your goals and the next information needed. Formal pricing and approval depend on property-specific review and the responsible authority.</p></details>
- </div></section><section className="pilot-final"><div><h2>Start with Your Property and Goals</h2><p>Explain the option you are considering, or ask which route needs investigating first.</p></div><Link href="/free-feasibility?service=compare-options" className="pilot-button">Request a Property Assessment</Link></section></div>;
+import { ADU_SERVICES } from '@/lib/data';
+import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Layers, DollarSign, Home } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'ADU Services in Orange County, CA | Turnkey Design, Permits & Build',
+  description: 'Explore full-service accessory dwelling unit solutions in Orange County: custom architectural plans, 100% in-house city permits, detached builds, and garage conversions.',
+  alternates: {
+    canonical: 'https://adualliance.com/services',
+  },
+};
+
+export default function ServicesIndexPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Orange County ADU Design-Build Services',
+    provider: {
+      '@type': 'GeneralContractor',
+      '@id': 'https://adualliance.com/#organization',
+    },
+    areaServed: 'Orange County, CA',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'ADU Construction Services',
+      itemListElement: ADU_SERVICES.map((s, idx) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: s.title,
+          description: s.description,
+          url: `https://adualliance.com/services/${s.slug}`,
+        },
+      })),
+    },
+  };
+
+  return (
+    <div className="bg-brand-canvas text-brand-main min-h-screen pt-28 sm:pt-36">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 space-y-20">
+        
+        {/* Hero Header */}
+        <div className="max-w-3xl space-y-4">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-amber flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-brand-emerald animate-pulse" />
+            SINGLE-SOURCE ACCOUNTABILITY &bull; ALL 34 ORANGE COUNTY CITIES
+          </span>
+          <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-white leading-tight">
+            Turnkey ADU Services <br />
+            <span className="font-normal italic text-brand-amber">in Orange County</span>
+          </h1>
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            One contract covers your entire project: custom site-specific architectural drawings, in-house municipal plan checks, and licensed general contracting from foundation to final inspection.
+          </p>
+        </div>
+
+        {/* 5 Core Services Grid */}
+        <div className="space-y-12">
+          {ADU_SERVICES.map((service, idx) => {
+            const isEven = idx % 2 === 1;
+
+            return (
+              <div
+                key={service.id}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10 rounded-3xl bg-brand-dark border border-brand-borderDark hover:border-brand-amber/50 transition-all shadow-xl"
+              >
+                {/* Image */}
+                <div className={`lg:col-span-6 relative aspect-[16/10] rounded-2xl overflow-hidden bg-brand-black ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                  <img
+                    src={service.imageUrl}
+                    alt={service.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-black/85 text-brand-amber font-mono text-xs font-bold rounded-lg border border-white/10 shadow">
+                    {service.number}. {service.category}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className={`lg:col-span-6 space-y-5 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <div className="space-y-1.5">
+                    <span className="text-xs font-mono uppercase text-brand-amber font-bold block">
+                      {service.tagline}
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight">
+                      {service.title}
+                    </h2>
+                  </div>
+
+                  <p className="text-sm text-slate-300 leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <div className="space-y-2 pt-1">
+                    {service.features.map((f, i) => (
+                      <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                        <CheckCircle2 className="w-4 h-4 text-brand-emerald shrink-0 mt-0.5" />
+                        <span>{f}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-brand-borderDark">
+                    <span className="text-xs font-mono text-slate-400">
+                      Typical Timeline: <strong className="text-white font-sans">{service.turnaroundTime}</strong>
+                    </span>
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="px-5 py-2.5 bg-brand-amber hover:bg-white text-black font-bold text-xs uppercase tracking-wider rounded-full transition-all flex items-center gap-1"
+                    >
+                      Explore {service.title} &rarr;
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Comparison Table */}
+        <div className="p-8 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark space-y-8 shadow-2xl">
+          <div className="max-w-2xl space-y-2">
+            <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold">
+              PLANNING MATRIX
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight">
+              Compare Orange County ADU Options
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300">
+              Find the right match based on budget, backyard space, and primary family or rental goals.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs font-mono text-slate-300 border-collapse">
+              <thead>
+                <tr className="border-b border-brand-borderDark text-brand-amber uppercase font-bold">
+                  <th className="py-4 px-4">ADU Type</th>
+                  <th className="py-4 px-4">Typical Size</th>
+                  <th className="py-4 px-4">Turnaround</th>
+                  <th className="py-4 px-4">Cost Efficiency</th>
+                  <th className="py-4 px-4">Primary Advantage</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-brand-borderDark/60">
+                <tr>
+                  <td className="py-4 px-4 font-bold text-white font-sans">Detached Backyard ADU</td>
+                  <td className="py-4 px-4">350 - 1,200 sq ft</td>
+                  <td className="py-4 px-4">6 - 9 Months</td>
+                  <td className="py-4 px-4">Moderate ($280 - $380/sqft)</td>
+                  <td className="py-4 px-4 font-sans text-slate-200">Maximum privacy & highest rental valuation</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-4 font-bold text-white font-sans">Garage to ADU Conversion</td>
+                  <td className="py-4 px-4">380 - 450 sq ft</td>
+                  <td className="py-4 px-4">3 - 5 Months</td>
+                  <td className="py-4 px-4 text-brand-emerald font-bold">Highest ($210 - $270/sqft)</td>
+                  <td className="py-4 px-4 font-sans text-slate-200">Uses existing slab/roof; zero yard lost</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-4 font-bold text-white font-sans">Junior ADU (JADU)</td>
+                  <td className="py-4 px-4">Up to 500 sq ft</td>
+                  <td className="py-4 px-4">2 - 4 Months</td>
+                  <td className="py-4 px-4 text-brand-emerald font-bold">Very High</td>
+                  <td className="py-4 px-4 font-sans text-slate-200">Exempt from school fees; interior conversion</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Bottom CTA Card */}
+        <div className="p-8 sm:p-12 bg-gradient-to-r from-brand-black via-brand-dark to-brand-black rounded-3xl border border-brand-borderDark flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+          <div className="space-y-2 max-w-xl">
+            <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold">
+              FREE PROPERTY FEASIBILITY
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight">
+              Ready to explore your lot&apos;s potential?
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300">
+              Get an exact setback analysis and preliminary budget for your property within 1 business day.
+            </p>
+          </div>
+
+          <Link
+            href="/free-feasibility"
+            className="px-8 py-4 bg-brand-amber hover:bg-white text-black font-black text-xs uppercase tracking-wider rounded-full shadow-lg transition-all shrink-0"
+          >
+            Request Free Assessment &rarr;
+          </Link>
+        </div>
+
+      </div>
+    </div>
+  );
 }

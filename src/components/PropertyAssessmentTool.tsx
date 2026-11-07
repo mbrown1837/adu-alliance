@@ -19,7 +19,7 @@ export default function PropertyAssessmentTool() {
             <span className="font-normal italic text-brand-amber">your lot?</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
-            Tell us about your property and project goals. The planning desk can discuss suitable options, the information needed for a property review and your next steps with an independent contractor partner.
+            Complete our interactive multi-step survey below to tell us about your property. We confirm your ADU options, municipal setback allowances across Orange County, and share realistic budget ranges within 1 business day.
           </p>
         </div>
 
@@ -30,11 +30,11 @@ export default function PropertyAssessmentTool() {
           {/* Micro Trust Strip */}
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-4 text-xs font-mono text-slate-400">
             <span className="flex items-center gap-1.5 text-brand-emerald">
-              <ShieldCheck className="w-4 h-4 text-brand-emerald" /> Privacy Policy Applies
+              <ShieldCheck className="w-4 h-4 text-brand-emerald" /> 100% Confidential
             </span>
             <span className="hidden sm:inline text-slate-600">&bull;</span>
             <span className="flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-brand-amber" /> Discuss Next Steps
+              <Clock className="w-4 h-4 text-brand-amber" /> 24-Hour Response
             </span>
             <span className="hidden sm:inline text-slate-600">&bull;</span>
             <span className="flex items-center gap-1.5">

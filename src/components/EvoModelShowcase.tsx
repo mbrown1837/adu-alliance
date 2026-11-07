@@ -19,7 +19,7 @@ export default function EvoModelShowcase() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-brand-borderDark pb-6">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-brand-amber font-bold">
-                COMPARE ADU LAYOUT CONCEPTS
+                100% ON-SITE STICK-BUILT &bull; 0% PREFAB
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tighter text-white mt-1">
                 Custom Architectural Layout Concepts
@@ -55,7 +55,7 @@ export default function EvoModelShowcase() {
                       From <span className="font-mono text-brand-amber font-bold">{model.priceFormatted}</span> &nbsp;&bull;&nbsp; {model.sqft} sq ft
                     </p>
                     <a
-                      href={`/models#${model.id}`}
+                      href="#assessment"
                       className="px-5 py-2.5 border border-white/30 text-white font-bold text-xs uppercase tracking-wider rounded-full hover:bg-brand-amber hover:text-black hover:border-brand-amber transition-colors"
                     >
                       Layout Details &rarr;

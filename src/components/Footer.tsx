@@ -5,7 +5,7 @@ import { ShieldCheck, Phone, MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black text-slate-400 pt-16 pb-28 sm:pb-20 px-6 border-t border-brand-borderDark text-sm force-dark">
+    <footer className="bg-brand-black text-slate-400 pt-16 pb-28 sm:pb-20 px-6 border-t border-brand-borderDark text-xs force-dark">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -14,26 +14,24 @@ export default function Footer() {
               <img
                 src="/images/logo-transparent.png"
                 alt="ADU Alliance Logo"
-                width={36}
-                height={36}
-                className="h-9 w-9 object-contain"
+                className="h-9 w-auto object-contain"
               />
               <span className="font-black text-xl tracking-tighter text-white uppercase">
                 ADU ALLIANCE
               </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              ADU Alliance connects Orange County homeowners with independent contractor partners for ADU planning, design, permitting and construction. Construction contracts are made directly with the selected contractor.
+            <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
+              Orange County&apos;s premier single-contract ADU design-build general contractor. We manage 3D architectural plans, city plan check permits, and ground-up turnkey construction across all 34 OC municipalities.
             </p>
-            <div className="space-y-1 text-sm font-mono text-slate-300">
-              <div>Independent Contractor Matching Network</div>
+            <div className="space-y-1 text-xs font-mono text-slate-300">
+              <div>Verified CSLB Licensed Builder Network</div>
               <div>Direct Planning Desk: <a href="tel:9498229561" className="text-white hover:text-brand-amber font-bold">(949) 822-9561</a></div>
-              <div className="text-brand-amber font-bold">Focused on Orange County</div>
+              <div className="text-brand-amber font-bold">Serving All Over California</div>
             </div>
           </div>
 
           <div className="space-y-3">
-            <h4 className="font-bold text-white uppercase text-sm tracking-wider">Services</h4>
+            <h4 className="font-bold text-white uppercase text-xs tracking-wider">Services</h4>
             <ul className="space-y-2 text-slate-400">
               {ADU_SERVICES.map((s) => (
                 <li key={s.id}>
@@ -46,20 +44,20 @@ export default function Footer() {
           </div>
 
           <div className="space-y-3">
-            <h4 className="font-bold text-white uppercase text-sm tracking-wider">Explore ADU Alliance</h4>
+            <h4 className="font-bold text-white uppercase text-xs tracking-wider">Explore ADU Alliance</h4>
             <ul className="space-y-2 text-slate-400">
-              <li><Link href="/models" className="hover:text-white transition-colors">Layout Concepts</Link></li>
-              <li><Link href="/process" className="hover:text-white transition-colors">Project Process</Link></li>
-              <li><Link href="/calculator" className="hover:text-white transition-colors">Budget Scenario Calculator</Link></li>
-              <li><Link href="/projects" className="hover:text-white transition-colors">ADU Design Inspiration</Link></li>
-              <li><Link href="/blog" className="hover:text-white transition-colors">Educational Guides</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">About the Network</Link></li>
-              <li><Link href="/free-feasibility" className="hover:text-white transition-colors">Property Assessment</Link></li>
+              <li><Link href="/models" className="hover:text-white transition-colors">Pre-Designed Models</Link></li>
+              <li><Link href="/process" className="hover:text-white transition-colors">4-Stage Turnkey Process</Link></li>
+              <li><Link href="/calculator" className="hover:text-white transition-colors">Cost & Value Estimator</Link></li>
+              <li><Link href="/projects" className="hover:text-white transition-colors">Completed OC Projects</Link></li>
+              <li><Link href="/blog" className="hover:text-white transition-colors">ADU Guides &amp; Insights</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About & Licensing</Link></li>
+              <li><Link href="/free-feasibility" className="hover:text-white transition-colors">Free Lot Feasibility</Link></li>
             </ul>
           </div>
 
           <div className="space-y-3">
-            <h4 className="font-bold text-white uppercase text-sm tracking-wider">Top OC Locations</h4>
+            <h4 className="font-bold text-white uppercase text-xs tracking-wider">Top OC Locations</h4>
             <ul className="space-y-2 text-slate-400">
               <li><Link href="/locations/irvine" className="hover:text-white transition-colors">Irvine ADU Builders</Link></li>
               <li><Link href="/locations/newport-beach" className="hover:text-white transition-colors">Newport Beach ADU Builders</Link></li>
@@ -73,10 +71,10 @@ export default function Footer() {
 
         {/* 34 OC Cities Strip */}
         <div className="pt-8 border-t border-brand-borderDark/60 space-y-2">
-          <div className="text-sm font-bold text-slate-300 font-mono uppercase font-bold text-slate-400">
-            Explore Orange County Cities and Communities:
+          <div className="text-xs font-bold text-slate-300 font-mono uppercase font-bold text-slate-400">
+            Dedicated In-House Permitting & Construction Across All 34 Orange County Municipalities:
           </div>
-          <div className="flex flex-wrap gap-2 text-sm text-slate-300">
+          <div className="flex flex-wrap gap-2 text-[11px] text-slate-300">
             {ORANGE_COUNTY_CITIES.map((c, i) => (
               <Link
                 key={c.slug}
@@ -90,14 +88,14 @@ export default function Footer() {
         </div>
 
         {/* Legal Disclaimer */}
-        <div className="pt-6 border-t border-brand-borderDark/40 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-400 font-mono">
+        <div className="pt-6 border-t border-brand-borderDark/40 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-400 font-mono">
           <div>
-            &copy; {new Date().getFullYear()} ADU Alliance. All Rights Reserved. Independent Contractor Matching Network.
+            &copy; {new Date().getFullYear()} ADU Alliance. All Rights Reserved. Verified CSLB Licensed Builder Alliance.
           </div>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white">Terms of Service</Link>
-            <Link href="/locations" className="hover:text-white">Service Areas</Link>
+            <Link href="/process" className="hover:text-white">California ADU Laws</Link>
           </div>
         </div>
       </div>

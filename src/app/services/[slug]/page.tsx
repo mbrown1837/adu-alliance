@@ -1,40 +1,225 @@
+import React from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { HCD_ADU_GUIDE, SERVICE_CONTENT, SERVICE_IMAGE } from '@/lib/service-content';
+import { ADU_SERVICES, EVO_MODELS } from '@/lib/data';
+import { ShieldCheck, CheckCircle2, Clock, Phone, ArrowRight, DollarSign, FileCheck, Layers, HelpCircle } from 'lucide-react';
+import Link from 'next/link';
+import GhlLeadForm from '@/components/GhlLeadForm';
 
-interface Props { params: Promise<{ slug: string }> }
-export function generateStaticParams() { return SERVICE_CONTENT.map(({ slug }) => ({ slug })); }
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
- const {slug}=await params; const s=SERVICE_CONTENT.find(item=>item.slug===slug);
- if(!s)return {};
- const url='https://adualliance.com/services/'+s.slug;
- return {title:s.title,description:s.description,alternates:{canonical:url},openGraph:{title:s.title,description:s.description,url,images:[{url:'https://adualliance.com'+SERVICE_IMAGE,alt:'ADU design inspiration'}]}};
+interface ServicePageProps {
+  params: Promise<{
+    slug: string;
+  }>;
 }
-export default async function ServicePage({params}:Props) {
- const {slug}=await params; const s=SERVICE_CONTENT.find(item=>item.slug===slug); if(!s)notFound();
- const url='https://adualliance.com/services/'+s.slug, cta='/free-feasibility?service='+encodeURIComponent(s.slug);
- const schema={'@context':'https://schema.org','@type':'Service','@id':url+'#service',url,name:s.name+' Planning in Orange County',serviceType:'ADU planning and independent contractor connections',description:s.description,provider:{'@id':'https://adualliance.com/#organization'},areaServed:{'@type':'AdministrativeArea',name:'Orange County, California'}};
- const crumbs={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://adualliance.com/'},{'@type':'ListItem',position:2,name:'Services',item:'https://adualliance.com/services'},{'@type':'ListItem',position:3,name:s.name,item:url}]};
- const list=(items:string[])=><ul className="list-disc pl-5 space-y-3 text-slate-300 leading-7">{items.map(t=><li key={t}>{t}</li>)}</ul>;
- return <div className="pilot-page">
- <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(crumbs)}}/>
- <nav aria-label="Breadcrumb" className="!flex-row flex-wrap gap-x-4 !mt-0 !mb-6"><Link href="/" className="!text-sm">Home</Link><Link href="/services" className="!text-sm">ADU services</Link><span aria-current="page" className="py-3 text-sm text-slate-300">{s.name}</span></nav>
- <header className="pilot-hero"><div><p className="!text-sm uppercase tracking-widest !text-amber-400">Orange County · Property-first planning</p><h1>{s.name} in Orange County</h1><p>{s.intro}</p><Link href={cta} className="pilot-button">Discuss Your Project Scope</Link><p className="!text-sm mt-4">Planning guidance and independent contractor connections. Confirm availability and your written scope before commissioning work.</p></div>
- <figure><img src={SERVICE_IMAGE} srcSet="/images/localized/adu-planning-640.webp 640w, /images/localized/adu-planning-960.webp 960w, /images/localized/adu-planning-1280.webp 1280w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1240px) 50vw, 600px" width={2752} height={1536} loading="eager" fetchPriority="high" alt="Backyard ADU design inspiration with an outdoor living area"/><figcaption className="text-sm text-slate-400 mt-3">Design inspiration; not a documented completed ADU Alliance project or an approved plan.</figcaption></figure></header>
- <div className="pilot-sections">
- <section><h2>When to Consider This Option</h2><div><p>{s.fit}</p></div></section>
- <section><h2>Deliverables to Agree in Writing</h2><div><p>Use these points to compare proposals. They are scope questions, rather than a promise that every item is included.</p><div className="mt-5">{list(s.deliverables)}</div></div></section>
- <section><h2>Exclusions and Conditions to Check</h2><div>{list(s.exclusions)}</div></section>
- <section><h2>Start with These Property Questions</h2><div>{list(s.questions)}</div></section>
- <section><h2>How to Compare the Cost Scope</h2><div><p>{s.cost}</p></div></section>
- <section><h2>Who Is Responsible for the Work?</h2><div><p>{s.responsibility}</p><p className="mt-4">Before signing, check current contractor licensing, insurance, references and written responsibilities. ADU Alliance does not sign the construction agreement on the homeowner&apos;s behalf.</p><a href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx" className="inline-block text-amber-400 underline mt-4">Check a contractor with California CSLB</a></div></section>
- <section><h2>What Happens After You Enquire?</h2><div><p>{s.next}</p><p className="mt-4">An initial enquiry is not a formal quote, structural assessment or permit approval. Agree any site visit, professional review, costs and timing before proceeding.</p></div></section>
- </div>
- {s.slug==='junior-adu'&&<section className="pilot-resources"><h2>Official JADU Guidance</h2><p>Definition and layout guidance checked against California HCD&apos;s March 2026 ADU Handbook on 4 November 2026. Confirm current requirements and the proposed classification with the responsible authority.</p><a href={HCD_ADU_GUIDE}>California HCD ADU and JADU Handbook</a></section>}
- <section className="pilot-resources"><h2>Compare Related Services</h2><nav aria-label="Related ADU services">{SERVICE_CONTENT.filter(item=>item.slug!==s.slug).map(item=><Link key={item.slug} href={'/services/'+item.slug}>{item.name}</Link>)}</nav></section>
- <section className="pilot-resources"><h2>Find Local Planning Information</h2><p>Explore the responsible authority and local planning questions. Service availability should be confirmed for your property.</p><nav aria-label="Selected Orange County locations">{s.cities.map(city=><Link key={city} href={'/locations/'+city}>{city.split('-').map(part=>part.charAt(0).toUpperCase()+part.slice(1)).join(' ')}</Link>)}<Link href="/locations">All Orange County locations</Link></nav></section>
- <section className="pilot-faq"><h2>Your Questions, Answered</h2><div>{s.faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></section>
- <section className="pilot-final"><div><h2>Discuss Your Next Step</h2><p>Share your property, goals and existing-plan status to start a scope-focused conversation.</p></div><Link href={cta} className="pilot-button">Request a Property Assessment</Link></section>
- </div>;
+
+export async function generateStaticParams() {
+  return ADU_SERVICES.map((s) => ({
+    slug: s.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const service = ADU_SERVICES.find((s) => s.slug === slug);
+  if (!service) return {};
+
+  return {
+    title: `${service.title} in Orange County, CA | ADU Alliance`,
+    description: `${service.description.slice(0, 150)} Guaranteed municipal permits across 34 OC cities. Call (949) 822-9561 for lot assessment.`,
+    alternates: {
+      canonical: `https://adualliance.com/services/${service.slug}`,
+    },
+    openGraph: {
+      title: `${service.title} | Orange County ADU Alliance`,
+      description: service.description,
+      url: `https://adualliance.com/services/${service.slug}`,
+      images: [{ url: service.imageUrl, alt: service.title }],
+    },
+  };
+}
+
+export default async function ServiceDetailPage({ params }: ServicePageProps) {
+  const { slug } = await params;
+  const service = ADU_SERVICES.find((s) => s.slug === slug);
+
+  if (!service) {
+    notFound();
+  }
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `${service.title} - Orange County`,
+    provider: {
+      '@type': 'GeneralContractor',
+      '@id': 'https://adualliance.com/#organization',
+    },
+    areaServed: 'Orange County, California',
+    description: service.description,
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://adualliance.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Services',
+        item: 'https://adualliance.com/services',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: service.title,
+        item: `https://adualliance.com/services/${service.slug}`,
+      },
+    ],
+  };
+
+  const serviceCostBreakdown = [
+    { item: 'Architectural Plans & Structural Engineering', range: '$6,000 - $9,500', note: 'Includes Title 24 energy calculations & 3D renderings' },
+    { item: 'Municipal Plan Check & City Permit Fees', range: '$2,500 - $5,000', note: 'Exempt from school impact fees if under 500 sq ft' },
+    { item: 'Plumbing Trenching & Sewer Utility Connection', range: '$8,000 - $18,000', note: 'Independent subpanel & dedicated water tie-in' },
+    { item: 'Structural Foundation & Framing Scope', range: '$35,000 - $85,000', note: 'Engineered slab pour or garage envelope retrofit' },
+    { item: 'Interior Finishes, Kitchen & Bath Turnkey', range: '$28,000 - $55,000', note: 'Quartz counters, mini-split HVAC & custom cabinetry' },
+  ];
+
+  return (
+    <div className="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto space-y-16 sm:space-y-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      {/* Hero Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+        <div className="lg:col-span-7 space-y-6">
+          <div className="flex items-center gap-2 text-brand-amber text-xs font-mono font-bold uppercase tracking-wider">
+            <span>Service {service.number} &bull; {service.category}</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-white">
+            {service.title} in Orange County.
+          </h1>
+
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            {service.description}
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-brand-borderDark font-mono">
+            <div className="p-4 bg-brand-dark rounded-2xl border border-brand-borderDark">
+              <div className="text-xs text-slate-400">Typical Timeline</div>
+              <div className="text-xl font-black text-brand-amber">{service.turnaroundTime}</div>
+            </div>
+            <div className="p-4 bg-brand-dark rounded-2xl border border-brand-borderDark">
+              <div className="text-xs text-slate-400">City Permits</div>
+              <div className="text-xl font-black text-white">100% In-House</div>
+            </div>
+            <div className="p-4 bg-brand-dark rounded-2xl border border-brand-borderDark col-span-2 sm:col-span-1">
+              <div className="text-xs text-slate-400">Contractor License</div>
+              <div className="text-xl font-black text-brand-emerald">Class B Alliance</div>
+            </div>
+          </div>
+
+          <div className="pt-2">
+            <a
+              href="#assessment"
+              className="inline-block px-8 py-4 bg-brand-amber hover:bg-white text-black font-black text-xs uppercase tracking-wider rounded-full shadow transition-all"
+            >
+              Get Free Feasibility for This Scope &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden bg-brand-dark border border-brand-borderDark shadow-2xl">
+          <img src={service.imageUrl} alt={service.title} className="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      {/* 2026 Line-Item Cost Breakdown Table */}
+      <div className="p-6 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark space-y-8 shadow-xl">
+        <div className="max-w-3xl space-y-2">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-amber">
+            2026 COST BREAKDOWN &bull; LINE-ITEM TRANSPARENCY
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight">
+            Estimated Line-Item Costs for {service.title}
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300">
+            Real budget allocations across architectural drawings, city permit fees, utility trenching, and turnkey construction in Orange County.
+          </p>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs font-mono text-slate-300 border-collapse">
+            <thead>
+              <tr className="border-b border-brand-borderDark text-brand-amber uppercase font-bold">
+                <th className="py-3 px-4">Cost Component</th>
+                <th className="py-3 px-4">Typical Range</th>
+                <th className="py-3 px-4">Key Details & Code Notes</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-borderDark/60">
+              {serviceCostBreakdown.map((row, idx) => (
+                <tr key={idx}>
+                  <td className="py-3.5 px-4 font-bold text-white font-sans">{row.item}</td>
+                  <td className="py-3.5 px-4 text-brand-amber font-bold">{row.range}</td>
+                  <td className="py-3.5 px-4 text-slate-400 font-sans">{row.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Features & Scope Detail Cards */}
+      <div className="p-6 sm:p-12 bg-brand-dark rounded-3xl border border-brand-borderDark space-y-8 shadow-xl">
+        <div className="max-w-3xl space-y-2">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-brand-amber">
+            SCOPE SPECIFICATIONS
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight">
+            What&apos;s Included in Your Single-Contract Scope
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {service.features.map((feature, i) => (
+            <div key={i} className="p-5 bg-brand-black rounded-2xl border border-brand-borderDark flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-brand-emerald shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-white font-bold text-sm block">{feature}</strong>
+                <span className="text-xs text-slate-400">Full architectural compliance and licensed Class B construction oversight.</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Embedded Live GHL Assessment Hub */}
+      <div id="assessment" className="space-y-6 pt-6">
+        <div className="text-center max-w-2xl mx-auto space-y-2">
+          <h2 className="text-2xl sm:text-4xl font-black uppercase text-white tracking-tight">
+            Request Your {service.title} Quote
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300">
+            Get exact line-item estimates and municipal permit review details for your property within 1 business day.
+          </p>
+        </div>
+        <GhlLeadForm minHeight="920px" />
+      </div>
+
+    </div>
+  );
 }

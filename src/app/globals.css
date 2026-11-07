@@ -173,29 +173,3 @@
   scrollbar-width: none;
 }
 
-/* Orange County pilot pages: scoped so existing pages retain their styles. */
-.pilot-page{max-width:1240px;margin:auto;padding:48px 32px 110px;color:#fff}
-.pilot-hero{display:grid;grid-template-columns:1fr 1.12fr;gap:48px;align-items:center;padding:28px 0 64px}
-.pilot-hero h1{font-size:clamp(36px,4.5vw,64px);font-weight:750;line-height:1.08;letter-spacing:-.045em;margin:0 0 24px}
-.pilot-page p{font-size:17px;line-height:1.75;color:#cbd5e1;max-width:72ch}
-.pilot-hero img{width:100%;height:440px;object-fit:cover;border-radius:8px}
-.pilot-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 22px;background:#ffac00;color:#111;font-size:15px;font-weight:750;border-radius:7px;margin-top:24px;text-align:center}
-.pilot-button:hover{background:#ffc44d}.pilot-page a:focus-visible,.pilot-page summary:focus-visible{outline:3px solid #ffac00;outline-offset:5px}
-.pilot-sections>section,.pilot-faq{display:grid;grid-template-columns:.85fr 1.4fr;gap:56px;border-top:1px solid #343434;padding:42px 0}
-.pilot-page h2{font-size:clamp(25px,2.5vw,34px);line-height:1.2;font-weight:700;letter-spacing:-.025em;margin:0 0 18px}
-.pilot-page nav{display:flex;flex-direction:column;margin-top:22px}.pilot-page nav a,.pilot-resources a{display:block;color:#ffac00;padding:12px 0;border-bottom:1px solid #333;font-size:17px}
-.pilot-resources{padding:38px 0;border-top:1px solid #343434}
-.pilot-faq details{border-bottom:1px solid #343434;padding:18px 0}.pilot-faq summary{font-size:18px;cursor:pointer;font-weight:600}.pilot-faq details p{padding-top:14px}
-.pilot-final{display:flex;align-items:center;justify-content:space-between;gap:32px;background:#1b1b1b;padding:32px;margin-top:32px;border-radius:8px}.pilot-final .pilot-button{margin-top:0;flex-shrink:0}
-@media(max-width:767px){.pilot-page{padding:28px 20px 110px}.pilot-hero{grid-template-columns:1fr;gap:28px;padding:12px 0 36px}.pilot-hero img{height:260px}.pilot-hero h1{font-size:38px}.pilot-page p{font-size:16px}.pilot-sections>section,.pilot-faq{grid-template-columns:1fr;gap:8px;padding:30px 0}.pilot-final{flex-direction:column;align-items:stretch;padding:24px}.pilot-button{width:100%}}
-
-.pilot-text-hero{max-width:850px;padding:20px 0 44px}
-.pilot-text-hero h1{font-size:clamp(36px,4.5vw,58px);font-weight:750;line-height:1.12;letter-spacing:-.035em;margin-bottom:22px}
-.pilot-page ul,.pilot-page ol{padding-left:22px}.pilot-page li{font-size:16px;line-height:1.7;color:#cbd5e1;margin:8px 0}
-.assessment-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;margin-top:32px}
-.assessment-layout aside h2{font-size:28px}.assessment-layout aside h3{font-size:19px;font-weight:650;color:#fff}
-.assessment-layout aside a:not(.pilot-button){color:#ffac00;text-decoration:underline}
-.assessment-steps{list-style:decimal}.assessment-steps li{padding:8px 0}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #ffac00;outline-offset:4px}
-@media(max-width:767px){.assessment-layout{grid-template-columns:minmax(0,1fr);gap:30px}.pilot-text-hero{padding:10px 0 28px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
