@@ -1,15 +1,42 @@
 'use client';
 
-import React from 'react';
-import { ArrowRight, Phone } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, Phone, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { trackPhoneCallClick } from '@/lib/gtm';
 
 export default function StickyBottomBar() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Appear once the user scrolls down past the hero (250px)
+      if (window.scrollY > 250) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Check initial scroll position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  if (isDismissed) return null;
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/95 backdrop-blur-xl border-t border-brand-borderDark px-4 sm:px-6 py-3 shadow-2xl">
+    <aside
+      aria-label="Floating Contact Bar"
+      className={`fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/95 backdrop-blur-xl border-t border-brand-borderDark px-4 sm:px-6 py-3 shadow-2xl transition-all duration-300 ease-in-out transform ${
+        isVisible
+          ? 'translate-y-0 opacity-100 pointer-events-auto'
+          : 'translate-y-full opacity-0 pointer-events-none'
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
-        
         {/* Left Headline (Desktop) */}
         <div className="hidden sm:block">
           <div className="text-sm font-bold text-white tracking-tight">
@@ -20,7 +47,7 @@ export default function StickyBottomBar() {
           </div>
         </div>
 
-        {/* Mobile Action Bar */}
+        {/* Action Bar & Controls */}
         <div className="flex items-center justify-between w-full sm:w-auto gap-2">
           <a
             href="tel:9498229561"
@@ -37,9 +64,17 @@ export default function StickyBottomBar() {
           >
             Get Free Feasibility <ArrowRight className="w-3.5 h-3.5 shrink-0" />
           </Link>
-        </div>
 
+          <button
+            onClick={() => setIsDismissed(true)}
+            className="p-1.5 text-slate-400 hover:text-white transition-colors rounded-full hover:bg-brand-black flex items-center justify-center shrink-0 ml-1"
+            aria-label="Collapse sticky bar"
+            title="Collapse"
+          >
+            <ChevronDown className="w-4 h-4" />
+          </button>
+        </div>
       </div>
-    </div>
+    </aside>
   );
 }
