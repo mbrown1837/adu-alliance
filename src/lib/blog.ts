@@ -1,4 +1,5 @@
 import { B1_TAX_POST } from './blog-b1';
+import { B2_GARAGE_POST } from './blog-b2';
 
 export interface BlogAuthor {
   name: string;
@@ -135,25 +136,7 @@ export const DEFAULT_ORGANIZATIONAL_AUTHOR: BlogAuthor = {
  */
 export const BLOG_POSTS: BlogPostData[] = [
   B1_TAX_POST,
-  {
-    slug: 'orange-county-garage-conversion-quote-checklist',
-    status: 'draft',
-    title: 'How to Compare Garage Conversion Quotes in Orange County',
-    excerpt: 'Received wildly different garage conversion bids? Learn how to compare contractor scopes, spot missing allowances, and evaluate slab and electrical conditions.',
-    content: '',
-    category: 'Garage Conversions',
-    readTime: '8 min read',
-    publishedAt: '',
-      featuredImage: {
-      url: '/images/localized/adu_asset_52dc4cc0e2.jpg',
-      alt: 'Converted garage accessory dwelling unit in suburban Orange County',
-      width: 1200,
-      height: 514,
-    },
-    author: DEFAULT_ORGANIZATIONAL_AUTHOR,
-    seoTitle: 'How to Compare Orange County Garage Conversion Quotes (Scope & Bid Checklist)',
-    seoDescription: 'Comparing garage conversion contractor quotes? Learn how to evaluate contract types, material allowances, slab conditions, and utility responsibilities.',
-  },
+  B2_GARAGE_POST,
   {
     slug: 'orange-county-adu-fee-categories-estimate-guide',
     status: 'draft',

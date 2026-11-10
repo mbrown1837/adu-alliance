@@ -12,6 +12,7 @@ export const B1_TAX_POST: BlogPostData = {
   seoTitle: 'ADU Property Taxes in Orange County: Prop 13 & Bills',
   seoDescription: 'Learn how new ADU construction affects assessed value in Orange County, how supplemental bills work, and which county office handles each question.',
   noIndex: false,
+  relatedSlugs: ['orange-county-garage-conversion-quote-checklist'],
   featuredImage: {
     url: '/images/blog/adu-property-tax-guide.webp',
     alt: 'Illustration of a main home and backyard ADU for a property-tax planning guide',
